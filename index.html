@@ -3,8 +3,12 @@ layout: default
 title: Home
 ---
 
-{% for person in site.data.people %}
-    <div class="">
-        {{ person.name }}
+<div class="row">
+    <div class="col-md-12">
+        {% for person in site.data.people %}
+            <div class="">
+                {{ person.name }} - {% for tag in person.tags %} <span class="badge badge-primary">{{ tag }}</span> {% endfor %}
+            </div>
+        {% endfor %}
     </div>
-{% endfor %}
+</div>
