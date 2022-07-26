@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: theme
 name: malaria
 theme: malaria
 ---
@@ -9,6 +9,3 @@ theme: malaria
 
 All malaria projects will be listed here
 
-{% for project in theme_projects %}
-- [{{ project.name }}]({{project.url}})
-{% endfor %}

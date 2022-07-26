@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: theme
 name: tuberculosis
 theme: tuberculosis
 ---
@@ -9,6 +9,3 @@ theme: tuberculosis
 
 All tuberculosis projects will be listed here
 
-{% for project in theme_projects %}
-- {{ project.name }}
-{% endfor %}
