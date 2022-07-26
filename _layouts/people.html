@@ -26,7 +26,7 @@
             <div class="row">
             {% for project in site.projects %}
                 
-                {% if project.people contains page.name %}
+                {% if project.people contains page.pid %}
                     <div class="col-md-4">
                         <div class="card" style="width: 18rem;height: 35rem;">
                             <img src="/assets/img/{{ project.name }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">

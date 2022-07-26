@@ -1,12 +1,11 @@
 ---
 layout: people
-name: jody
+pid: jphelan
+forname: Jody
+surname: Phelan
 tags:
   - Tuberculosis
   - Bioinformatics
   - Drug-resistance
-projects:
-  - tb-profiler
-  - malaria-profiler
 ---
 Hello! My name is Jody.

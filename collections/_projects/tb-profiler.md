@@ -3,8 +3,8 @@ layout: default
 name: TB-Profiler
 theme: tuberculosis
 people:
-  - gary
-  - jody
+  - gnapier
+  - jphelan
 ---
 
 This project page describes TB-Profiler

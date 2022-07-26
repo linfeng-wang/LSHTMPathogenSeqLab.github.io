@@ -23,9 +23,9 @@ This page lists the people in the lab
   {% for person in site.people %}
   <div class="col-md-4">
     <div class="card" style="width: 18rem;height: 35rem;">
-      <img src="/assets/img/{{ person.name }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+      <img src="/assets/img/{{ person.pid }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
       <div class="card-body">
-        <h5 class="card-title">{{ person.name | capitalize }}</h5>
+        <h5 class="card-title">{{ person.forname | capitalize }}</h5>
         <p class="card-text">{{ person.excerpt }}</p>
         <hr>
         <div>

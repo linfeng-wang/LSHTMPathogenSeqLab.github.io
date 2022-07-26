@@ -20,9 +20,10 @@
 
         <div class="container pt-4">
             <!-- Content here -->
+            <h1>{{ page.name | capitalize }}</h1>
             {{ content }}
             <hr>
-            <h1>Projects</h1>
+            <h2>Projects</h2>
             <div class="row">
             {% for project in site.projects %}
                 

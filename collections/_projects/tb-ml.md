@@ -3,7 +3,7 @@ layout: default
 name: TB-ML
 theme: tuberculosis
 people:
-    - julian
+    - jphelan
 ---
 
 This project page describes TB-ML
