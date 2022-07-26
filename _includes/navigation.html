@@ -12,7 +12,7 @@
                 <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">Research themes</a>
                 <ul class="dropdown-menu">
                     {% for theme in site.themes %}
-                        <li><a class="dropdown-item" href="{{theme.url}}"> {{ theme.name }}</a></li>
+                        <li><a class="dropdown-item" href="{{theme.url}}"> {{ theme.name | capitalize }}</a></li>
                     {% endfor %}
                 </ul>
             </li>
