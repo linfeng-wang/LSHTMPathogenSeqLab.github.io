@@ -1,0 +1,14 @@
+---
+layout: default
+name: tuberculosis
+theme: tuberculosis
+---
+
+# {{ page.theme | capitalize }}
+{% assign theme_projects = site.projects | where: "theme", page.theme %}
+
+All tuberculosis projects will be listed here
+
+{% for project in theme_projects %}
+- {{ project.name }}
+{% endfor %}

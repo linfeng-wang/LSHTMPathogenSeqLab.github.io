@@ -21,6 +21,27 @@
         <div class="container pt-4">
             <!-- Content here -->
             {{ content }}
+            <hr>
+            <h1>Projects</h1>
+            <div class="row">
+            {% for project in site.projects %}
+                
+                {% if project.people contains page.name %}
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;height: 35rem;">
+                            <img src="/assets/img/{{ project.name }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ project.name | capitalize }}</h5>
+                                <p class="card-text">{{ project.excerpt }}</p>
+                          
+                                <hr>
+                                <a href="{{ person.url }}" class="btn btn-primary">More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
         </div>
     </body>
 </html>

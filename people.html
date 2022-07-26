@@ -1,0 +1,43 @@
+---
+layout: default
+title: About
+---
+<h1> People page</h1>
+
+This page lists the people in the lab
+
+<!-- <ul>
+    {% for person in site.people %}
+      <li>
+        {{ person.name }}
+        {{ person.excerpt }}
+        <img src="/assets/img/{{ person.name }}.jpg" alt="sdsd">
+        {% for tag in person.tags %} <span class="badge badge-primary">{{ tag }}</span> {% endfor %}
+      </li>
+  {% endfor %}
+
+</ul>
+ -->
+
+<div class="row">
+  {% for person in site.people %}
+  <div class="col-md-4">
+    <div class="card" style="width: 18rem;height: 35rem;">
+      <img src="/assets/img/{{ person.name }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+      <div class="card-body">
+        <h5 class="card-title">{{ person.name | capitalize }}</h5>
+        <p class="card-text">{{ person.excerpt }}</p>
+        <hr>
+        <div>
+          {% assign tags = person.tags | sample: 2 %}
+          {% for tag in tags %}
+            <span class="badge badge-primary">{{ tag }}</span> 
+          {% endfor %}
+        </div>
+        <hr>
+        <a href="{{ person.url }}" class="btn btn-primary">More</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
