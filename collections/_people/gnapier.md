@@ -8,6 +8,6 @@ tags:
   - Trees
   - Drug-resistance
 ---
-Hello! My name is Gary, I love phylogenetic trees and fine wine!
+Hello! My name is Gary, I love phylogenetic trees!
 
 I analyse Mtb NGS data.
