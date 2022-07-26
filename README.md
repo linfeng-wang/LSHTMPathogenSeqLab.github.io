@@ -5,7 +5,7 @@ The website uses github's built in jekyll static site generator to create a webs
 
 ## Modifying
 
-It is fairly straightforward to add pages. At the moment you can add yourself in the people page and add projects in the project page.
+It is fairly straightforward to add pages. At the moment you can add yourself in the people page, add projects in the project page and new research themes.
 
 ### People
 
