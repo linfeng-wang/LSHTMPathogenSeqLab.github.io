@@ -1,0 +1,11 @@
+---
+layout: default
+title: About
+---
+<h1>Publications</h1>
+<hr>
+<ul class="list-group">
+    {% for x in site.data.publications %}
+    <li class="list-group-item list-group-item-action"><p>{{x.Authors}} {{x.Title}} {{x.Citation}}</p></li>
+    {% endfor %}
+</ul>

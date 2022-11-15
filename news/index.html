@@ -1,0 +1,66 @@
+---
+layout: default
+title: My Blog
+---
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+    {% assign author = site.people | where: "pid", post.author | sample %}
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <p class="author">
+        <p>
+            <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+            {{ author.forname }} {{ author.surname }}
+        </p>
+        <span class="date">{{ post.date }}</span>
+    </p>
+    <div class="content">
+        {{ post.excerpt }}
+    </div>
+{% endfor %}
+
+<!-- Pagination links -->
+
+<nav aria-label="...">
+    <ul class="pagination">
+    {% if paginator.previous_page %}
+        <li class="page-item">
+            <a class="page-link" href="{{ paginator.previous_page_path }}">Previous</a>
+        </li>
+    {% else %}
+        <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+        </li>
+    {% endif %}
+
+    {% assign pstart = paginator.page | minus : 2  | at_least: 1 %}
+    {% assign pend = paginator.page | plus  : 2  | at_most: paginator.total_pages%}
+    {% for i in (pstart..pend) %}
+        {% if i==1 %}
+            {% assign link = "/news/" %}
+        {% else %}
+            {% assign link = "/news/page" | append: i %}
+        {% endif %}
+
+        {% if i==paginator.page %}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="{{ link }}">{{ i }}</a>
+            </li>    
+        {% else %}
+            <li class="page-item"><a class="page-link" href="{{ link }}">{{ i }}</a></li>    
+        {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+        <li class="page-item">
+            <a class="page-link" href="{{ paginator.next_page_path }}">Next</a>
+        </li>
+    {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    {% endif %}
+
+    </ul>
+</nav>
+

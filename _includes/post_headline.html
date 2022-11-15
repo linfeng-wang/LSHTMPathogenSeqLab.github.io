@@ -1,0 +1,12 @@
+{% assign author = site.people | where: "pid", post.author | sample %}
+<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+<p class="author">
+    <p>
+        <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+        <a href="{{author.url}}">{{ author.forname }} {{ author.surname }}</a>
+    </p>
+    <span class="date">{{ post.date }}</span>
+</p>
+<div class="content">
+    {{ post.excerpt }}
+</div>

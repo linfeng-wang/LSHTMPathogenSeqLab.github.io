@@ -21,23 +21,31 @@ This page lists the people in the lab
 
 <div class="row">
   {% for person in site.people %}
-  <div class="col-md-4">
+  <div class="col-md-4 pt-4">
     <div class="card" style="width: 18rem;height: 35rem;">
       <img src="/assets/img/{{ person.pid }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
       <div class="card-body">
         <h5 class="card-title">{{ person.forname | capitalize }}</h5>
         <p class="card-text">{{ person.excerpt }}</p>
         <hr>
-        <div>
-          {% assign tags = person.tags | sample: 2 %}
-          {% for tag in tags %}
-            <span class="badge badge-primary">{{ tag }}</span> 
+        <p id="tags_{{person.pid}}"></p>
+        <script>
+          function getMultipleRandom(arr, num) {
+            const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+            return shuffled.slice(0, num);
+          }
+          tags = []
+          {% for tag in person.tags %}
+            tags.push('<span class="badge bg-primary">{{ tag }}</span>')
           {% endfor %}
-        </div>
+          document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 2).join(" ")
+        </script>
         <hr>
-        <a href="{{ person.url }}" class="btn btn-primary">More</a>
+        <a href="{{ person.url }}" class="btn btn-outline-primary">More</a>
       </div>
     </div>
   </div>
   {% endfor %}
 </div>
+

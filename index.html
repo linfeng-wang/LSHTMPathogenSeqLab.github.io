@@ -1,0 +1,54 @@
+---
+layout: default
+title: Home
+---
+
+<h1 class="text-center">PathogenSeq lab</h1>
+
+<hr>
+<div id="carouselExampleControls" class="carousel slide carousel-dark " data-bs-ride="carousel"  >
+    <div class="carousel-inner position-relative">
+      {% assign i = 0 %}
+      {% for image in site.static_files %}
+          {% if image.path contains 'homepage' %}
+              {% if i == 0 %}
+                <div class="carousel-item active" style="height:500px;">
+              {% else %}
+                <div class="carousel-item" style="height:500px;">
+              {% endif %}
+               <img id="{{i}}" src="{{ image.path }}"  style="margin: auto;" class="img-fluid d-block mh-100 " alt="...">
+               
+              </div>
+              {% assign i = i | plus: 1 %}
+          {% endif %}
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<hr>
+
+<p>
+  {% capture about_us %}{% include about_us.md %}{% endcapture %}
+  {{ about_us | markdownify }}
+</p>
+
+<hr>
+<h1>Latest news</h1>
+
+{% assign top_posts = site.posts | slice: 0,3 %}
+{% for post in top_posts %}
+    {% include post_headline.html %}
+{% endfor %}
+<p>
+    <a class="btn btn-primary" href="/news/" role="button">More</a>
+</p>
+<hr>

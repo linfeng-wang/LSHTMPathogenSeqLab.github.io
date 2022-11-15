@@ -1,0 +1,25 @@
+---
+layout: default
+title: Funding
+---
+
+This page will list funders
+
+<div class="row">
+    {% for funder in site.funders %}
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top p-2" src="/assets/img/funders/{{funder.did}}.png" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">{{funder.name}}</p>
+                    <p class="card-text">{{funder.description}}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="{{funder.link}}" class="btn btn-sm btn-outline-secondary">Homepage</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
