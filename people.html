@@ -2,9 +2,68 @@
 layout: default
 title: About
 ---
-<h1> People page</h1>
 
-This page lists the people in the lab
+
+<links>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></links>
+<body id="people">
+<div id="content" class="content-area" style="box-sizing: border-box;">
+  
+  <main role="main" id="main" class="site-main">
+    <section class="block" style="background-color: #fff;
+    position: relative;
+    min-height: 100px;
+    max-width: 1920px;
+    margin: 0 auto;">
+      <div class="container-fluid" style="    margin: 0 auto;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;">
+        
+  <div class="box-wrapper" style="height: 20vh;position: relative;">
+    <div class="heading" style="position:absolute;
+    bottom:0;
+    left:0;">
+      <h1 style="font-family: 'Quicksand', sans-serif;"> People page</h1>
+    </div>
+  
+</div>
+        <div class="people" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr auto;gap: 20px; ">
+          {% for person in site.people %}
+          
+            <div class="card mb-4 border-0" style="width: 20vw;height: 500px; border-top: 0;">
+              <img src="/assets/img/{{ person.pid }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'" style="border-radius:50%; width: 250px;height: 250px; object-fit:cover;object-position:50% 50%;">
+              <div class="card-body">
+                <h5 class="card-title">{{ person.forname | capitalize }}</h5>
+                <p class="card-text">{{ person.excerpt }}</p>
+                <hr>
+                <p id="tags_{{person.pid}}"></p>
+                <script>
+                  function getMultipleRandom(arr, num) {
+                    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+        
+                    return shuffled.slice(0, num);
+                  }
+                  tags = []
+                  {% for tag in person.tags %}
+                    tags.push('<span class="badge bg-primary">{{ tag }}</span>')
+                  {% endfor %}
+                  document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
+                </script>
+                <hr>
+                <a href="{{ person.url }}" class="btn btn-outline-primary">More</a>
+             
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        
+      </div>
+    </section>
+  </main>
 
 <!-- <ul>
     {% for person in site.people %}
@@ -19,33 +78,5 @@ This page lists the people in the lab
 </ul>
  -->
 
-<div class="row">
-  {% for person in site.people %}
-  <div class="col-md-4 pt-4">
-    <div class="card" style="width: 18rem;height: 35rem;">
-      <img src="/assets/img/{{ person.pid }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-      <div class="card-body">
-        <h5 class="card-title">{{ person.forname | capitalize }}</h5>
-        <p class="card-text">{{ person.excerpt }}</p>
-        <hr>
-        <p id="tags_{{person.pid}}"></p>
-        <script>
-          function getMultipleRandom(arr, num) {
-            const shuffled = [...arr].sort(() => 0.5 - Math.random());
-
-            return shuffled.slice(0, num);
-          }
-          tags = []
-          {% for tag in person.tags %}
-            tags.push('<span class="badge bg-primary">{{ tag }}</span>')
-          {% endfor %}
-          document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 2).join(" ")
-        </script>
-        <hr>
-        <a href="{{ person.url }}" class="btn btn-outline-primary">More</a>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
 </div>
-
+</div></body>
