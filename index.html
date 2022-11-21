@@ -1,54 +1,186 @@
----
-layout: default
-title: Home
----
+<!doctype html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<h1 class="text-center">PathogenSeq lab</h1>
+        <title>PathogenSeq lab</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="/assets/custom.css" >
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <style>
+            @media all and (min-width: 992px) {
+                .navbar .nav-item .dropdown-menu{ display: none; }
+                .navbar .nav-item:hover .nav-link{   }
+                .navbar .nav-item:hover .dropdown-menu{ display: block; }
+                .navbar .nav-item .dropdown-menu{ margin-top:0; }
+            }	
+        </style>
+    </head>
+    <body>
+        
+<links>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></links>
+        <style>
+            nav.navbar li a {
+          color: white;
+          font-family: 'Quicksand', sans-serif;
+         
+        }
+        #people  .nav-item-1 {
+          background: rgb(0,191,111);
+        }
+        #Home  .nav-item-2 {
+          background: rgb(0,191,111);
+        }
+        nav.navbar li a:hover {
+            font-weight: 900;
+            color: white;
+        }
+        </style>
+        
+        
+        <nav class="navbar navbar-expand-lg navbar-light  sticky-top justify-content-center rounded" style="background-color: rgb(49, 48, 48); height: 95px;"  >
+            <div class="container-fluid" >
+                <img src="/assets/img/logo/logo.png" style="width: 150px;height:100px">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(0,191,111);color:white">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse w-100" id="main_nav" style="background-color: rgb(49, 48, 48);">
+                <ul class="navbar-nav w-100 justify-content-center">
+                    <li class="nav-item-2 "> <a class="nav-link" href="/">Home </a> </li>
+                    <li class="nav-item "><a class="nav-link"  href="teaching.html"> Teaching </a></li>
+                    <li class="nav-item-1"><a class="nav-link" href="/people.html"> The team </a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown" style="background-color: rgb(49,48,48);">Research themes</a>
+                        <ul class="dropdown-menu" style="background-color: rgb(49,48,48);">
+                            
+                                <li><a class="dropdown-item" href="/themes/malaria.html"> Malaria</a></li>
+                            
+                                <li><a class="dropdown-item" href="/themes/tuberculosis.html"> Tuberculosis</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/publications.html"> Publications </a></li>
+                    
+                    <li class="nav-item active"> <a class="nav-link" href="/news">News </a> </li>
+                    <li class="nav-item"><a class="nav-link" href="/funding.html"> Funding </a></li>
+                </ul>
+                </div> <!-- navbar-collapse.// -->
+            </div> <!-- container-fluid.// -->
+        </nav>
+<body id="Home">
+        <div class="first-section" style="background-image:url(/assets/img/homepage/PXL_20220707_091150444.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        height: 600px;
+        width: 100%;
+        position: relative;"
+        >
+            <!-- Content here -->
+            
+            <div class="box-wrapper" style="position: absolute;
+            width: 100%; 
+            height: 150px;
+            box-sizing:border-box;
+            max-height: inherit; 
+            background-color: rgba(49, 48, 48,0.4);
+            bottom: 0;">
+            <div style="color: white;font-family: 'Quicksand', sans-serif;">
+                <h1 class="text" style="text-align: right; margin-right:10px;">The Applied Genomics Centre</h1>
+                <p style="text-align: right;margin-right:10px;">For Infectious Diseases</p>
 
-<hr>
-<div id="carouselExampleControls" class="carousel slide carousel-dark " data-bs-ride="carousel"  >
-    <div class="carousel-inner position-relative">
-      {% assign i = 0 %}
-      {% for image in site.static_files %}
-          {% if image.path contains 'homepage' %}
-              {% if i == 0 %}
-                <div class="carousel-item active" style="height:500px;">
-              {% else %}
-                <div class="carousel-item" style="height:500px;">
-              {% endif %}
-               <img id="{{i}}" src="{{ image.path }}"  style="margin: auto;" class="img-fluid d-block mh-100 " alt="...">
-               
-              </div>
-              {% assign i = i | plus: 1 %}
-          {% endif %}
-      {% endfor %}
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-</div>
+            </div>
+                
+                </div>    
+            </div>
+            
+        </div>
+            <div class="second section"> 
 
-
+    
+                
 <hr>
 
 <p>
-  {% capture about_us %}{% include about_us.md %}{% endcapture %}
-  {{ about_us | markdownify }}
+  
+  <h1 id="what-we-do">What we do</h1>
+
+<p>We are a diverse group of researchers developing methods to analyse next generation sequence data from:</p>
+<ul>
+  <li>Parasites</li>
+  <li>Bacteria</li>
+  <li>Vectors</li>
+  <li>Hosts</li>
+</ul>
+
 </p>
 
 <hr>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide carousel-dark " data-bs-ride="carousel"  >
+                <div class="carousel-inner position-relative">
+                 
+                            <div class="carousel-item active" style="height:500px;">
+                          
+                           <img id="0" src="/assets/img/homepage/PXL_20220707_091150444.jpg"  style="margin: auto;" class="img-fluid d-block mh-100 " alt="...">
+                           
+                          </div>
+                     
+                  
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+
 <h1>Latest news</h1>
 
-{% assign top_posts = site.posts | slice: 0,3 %}
-{% for post in top_posts %}
-    {% include post_headline.html %}
-{% endfor %}
+
+
+    
+<h3><a href="/2018/08/21/DMSC-LSHTM-Collaberation.html">Dmsc Lshtm Collaberation</a></h3>
+<p class="author">
+    <p>
+        <img src="/assets/img/jphelan.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+        <a href="/people/jphelan.html">Jody Phelan</a>
+    </p>
+    <span class="date">2018-08-21 00:00:00 +0100</span>
+</p>
+<div class="content">
+    <p>Kevin Tetteh and Daniel Ward recently visited the Ministry of Public Health in Thailand, and trained their staff in serological methods and Oxford Nanopore sequencing, as part of funded TB and COVID-19 projects (photo attached). Members of the Ministry of Public Health are visiting the LSHTM during July/August. Please contact Taane Clark if keen to meet with them.</p>
+
+</div>
+
+    
+<h3><a href="/2018/08/20/bangkok-genomics-course.html">Bangkok Genomics Course</a></h3>
+<p class="author">
+    <p>
+        <img src="/assets/img/jphelan.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+        <a href="/people/jphelan.html">Jody Phelan</a>
+    </p>
+    <span class="date">2018-08-20 00:00:00 +0100</span>
+</p>
+<div class="content">
+    <p>Members of the Clark/Campino groups recently organised a genomics capacity strengthening workshop in Siriraj Hospital - Mahidol University, Thailand. This follows a successful symposium in the Pampanga State Agricultural University (The Philippines) focused on AMR and TB genomics. Other funded genomics workshops will take place in Bangladesh and Vietnam later this year.</p>
+
+</div>
+
 <p>
     <a class="btn btn-primary" href="/news/" role="button">More</a>
 </p>
 <hr>
+
+        </div>
+    </body>
+</html>
+</body>
