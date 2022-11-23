@@ -2,7 +2,53 @@
 layout: default
 title: About
 ---
+<style>
+  .team-list{
+    font-family: "Mercury Text G1 A","Mercury Text G1 B",serif;
+font-style: italic;
+font-size: 17px;
+padding: 0 20px;
+cursor: pointer;
+display: inline-block;
+transition: .15s all 0s ease-in-out;
+-webkit-transition: .15s all 0s ease-in-out;
+-moz-transition: .15s all 0s ease-in-out;
+  }
+  .team-list:hover{
+    font-weight: 700;
+  }
+  .col-4 {
+  width: 33.333%;
+}
+@media (min-width: 768px){
+.col-4 {
+  width: 33.333%;
+}}
+.team-member .team-member-wrap {
+  position: relative;
+  
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 402px;
+  
+  width: 100%;
+  height: inherit;
 
+}
+.team-member-panel:hover{
+  background-color: rgb(0,191,111);
+  transition: 0.4s;
+}
+h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+
+</style>
 
 <links>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,27 +78,111 @@ title: About
         right: 0;
         margin-right: 10px;">
       <h1 style="font-family: 'Anton', sans-serif; color: white; text-align: center;"> <b>The Genomics Team</b></h1>
+      
     </div>
   
 </div>
-<div class="row-fluid-wrapper row-depth-1 row-number-2 ">
+
+
+<div class="row-fluid-wrapper row-depth-5 row-number-2 "style="height=500px">
   <div class="row-fluid ">
-  <div class="span12 widget-span widget-type-cell container" style="" data-widget-type="cell" data-x="0" data-w="12">
+  <div class="span12 widget-span widget-type-cell container" style="height: 200px;margin: 0 auto; text-align: center;" data-widget-type="cell" data-x="0" data-w="12">
   
-  <div class="row-fluid-wrapper row-depth-1 row-number-3 ">
+  
+      <div class="row-fluid-wrapper row-depth-1 row-number-4" >
+        <div class="row-fluid">
+          <div class="span12 widget-span widget-type-header" style=" margin-top: 150px;" data-widget-type="header" data-x="0" data-w="12">
+            <div class="cell-wrapper layout-widget-wrapper">
+              <span class="small-wrapper" style="text-align: center;" data-hs-cos-general-type="widget" data-hs-cos-type="header">
+                <h2 style="  font-family: 'Quicksand', sans-serif;color: black; text-align: center;line-height: 1.2;">We are genomics</h2>
+                <p  style="  font-family: 'Quicksand', sans-serif;color: black; text-align: center;">Scroll down for a peek into our weird and wonderful team</p>
+              </span></div>
+          </div>
+        </div>
+      </div>
+  
+            </div>
+          </div>
+        </div>
+  
+    <ul style="list-style: none;box-sizing: border-box; text-align: center; background-color: rgb(248, 248, 248);" class="past-present">
+      <li class="team-list">Current Team</li>
+      <li class="team-list"> Alumni</li>
+    </ul>
+
+<div class="wrapper team container" style="margin-top: 200px;">
+  <div class="row">
+    {% for person in site.people %}
+    <div class="col-4 team-member"style=" overflow: hidden;
+    position: relative;" >
+     
+      <div class="team-member-wrap" style="position: relative;">
+        <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
+        background-color: #888;
+        background-position: center top;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        content: '';
+float: left;
+padding-bottom: 63.93862%;
+margin-top: 20px;">
+
+        </div>
+        <div  class="team-member-panel" onclick="togglediv('item')" style=" clear: both;  ">
+          <h6 class="team-member-name " style=" padding:10px 0; align-content: center; justify-content: center; text-align: center;">{{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
+          <p class="small italic-serif team-member-title" style=" align-content: center; justify-content: center; text-align: center;">{{person.title | capitalize}}</p>
+          
+          <div id="item"  class="team-member-bio-wrap middle" style="z-index:1" >
+            <p class="team-member-bio"></p>
+            <p class="text-center" style="margin-bottom: 20px;" id="tags_{{person.pid}}"></p>
+                <script>
+                  function getMultipleRandom(arr, num) {
+                    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+        
+                    return shuffled.slice(0, num);
+                  }
+                  tags = []
+                  {% for tag in person.tags %}
+                    tags.push('<span class=" style=color:rgb(0,191,111)">{{ tag }}</span>')
+                  {% endfor %}
+                  document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
+                </script>
+          </div>
+         
+        </div>       
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<script>
+  function togglediv(id) {
+    var div = document.getElementById(id);
+    div.style.display = div.style.display == "none" ? "block" : "none";
+}
+</script>
+
+
+<div class="row-fluid-wrapper row-depth-1 row-number-3 ">
+  <div class="row-fluid ">
+  <div class="span12 widget-span widget-type-cell container" style="margin-top: 50px;" data-widget-type="cell" data-x="0" data-w="12">
+  
+  <div class="row-fluid-wrapper row-depth-1 row-number-4 ">
   <div class="row-fluid ">
   <div class="span12 widget-span widget-type-cell inner-hubspot" style="" data-widget-type="cell" data-x="0" data-w="12">
   
-        <div class="wrapper" style="display: grid; grid-template-columns: 1fr 1fr 1fr; ;gap: 10px; grid-auto-flow:dense; ">
+        <div class="row align-items-center" style="display: grid; grid-template-columns: 1fr 1fr 1fr; ;gap: 10px; grid-auto-flow:dense; justify-content: center; margin: 0;float: none;">
           {% for person in site.people %}
           
-            <div class="card mb-4 border-0" style="width: 20vw;height: 500px; border-top: 0;">
-              <img src="/assets/img/{{ person.pid }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'" style="border-radius:50%; width: 250px;height: 250px; object-fit:cover;object-position:50% 50%;">
-              <div class="card-body">
-                <h5 class="card-title">{{ person.forname | capitalize }}</h5>
-                <p class="card-text">{{ person.excerpt }}</p>
+            <div class="card d-flex border-0" style="width: 20vw;height: 500px; border-top: 0; display: flex;
+            justify-content: center;
+            align-items: center;">
+              <img src="/assets/img/{{ person.pid }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'" style=" width: 250px;height: 250px; object-fit:cover;object-position:50% 50%;">
+              <div class=" card-body align-items-center ">
+                <h5 class="card-title align-items-center d-flex justify-content-center">{{ person.forname | capitalize }}</h5>
+                <p class="card-text text-center" >{{ person.excerpt }}</p>
                 <hr>
-                <p id="tags_{{person.pid}}"></p>
+                <p class="text-center" id="tags_{{person.pid}}"></p>
                 <script>
                   function getMultipleRandom(arr, num) {
                     const shuffled = [...arr].sort(() => 0.5 - Math.random());
@@ -66,14 +196,20 @@ title: About
                   document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
                 </script>
                 <hr>
-                <a href="{{ person.url }}" class="btn btn-outline" style="color: rgb(49,48,48); background-color:rgb(0,191,111)">More</a>
-             
+                <div class="text-center">
+                <a  href="{{ person.url }}" class="btn btn-outline" style="color: rgb(49,48,48); background-color:rgb(0,191,111); ">More</a>
+              </div>
             </div>
           </div>
           {% endfor %}
         </div>
         
       </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
     </section>
   </main>
 
@@ -89,6 +225,7 @@ title: About
 
 </ul>
  -->
+ 
 
 </div>
 </div></body>

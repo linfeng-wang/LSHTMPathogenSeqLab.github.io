@@ -3,6 +3,7 @@ layout: people
 pid: jphelan
 forname: Jody
 surname: Phelan
+title: cool dude
 tags:
   - Tuberculosis
   - Bioinformatics
