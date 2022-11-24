@@ -113,48 +113,49 @@ h6 {
 <div class="wrapper team container" style="margin-top: 200px;">
   
   <div class="row">
+    {% assign my_counter = 0 %}
     {% for person in site.people %}
   
-      {% increment my_counter %}
-    <div class="col-4 team-member"style=" overflow: hidden;
-    position: relative;" >
-     
-      <div class="team-member-wrap" style="position: relative;">
-        <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
-        background-color: #888;
-        background-position: center top;
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-        content: '';
-float: left;
-padding-bottom: 63.93862%;
-margin-top: 20px;">
+      {% assign my_counter = my_counter | plus: 1 %}
+      <div class="col-4 team-member"style=" overflow: hidden;
+      position: relative;" >
+      
+        <div class="team-member-wrap" style="position: relative;">
+          <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
+          background-color: #888;
+          background-position: center top;
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          content: '';
+  float: left;
+  padding-bottom: 63.93862%;
+  margin-top: 20px;">
 
-        </div>
-        <div  class="team-member-panel"  data-bs-toggle="collapse" data-bs-target="#item{{my_counter}}"  aria-expanded="false" " style=" clear: both;  ">
-          <h6 class="team-member-name " style=" padding:10px 0; align-content: center; justify-content: center; text-align: center;">{{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
-          <p class="small italic-serif team-member-title" style=" align-content: center; justify-content: center; text-align: center;">{{person.title | capitalize}}</p>
-          
-          <div id="item{{my_counter}}"  class="collapse" style="z-index:1" >
-            <p class="team-member-bio"></p>
-            <p class="text-center" style="margin-bottom: 20px;" id="tags_{{person.pid}}"></p>
-                <script>
-                  function getMultipleRandom(arr, num) {
-                    const shuffled = [...arr].sort(() => 0.5 - Math.random());
-        
-                    return shuffled.slice(0, num);
-                  }
-                  tags = []
-                  {% for tag in person.tags %}
-                    tags.push('<span class=" style=color:rgb(0,191,111)">{{ tag }}</span>')
-                  {% endfor %}
-                  document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
-                </script>
           </div>
-         
-        </div>       
+          <div  class="team-member-panel"  data-bs-toggle="collapse" data-bs-target="#item{{my_counter}}"  aria-expanded="false" " style=" clear: both;  ">
+            <h6 class="team-member-name " style=" padding:10px 0; align-content: center; justify-content: center; text-align: center;">{{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
+            <p class="small italic-serif team-member-title" style=" align-content: center; justify-content: center; text-align: center;">{{person.title | capitalize}}</p>
+            
+            <div id="item{{my_counter}}"  class="collapse" style="z-index:1" >
+              <p class="team-member-bio"></p>
+              <p class="text-center" style="margin-bottom: 20px;" id="tags_{{person.pid}}"></p>
+                  <script>
+                    function getMultipleRandom(arr, num) {
+                      const shuffled = [...arr].sort(() => 0.5 - Math.random());
+          
+                      return shuffled.slice(0, num);
+                    }
+                    tags = []
+                    {% for tag in person.tags %}
+                      tags.push('<span class=" style=color:rgb(0,191,111)">{{ tag }}</span>')
+                    {% endfor %}
+                    document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
+                  </script>
+            </div>
+          
+          </div>       
+        </div>
       </div>
-    </div>
     {% endfor %}
   </div>
 </div>
