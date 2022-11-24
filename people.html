@@ -111,8 +111,11 @@ h6 {
     </ul>
 
 <div class="wrapper team container" style="margin-top: 200px;">
+  
   <div class="row">
     {% for person in site.people %}
+  
+      {% increment my_counter %}
     <div class="col-4 team-member"style=" overflow: hidden;
     position: relative;" >
      
@@ -128,11 +131,11 @@ padding-bottom: 63.93862%;
 margin-top: 20px;">
 
         </div>
-        <div  class="team-member-panel" onclick="togglediv('item')" style=" clear: both;  ">
+        <div  class="team-member-panel"  data-bs-toggle="collapse" data-bs-target="#item{{my_counter}}"  aria-expanded="false" " style=" clear: both;  ">
           <h6 class="team-member-name " style=" padding:10px 0; align-content: center; justify-content: center; text-align: center;">{{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
           <p class="small italic-serif team-member-title" style=" align-content: center; justify-content: center; text-align: center;">{{person.title | capitalize}}</p>
           
-          <div id="item"  class="team-member-bio-wrap middle" style="z-index:1" >
+          <div id="item{{my_counter}}"  class="collapse" style="z-index:1" >
             <p class="team-member-bio"></p>
             <p class="text-center" style="margin-bottom: 20px;" id="tags_{{person.pid}}"></p>
                 <script>
