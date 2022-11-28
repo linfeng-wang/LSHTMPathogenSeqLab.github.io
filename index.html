@@ -23,6 +23,7 @@ title: About
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" type="text/css" href="./slick/slick.css">
         <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
         </links>
     </head>
     
@@ -99,12 +100,47 @@ title: About
             right: 0;
 
           }
+          .fa-solid{
+            cursor: pointer;
+            color: rgba(49, 48, 48,)
+          }
           p{
             font-family: 'Quicksand', sans-serif; 
           }
-          h2 {
+          .col-md-8{
+         
+            text-align: center;
+          }
+          #do:hover{
+            background-color: rgb(0,191,111);
+            cursor: pointer;
+            background-position:left bottom;
+          }
+          #do{
+            height: 100px;
+            display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to left, rgb(240, 240, 240) 50%, rgb(0,191,111) 50%) right;
+            transition:all 1s ease;
+            background-size: 200% 100%;
+            border-radius: 20px;
+ 
+          }
+          #dont{
+            height: 100px;
+            display: flex;
+  justify-content: center;
+  align-items: center;
+            }
 
-}
+            .newsSlick .slick-list .slick-track{
+              height: 475px;
+            }
+            .newsSlick .slick-slide{
+              width: 720px;
+            }
+
         </style>
         
 <body id="Home">
@@ -165,42 +201,34 @@ title: About
            
           });
       </script>   
+      <script type="text/javascript">
+        $(document).on('ready', function() {
+         
+          $(".newsSlick").slick({
+            variableWidth:true,
+            dots: false,
+            arrows:false,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite:false,
+            variableWidth:true
+          });
+         
+        });
+    </script>   
        <script src="/assets/js/jquery/src/jquery.js" ></script>
-        <script src="/assets/js/slick/slick.js" ></script></scripts>
-      <!--
-        <div class="first-section" style="background-image:url(/assets/img/homepage/PXL_20220707_091150444.jpg);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
-        height: 600px;
-        width: 100%;
-        position: relative;"
-        >
+        <script src="/assets/js/slick/slick.js" ></script>
+        <script type="text/javascript">
+          function newsItem(a){
+            $('.newsSlick').slick('slickGoTo', a);
+            
+          }
+          </script>
+         </scripts>
        
-            
-            <div class="box-wrapper" style="position: absolute;
-            width: 100%; 
-            height: 150px;
-            box-sizing:border-box;
-            max-height: inherit; 
-            background-color: rgba(49, 48, 48,0.7);
-            bottom: 0;">
-            <div style="color: white;font-family: 'Quicksand', sans-serif;">
-                <h1 class="text" style="text-align: right; margin-right:10px;">The Applied Genomics Centre</h1>
-                <p style="text-align: right;margin-right:10px;">For Infectious Diseases</p>
-
-            </div>
-                
-                </div>    
-            </div>
-            
-        </div>
-
-
-    -->
     
-    
-      <div class="wrapper" style="background-color: rgb(209, 243, 229) ; height: 450px;">
+      <div class="wrapper" style="background-color: rgb(240, 240, 240) ; height: 450px;">
     <div class="wrapper about container" style="margin-top: 150px; text-align: center;
     vertical-align: middle; ">
   
@@ -258,63 +286,87 @@ position: relative;">
           </div>       
         </div>
       </div>
+
   
-
-            <!--
-            <div id="carouselExampleControls" class="carousel slide carousel-dark " data-bs-ride="carousel"  >
-                <div class="carousel-inner position-relative">
-                 
-                            <div class="carousel-item active" style="height:500px;">
-                          
-                           <img id="0" src="/assets/img/homepage/PXL_20220707_091150444.jpg"  style="margin: auto;" class="img-fluid d-block mh-100 " alt="...">
-                           
-                          </div>
-                     
-                  
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        -->
-
-
         <div class="wrapper news" style="margin-top: 150px;">
-            <div class="wrapper" >
-                <div class="wrapper about container" style=" text-align: center;
-                vertical-align: middle; ">
-              
-              <div class="row" >
-               
-                  <div style=" overflow: hidden;  position: relative; margin-top: 50px; margin-bottom: 50px;" >
-                    
-              <h1 class="text-align" style="justify-content: center; align-items:center;font-family: 'Quicksand', sans-serif; " id="what-we-do">Latest news</h1>
+            <div class="container-fluid"  style="width:90%;margin-left: 5%; ">
+                <div class="row">
+                <div style=" overflow: hidden;  position: relative; margin-top: 50px; margin-bottom: 50px;text-align: center;
+                  vertical-align: middle; " >
+                    <img class="logo" src="/assets/img/logo/logo.png" style="width: 200px;height:200px">
+              <h1 class="text-align" style="justify-content: center; align-items:center;
+              color: rgb(0,191,111); letter-spacing: .2rem;font-family: 'Abril Fatface', cursive;" id="news" >LATEST NEWS</h1>
             
            
             </div>
+           <div class="col-md-4" style="margin-top:10px">
+            
+            <div class="newsSlick slider" style="width: 130%; height: 100%; border-radius: 50%;">
+              <div class="newsItems" id="1"  >
+                  <img style="border-radius: 25px;" src="http://upload.wikimedia.org/wikipedia/commons/6/62/Berkeley-San_Francisco-Oakland--Sunset-Panorama.jpg">
+                  
+                
+                </div>
+              
+              
+              <div class="newsItems" id="2">
+                  <img style="border-radius: 25px;" src="/assets/img/homepage/PXL_20220707_091150444.jpg">
+                  
+              </div>
+              <div class="newsItems" id="3">
+                  <img style="border-radius: 25px;" src="/assets/img/test/george-prentzas-SRFG7iwktDk-unsplash.jpg">
+                  
+              </div>
+              
+            
+            </div>
+           </div>
            
+        <div class="col-md-8 " style="background-color: rgb(240, 240, 240); border-radius: 25px;">
+          <div class="row"  >
+            <div class="col-2 " >  
+            </div>
+            <div class="col" id="dont">
+            </div>
+            
+          <div class="row" >
+            <div class="col-2 ">
+            </div>
+            <div class="col"id="do" onclick="newsItem(0)" >
+              <p class="" >Kevin Tetteh and Daniel Ward visits the Ministry of Public Health in Thailand</p>
+            </div>
+          </div>
+          
+          <div class="row" >
+            <div class="col-2 ">
+            </div>
+            <div class="col "id="do" onclick="newsItem(1)">
+              <p> Members of the Clark/Campino groups recently organised a genomics capacity strengthening workshop in Siriraj Hospital - Mahidol University, Thailand</p>
+            </div>
+          </div>
+
+          <div class="row" >
+            <div class="col-2 ">
+            </div>
+            <div class="col" id="do" onclick="newsItem(2)" >
+              <p> webstuff</p>
+            </div>
+          </div>
+
+          <div class="row" >
+            <div class="col-2 ">
+            </div>
+            <div class="col" id="dont" >
+            </div>
+        </div>
+          </div></div>
+
 
 
 
     
-            <h3><a href="/2018/08/21/DMSC-LSHTM-Collaberation.html">Dmsc Lshtm Collaberation</a></h3>
-            <p class="author">
-                <p>
-                    <img src="/assets/img/jphelan.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-                    <a href="/people/jphelan.html">Jody Phelan</a>
-                </p>
-                <span class="date">2018-08-21 00:00:00 +0100</span>
-            </p>
-            <div class="content">
-                <p>Kevin Tetteh and Daniel Ward recently visited the Ministry of Public Health in Thailand, and trained their staff in serological methods and Oxford Nanopore sequencing, as part of funded TB and COVID-19 projects (photo attached). Members of the Ministry of Public Health are visiting the LSHTM during July/August. Please contact Taane Clark if keen to meet with them.</p>
-            
-            </div>
-            
+           
+            <!--
                 
             <h3><a href="/2018/08/20/bangkok-genomics-course.html">Bangkok Genomics Course</a></h3>
             <p class="author">
@@ -326,13 +378,14 @@ position: relative;">
             </p>
             <div class="content">
                 <p>Members of the Clark/Campino groups recently organised a genomics capacity strengthening workshop in Siriraj Hospital - Mahidol University, Thailand. This follows a successful symposium in the Pampanga State Agricultural University (The Philippines) focused on AMR and TB genomics. Other funded genomics workshops will take place in Bangladesh and Vietnam later this year.</p>
-            
+                
             </div>
             
             <p>
                 <a class="btn btn-primary" href="/news/" role="button">More</a>
             </p>
             <hr>
-        </div></div> </div></div> </div>
+        </div></div> </div></div> 
     </body>
 </html>
+Kevin Tetteh and Daniel Ward recently visited the Ministry of Public Health in Thailand, and trained their staff in serological methods and Oxford Nanopore sequencing, as part of funded TB and COVID-19 projects (photo attached). Members of the Ministry of Public Health are visiting the LSHTM during July/August. Please contact Taane Clark if keen to meet with them. -->

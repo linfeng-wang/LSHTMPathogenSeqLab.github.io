@@ -2,6 +2,15 @@
 layout: default
 title: About
 ---
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  
+</head>
 <style>
   .team-list{
     font-family: "Mercury Text G1 A","Mercury Text G1 B",serif;
@@ -46,7 +55,33 @@ h6 {
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
-
+#container {
+  width: 100%;
+  position: absolute;
+  max-height: 500px;
+  max-width: 100%;
+  height: 0%;
+  overflow-y: hidden;
+  left: 50%;
+  
+  transform: translate(-50%, -50%);
+  background-color: aquamarine;
+  transition: height 1s linear;
+}
+.page-template-page-team .team-member .team-member-wrap .team-member-panel .team-member-bio-wrap {
+  overflow: hidden;
+  padding: 0 36px;
+  max-height: 0;
+  opacity: 0;
+  transition: .3s all 0s ease-in-out;
+  -webkit-transition: .3s all 0s ease-in-out;
+  -moz-transition: .3s all 0s ease-in-out;
+  -o-transition: .3s all 0s ease-in-out;
+  
+}
+#container.expanded{
+  height: 200%;
+}
 
 </style>
 
@@ -109,7 +144,12 @@ h6 {
       <li class="team-list">Current Team</li>
       <li class="team-list"> Alumni</li>
     </ul>
-
+    <script>
+      document.getElementById("btn").addEventListener("click", function() {
+      this.classList.toggle("expanded");
+      console.log("not working")
+    });
+      </script>
 <div class="wrapper team container" style="margin-top: 200px;">
   
   <div class="row">
@@ -127,31 +167,22 @@ h6 {
           background-size: 100% auto;
           background-repeat: no-repeat;
           content: '';
-  float: left;
-  padding-bottom: 63.93862%;
-  margin-top: 20px;">
+          float: left;
+          padding-bottom: 63.93862%;
+          margin-top: 20px;">
 
           </div>
-          <div  class="team-member-panel"  data-bs-toggle="collapse" data-bs-target="#item{{my_counter}}"  aria-expanded="false" " style=" clear: both;  ">
+          <div  class="team-member-panel" id="btn"  data-bs-toggle="collapse" data-bs-target="#item{{my_counter}}"  aria-expanded="false"  style=" clear: both;
+          ">
             <h6 class="team-member-name " style=" padding:10px 0; align-content: center; justify-content: center; text-align: center;">{{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
             <p class="small italic-serif team-member-title" style=" align-content: center; justify-content: center; text-align: center;">{{person.title | capitalize}}</p>
             
-            <div id="item{{my_counter}}"  class="collapse" style="z-index:1" >
-              <p class="team-member-bio"></p>
-              <p class="text-center" style="margin-bottom: 20px;" id="tags_{{person.pid}}"></p>
-                  <script>
-                    function getMultipleRandom(arr, num) {
-                      const shuffled = [...arr].sort(() => 0.5 - Math.random());
-          
-                      return shuffled.slice(0, num);
-                    }
-                    tags = []
-                    {% for tag in person.tags %}
-                      tags.push('<span class=" style=color:rgb(0,191,111)">{{ tag }}</span>')
-                    {% endfor %}
-                    document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
-                  </script>
+            <div class="team-member-bio-wrap middle" id="container">
+              <h6>YES</h6>
+              <p>NO</p>
             </div>
+              
+              
           
           </div>       
         </div>
@@ -159,13 +190,23 @@ h6 {
     {% endfor %}
   </div>
 </div>
-<script>
-  function togglediv(id) {
-    var div = document.getElementById(id);
-    div.style.display = div.style.display == "none" ? "block" : "none";
-}
-</script>
 
+<div id="item{{my_counter}}"  class="collapse" style="z-index:1" >
+  <p class="team-member-bio"></p>
+  <p class="text-center" style="margin-bottom: 20px;" id="tags_{{person.pid}}"></p>
+      <script>
+        function getMultipleRandom(arr, num) {
+          const shuffled = [...arr].sort(() => 0.5 - Math.random());
+
+          return shuffled.slice(0, num);
+        }
+        tags = []
+        {% for tag in person.tags %}
+          tags.push('<span class=" style=color:rgb(0,191,111)">{{ tag }}</span>')
+        {% endfor %}
+        document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
+      </script>
+</div>
 
 <div class="row-fluid-wrapper row-depth-1 row-number-3 ">
   <div class="row-fluid ">
