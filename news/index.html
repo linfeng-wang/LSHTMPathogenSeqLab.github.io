@@ -3,6 +3,7 @@ layout: default
 title: My Blog
 ---
 
+<body id="News">
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
     {% assign author = site.people | where: "pid", post.author | sample %}
@@ -64,3 +65,4 @@ title: My Blog
     </ul>
 </nav>
 
+</body>

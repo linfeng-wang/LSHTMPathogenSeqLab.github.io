@@ -28,7 +28,7 @@ transition: .15s all 0s ease-in-out;
   }
   .col-4 {
   width: 33.333%;
-  height: 200%;
+  height: 350px;
 }
 @media (max-width: 767px) {
     .col-4 {
@@ -52,7 +52,7 @@ transition: .15s all 0s ease-in-out;
 }
 .team-member-panel{
   background-color: white;
-  height: 299%;
+  height: 400px;
 }
 .team-member-panel:hover{
   background-color: rgb(0,191,111);
@@ -71,22 +71,22 @@ h6 {
   position: absolute;
   max-width: 100%;
   margin-bottom: 200px;
-  overflow-y: hidden;
+  
   left: 50%;
-  top: 75%;
+  top: 100%;
   overflow: hidden;
-  max-height: 0;
-  height:520px;
+  max-height: 150px;
+  height:670px;
   transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
   transform: translate(-50%, -50%);
-  background-color: rgb(0,191,111);
+  
   
   
 
 }
 .page-template-page-team .team-member .team-member-wrap .team-member-panel .team-member-bio-wrap {
-  overflow: hidden;
-  padding: 0 36px;
+  overflow-y: hidden;
+  
   max-height: 0;
   opacity: 0;
   transition: .3s all 0s ease-in-out;
@@ -97,8 +97,10 @@ h6 {
 }
 #container1.expanded,#container2.expanded,#container3.expanded,#container4.expanded{
   max-height: 200%;
+  overflow-y: hidden;
   transition: max-height 0.5s ease-in-out;
   color: white;
+  background-color: rgb(0,191,111);
 }
 
 </style>
@@ -175,33 +177,32 @@ h6 {
       <div class="teamsection" style="background-color: rgb(248, 248, 248);">
 <div class="wrapper team container" style="margin-top: 200px;">
   
-  <div class="row">
+  <div class="row gy-5">
     {% assign my_counter = 0 %}
     {% for person in site.people %}
   
       {% assign my_counter = my_counter | plus: 1 %}
-      <div class="col-4 team-member"style=" overflow: hidden;
-      position: relative;" >
+      <div class="col-4 team-member" style="margin-bottom: 50px;">
       
         <div class="team-member-wrap" style="position: relative;">
           <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
           background-color: #888;
-          background-position: center top;
+          
           background-size: 100% auto;
-          background-repeat: no-repeat;
-          content: '';
-          float: left;
+          
+          
+          
           padding-bottom: 63.93862%;
           margin-top: 20px;
           ">
 
           </div>
-          <div  class="team-member-panel" onclick="expand({{my_counter}})" style=" clear: both; 
+          <div  class="team-member-panel" id="container{{my_counter}}" onclick="expand({{my_counter}})" style=" clear: both; ; 
           ">
             <h6 class="team-member-name " style=" padding:10px 0; align-content: center; justify-content: center; text-align: center;">{{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
             <p class="small italic-serif team-member-title" style=" align-content: center; justify-content: center; text-align: center;">{{person.title | capitalize}}</p>
             
-            <div class="team-member-bio-wrap middle" id="container{{my_counter}}"  >
+            <div class="team-member-bio-wrap middle"   >
               
               <p style="flex: 0 0 120px;">{{person.excerpt}}</p>
               <h6 style="bottom:0">IMPORTANT FACT</h6>
@@ -215,88 +216,5 @@ h6 {
       </div>
     {% endfor %}
   </div>
-</div>
-</div>
-<div id="item{{my_counter}}"  class="collapse" style="z-index:1" >
-  <p class="team-member-bio"></p>
-  <p class="text-center" style="margin-bottom: 20px;" id="tags_{{person.pid}}"></p>
-      <script>
-        function getMultipleRandom(arr, num) {
-          const shuffled = [...arr].sort(() => 0.5 - Math.random());
-
-          return shuffled.slice(0, num);
-        }
-        tags = []
-        {% for tag in person.tags %}
-          tags.push('<span class=" style=color:rgb(0,191,111)">{{ tag }}</span>')
-        {% endfor %}
-        document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
-      </script>
-</div>
-
-<div class="row-fluid-wrapper row-depth-1 row-number-3 ">
-  <div class="row-fluid ">
-  <div class="span12 widget-span widget-type-cell container" style="margin-top: 50px;" data-widget-type="cell" data-x="0" data-w="12">
-  
-  <div class="row-fluid-wrapper row-depth-1 row-number-4 ">
-  <div class="row-fluid ">
-  <div class="span12 widget-span widget-type-cell inner-hubspot" style="" data-widget-type="cell" data-x="0" data-w="12">
-  
-        <div class="row align-items-center" style="display: grid; grid-template-columns: 1fr 1fr 1fr; ;gap: 10px; grid-auto-flow:dense; justify-content: center; margin: 0;float: none;">
-          {% for person in site.people %}
-          
-            <div class="card d-flex border-0" style="width: 20vw;height: 500px; border-top: 0; display: flex;
-            justify-content: center;
-            align-items: center;">
-              <img src="/assets/img/{{ person.pid }}.jpg" class="card-img-top" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'" style=" width: 250px;height: 250px; object-fit:cover;object-position:50% 50%;">
-              <div class=" card-body align-items-center ">
-                <h5 class="card-title align-items-center d-flex justify-content-center">{{ person.forname | capitalize }}</h5>
-                <p class="card-text text-center" >{{ person.excerpt }}</p>
-                <hr>
-                <p class="text-center" id="tags_{{person.pid}}"></p>
-                <script>
-                  function getMultipleRandom(arr, num) {
-                    const shuffled = [...arr].sort(() => 0.5 - Math.random());
-        
-                    return shuffled.slice(0, num);
-                  }
-                  tags = []
-                  {% for tag in person.tags %}
-                    tags.push('<span class="badge bg-primary style=background-color:rgb(0,191,111)">{{ tag }}</span>')
-                  {% endfor %}
-                  document.getElementById("tags_{{person.pid}}").innerHTML = getMultipleRandom(tags, 3).join(" ")
-                </script>
-                <hr>
-                <div class="text-center">
-                <a  href="{{ person.url }}" class="btn btn-outline" style="color: rgb(49,48,48); background-color:rgb(0,191,111); ">More</a>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-        
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-    </section>
-  </main>
-
-<!-- <ul>
-    {% for person in site.people %}
-      <li>
-        {{ person.name }}
-        {{ person.excerpt }}
-        <img src="/assets/img/{{ person.name }}.jpg" alt="sdsd">
-        {% for tag in person.tags %} <span class="badge badge-primary">{{ tag }}</span> {% endfor %}
-      </li>
-  {% endfor %}
-
-</ul>
- -->
- 
-
 </div>
 </div></body>
