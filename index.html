@@ -21,9 +21,9 @@ title: About
         <script src="https://kit.fontawesome.com/f8a9821c7d.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-        <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+       
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,500;1,8..144,500&display=swap" rel="stylesheet">
         </links>
     </head>
     
@@ -138,6 +138,7 @@ position: relative;
     left: -50%;
     width: 200%;
     height: 200%;
+
 }
 
 video {
@@ -149,6 +150,8 @@ video {
     margin: auto;
     min-height: 50%;
     min-width: 50%;
+  
+    
     
 }
 .content{
@@ -156,28 +159,44 @@ video {
   z-index: 0;
   top:75%;
   left: 10%;
+  color: white;
+  z-index: 3;
+}
+.overlay{
+  position: absolute;
+  top:0;
+  left:0;
+
+  width: 100vw;
+  height: 108vh;
+  background-image: linear-gradient(to right, rgba(43, 44, 53, 0.5) 40%, 
+rgba(0,0,0,0));
+  z-index: 2;
+  clear: both;
 }
         </style>
         
 <body id="Home">
-    <div class="backvid" >
+    <section class="backvid" >
+      <div  class="overlay"></div>
       <div class="video_contain" >
         
       <video autoplay muted loop id="myVideo">
         <source src="/assets/vid/vid.mp4" type="video/mp4">
       </video>
       </div>
-      <div class="content" style="color: black;font-family: 'Quicksand', sans-serif; text-shadow:  1px " >
+    </section> 
+      <div class="content" style="color: white;font-family: 'Roboto Serif', serif; text-shadow:  1px " >
         <h1 >The Applied Genomics Centre</h1>
-        <p>For Infectious Diseases</p>
+        <p style="font-family: 'Roboto Serif', serif;"><em>For Infectious Diseases</em></p>
        
-      </div></div>    
+      </div>   
 
         
       
       <scripts>
         <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-        <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+        
         <script type="text/javascript">
           $(document).on('ready', function() {
            
@@ -210,14 +229,24 @@ video {
          
         });
     </script>   
+
+<script>
+  var colors = ["red", "orange", "yellow", "green", "blue"];
+var currentIndex = 0;
+$('.newsSlick').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  console.log(event.currentTarget);
+});
+</script>
        <script src="/assets/js/jquery/src/jquery.js" ></script>
         <script src="/assets/js/slick/slick.js" ></script>
         <script type="text/javascript">
           function newsItem(a){
             $('.newsSlick').slick('slickGoTo', a);
-            
+           
           }
+          
           </script>
+          
          </scripts>
        
     

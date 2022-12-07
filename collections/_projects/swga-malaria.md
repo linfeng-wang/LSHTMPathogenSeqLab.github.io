@@ -2,6 +2,7 @@
 layout: default
 name: Malaria SWGA
 theme: malaria
+pid: swga
 people:
   - aibrahim
 ---

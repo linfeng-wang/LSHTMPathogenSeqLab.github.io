@@ -15,8 +15,11 @@ title: About
   .team-list{
     font-family: "Mercury Text G1 A","Mercury Text G1 B",serif;
 font-style: italic;
-
+display: inline;
 cursor: pointer;
+margin: 20px;
+
+
 
   }
   .team-list:hover{
@@ -153,30 +156,30 @@ h6 {
             </div>
           </div>
         </div>
-  
-    <ul style="list-style: none;box-sizing: border-box; text-align: center; background-color: rgb(248, 248, 248);" class="past-present">
+        <div class="list-section" style="margin-bottom: 200px;background-color: rgb(248, 248, 248);">
+    <ul style="list-style: none;box-sizing: border-box; text-align: center; " class="past-present">
       <li class="team-list">Current Team</li>
       <li class="team-list"> Alumni</li>
-    </ul>
+    </ul></div>
     <script>
       function expand(a){
        
       const contain = document.getElementById("container"+a);
       contain.classList.toggle("expanded");
-        console.log(contain)
+        
       
     }
       
       </script>
       <div class="teamsection" style="background-color: rgb(248, 248, 248);">
-<div class="wrapper team container" style="margin-top: 40px;">
+<div class="wrapper team container" style="margin-top: 20px;">
   
   <div class="row gy-5">
     {% assign my_counter = 0 %}
     {% for person in site.people %}
   
       {% assign my_counter = my_counter | plus: 1 %}
-      <div class="col-4 team-member" style="margin-bottom: 200px;">
+      <div class="col-4 team-member" style="margin-bottom: 21px;">
       
         <div class="team-member-wrap" style="position: relative;">
           <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;

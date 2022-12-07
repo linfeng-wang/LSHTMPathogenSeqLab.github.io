@@ -2,9 +2,60 @@
 layout: default
 title: About
 ---
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Cairo');
+html, body {
+    height: 100%;   
+}
+.container {
+   min-width: 90% !important;/*Set your own width %; */
+}
+
+</style>
+<scripts>
+    
+</scripts>
+
 <body id="research">
 
-    <p>malaria</p>
+    <section class="heading">
+        
+    <div class="container-fluid" style="margin-top: 200px; margin-bottom:200px;">
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+            <h1 style="font-family: Cairo;text-align: center; text-transform: uppercase;">Our Malaria Projects</h1>
+        </div>
+        
+       
+    </div>
+</section>
+
+<section class="project-list">
+
+    <div class="container" >
+       
+        <div class="row">
+            
+            {% for projects in site.projects %}
+            {% if projects.name == "malaria"%}
+            
+            
+            <div class="col-sm-6 mx-auto">
+                <img src="/assets/img/projects/malaria/{{project.pid}} " >
+                {{project.name}}
+                {{project.excerpt}}
+            </div>
+            <div class="col-sm-6 mx-auto">
+                
+            </div>
+            
+            {%endif%}
+            {% endfor %}
+        </div>
+        
+         </div>
+
+</section>
 
 
 </body>
