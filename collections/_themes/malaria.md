@@ -1,5 +1,5 @@
 ---
-layout: themes
+layout: theme
 name: malaria
 
 
