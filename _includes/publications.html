@@ -1,0 +1,97 @@
+---
+layout: default
+title: About
+---
+
+<style>
+    .yearList li{
+        width: 12.5%;
+        float: left;
+        display: inline;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+  $("#button2022").click(function() {
+      $("#2021").hide("slow");
+      $("#2021").hide("slow");
+      $("#2021").hide("slow");
+      $("#2022").show("slow");
+      $("#textForHeader").hide("slow")
+      $('html,body').animate({
+ scrollTop: $(".heading").offset().top
+});
+  });
+  $("#button2").click(function() {
+      $("#hiddenDiv1").hide("slow");
+      $("#hiddenDiv3").hide("slow");
+      $("#hiddenDiv4").hide("slow");
+      $("#hiddenDiv2").show("slow");
+      $("#textForHeader").hide("slow")
+      $('html,body').animate({
+ scrollTop: $(".heading").offset().top
+});
+  });
+  $("#button3").click(function() {
+      $("#hiddenDiv1").hide("slow");
+      $("#hiddenDiv2").hide("slow");
+      $("#hiddenDiv4").hide("slow");
+      $("#hiddenDiv3").show("slow");
+      $("#textForHeader").hide("slow")
+      $('html,body').animate({
+ scrollTop: $(".heading").offset().top
+});
+  });
+  $("#button4").click(function() {
+      $("#hiddenDiv1").hide("slow");
+      $("#hiddenDiv2").hide("slow");
+      $("#hiddenDiv3").hide("slow");
+      $("#hiddenDiv4").show("slow");
+      $("#textForHeader").hide("slow")
+      $('html,body').animate({
+ scrollTop: $(".heading").offset().top
+});
+  });
+  $("#thirdRadio").click(function() {
+      $("#firstHiddenDiv, #secondHiddenDiv").hide("slow"); 
+  });
+});
+  </script>
+
+<body id="publications">
+    <div class="main">
+    
+        <div class="heading" >
+            <div class="container" style="height: 200px; margin-bottom: 50px;">
+                <div class="panel-outer" style="position: relative;
+                     top:50%;
+                     text-align: center;">
+                    <h1>Publications</h1>
+            
+                    <p style="width: fit-content;">The genomics centre has published in the most prestigious and scientific journals for the entire world. Our goal is to improve the global understanding of infectious diseases and improve healthcare and learning worldwide</p>
+                </div>
+        </div></div>
+        <div class="container" id="years">
+            <h3 style="display: inline;">Search for publications by year</h3>
+            <div class="container" style="height: 100px; margin-top: 50px;">
+                <ul class="yearList" style="height: 100px;list-style: none;box-sizing: border-box;
+                 text-align: center;
+                 padding: 0; " >
+                 {% for year in site.data.publications %}
+                    <li>
+                        <a href="{{ year.url }}" title="{{page.title}}"> {{page.Year}}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="publications" id="2022">
+            <ul class="list">
+            
+            </ul>
+        </div>
+       
+    </div>
+
+</body>

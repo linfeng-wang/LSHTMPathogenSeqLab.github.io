@@ -312,7 +312,7 @@ window.addEventListener("scroll", reveal);
     </div></div>
     <div class="hidden-div" style="height: 100vh;">{% assign my_counter = 0 %}
       {% for projects in site.projects %}
-      {% if projects.theme == "malaria"%}
+      {% if projects.theme == "page.name"%}
       
       {% assign my_counter = my_counter | plus: 1  %}
       
@@ -350,7 +350,7 @@ window.addEventListener("scroll", reveal);
         <div class="row  " style=" ">
             {% assign my_counter = 0 %}
             {% for projects in site.projects %}
-            {% if projects.theme == "malaria"%}
+            {% if projects.theme == "page.name"%}
             
             {% assign my_counter = my_counter | plus: 1  %}
             {% assign value = my_counter | modulo:2 %}
