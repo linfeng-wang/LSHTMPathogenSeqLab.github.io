@@ -1,0 +1,57 @@
+---
+layout: default
+title: Publications
+---
+
+<style>
+    .yearList li{
+        width: 12.5%;
+        float: left;
+        display: inline;
+    }
+</style>
+
+
+<body id="publications">
+    <div class="main">
+        {% assign my_array = "" | split: ',' %}
+        <div class="heading" >
+            <div class="container" style="height: 200px; margin-bottom: 50px;">
+                <div class="panel-outer" style="position: relative;
+                     top:50%;
+                     text-align: center;">
+                    <h1>Publications</h1>
+            
+                    <p style="width: fit-content;">The genomics centre has published in the most prestigious and scientific journals for the entire world. Our goal is to improve the global understanding of infectious diseases and improve healthcare and learning worldwide</p>
+                </div>
+        </div></div>
+        <div class="container" id="years">{% assign my_counter = 0 %}
+ 
+            <h3 style="display: inline;">Search for publications by year</h3>
+            <div class="container" style="height: 100px; margin-top: 50px;">
+                <ul class="yearList" style="height: 100px;list-style: none;box-sizing: border-box;
+                 text-align: center;
+                 padding: 0; " >
+                    {% for pub in site.data.publications %}
+                    {% unless my_array contains pub.Year %}
+                    {% assign my_array = my_array | push: pub.Year %}
+                    {% endunless %}
+                    {% endfor %}
+                    {% for item in my_array %}
+                <li>
+                    <a href="/publications/{{item}}"> {{item}}</a>
+                </li>
+                {% endfor %}
+                </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="publications" id="2022">
+            <ul class="list">
+               
+            </ul>s
+        </div>
+       
+    </div>
+
+</body>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About
+title: theme
 ---
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -305,14 +305,14 @@ window.addEventListener("scroll", reveal);
     text-align: center;">
         <div class="row">
             <div class="col-sm-6 mx-auto">
-            <h1 style="font-family: Cairo;text-align: center; text-transform: uppercase;">Our Malaria Projects</h1>
+            <h1 style="font-family: Cairo;text-align: center; text-transform: uppercase;">Our {{page.name}} Projects</h1>
         </div>
         
        
     </div></div>
     <div class="hidden-div" style="height: 100vh;">{% assign my_counter = 0 %}
       {% for projects in site.projects %}
-      {% if projects.theme == "page.name"%}
+      {% if projects.theme == page.name%}
       
       {% assign my_counter = my_counter | plus: 1  %}
       
@@ -322,7 +322,7 @@ window.addEventListener("scroll", reveal);
       <div class="col-8" style="max-width: 100%;
       max-height: 100%;
       overflow:hidden;">
-        <img src="/assets/img/projects/malaria/{{projects.pid}}.png "
+        <img src="/assets/img/projects/{{project.theme}}/{{projects.pid}}.png "
         style="
         
         align-items: center;
@@ -350,7 +350,7 @@ window.addEventListener("scroll", reveal);
         <div class="row  " style=" ">
             {% assign my_counter = 0 %}
             {% for projects in site.projects %}
-            {% if projects.theme == "page.name"%}
+            {% if projects.theme == page.name%}
             
             {% assign my_counter = my_counter | plus: 1  %}
             {% assign value = my_counter | modulo:2 %}
@@ -362,7 +362,7 @@ window.addEventListener("scroll", reveal);
                     <button id="button{{my_counter}}" type="button" class="btn"> Show me more </button>
                 </div></div>
             <div class='col-8 reveal' id="first{{my_counter}}">
-                <img class="revealUp" src="/assets/img/projects/malaria/{{projects.pid}}.png "  style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
+                <img class="revealUp" src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png "  style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
                 transform: translate(-50%,-50%);
                 position: absolute;
                 top: 50%;
@@ -373,7 +373,7 @@ window.addEventListener("scroll", reveal);
             {% else %} 
            
             <div class='col-8 reveal' id="first{{my_counter}}" style="  ">
-                <img src="/assets/img/projects/malaria/{{projects.pid}}.png " style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
+                <img src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png " style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
                 transform: translate(-50%,-50%);
                 position: absolute;
                 top: 50%;
