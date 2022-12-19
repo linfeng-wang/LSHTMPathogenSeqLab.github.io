@@ -240,6 +240,7 @@ top: 50vh;
 </div>
 <scripts>
     <script type="text/javascript">
+        
 
         let colours = ["rgb(0,191,111)","rgb(49,48,48)"];
         let index = 0;
@@ -249,10 +250,8 @@ top: 50vh;
          '/assets/img/homepage/PXL_20220707_091150444.jpg'];
          const imgElement = document.querySelector('#mainPhoto');
         var counter = 0;
-var i = setInterval(function(){
-    // do your thing
-    
-    div[counter].style.backgroundColor = "rgb(0,191,111)";
+        function doSomething(){
+            div[counter].style.backgroundColor = "rgb(0,191,111)";
     imgElement.src = images[counter]
     if(counter !=0){
         
@@ -267,7 +266,13 @@ var i = setInterval(function(){
         counter=0
         setInterval(i);
     }
-}, 5000);
+}
+        
+
+    // do your thing
+    
+doSomething();
+setInterval(doSomething,5000)
 
     </script>
 
