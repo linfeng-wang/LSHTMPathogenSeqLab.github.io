@@ -8,7 +8,7 @@ title: My Blog
         max-width: 1500px
     }
 }
-.container {
+.heading .container {
   padding: 0 60px;
   box-sizing: border-box;
   content: "";
@@ -19,6 +19,23 @@ position: relative;
 height: 60vh;
   min-height: 100%;
 
+}
+.pastEvents .container{
+    padding: 0 60px;
+  box-sizing: border-box;
+    margin-top: 100px;
+
+
+}
+
+.events .container{
+    padding: 0 60px;
+  box-sizing: border-box;
+height: 200px;
+display: table;
+clear: both;
+border-spacing: 0;
+position: relative;
 }
 .col-8 {
   width: 60.66667%;
@@ -120,15 +137,18 @@ top: 50vh;
             <div class="bottomevents"  style="box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); background-color: white;  width: 100%; height: 200px; position: absolute; top: 0;">
                 <div class="row">
                     <div class="col-4">
-                        <p> doing some teaching</p>
+                        <p style="text-align: center;
+                        line-height: 150px;"> doing some teaching</p>
                     </div>
                     
                     <div class="col-4">
-                        <p>meeting some people</p>
+                        <p style="text-align: center;
+                        line-height: 150px;">meeting some people</p>
                     </div>
                     
                     <div class="col-4">
-                        <p>going bangladesh</p>
+                        <p style="text-align: center;
+                        line-height: 150px;">going bangladesh</p>
                     </div>
                 </div>
             </div>
@@ -136,25 +156,45 @@ top: 50vh;
         </div>
 
     </section>
-<div class="news" style="margin-top: 100px;">
-{% for post in paginator.posts %}
+    <section class="pastEvents">
+        <div class="container">
+            <h3 style="font-family: 'Heebo', sans-serif; border-bottom: 2px solid rgb(0,191,111); border-bottom-width: thin;">
+                Past Events
+            </h3>
+            <div class="row" style="margin-top: 70px;">
+                {% for post in paginator.posts %}
     {% assign author = site.people | where: "pid", post.author | sample %}
-    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    <p class="author">
-        <p>
-            <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-            {{ author.forname }} {{ author.surname }}
-        </p>
-        <span class="date">{{ post.date }}</span>
-    </p>
-    <div class="content">
-        {{ post.excerpt }}
-    </div>
-{% endfor %}
+    
+                <div class="col-4" style="max-height: 300px; overflow-y: hidden;">
+                    <div class="title">
+                        <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    </div>
+                    
+                    
+                    <div class="content">
+                        {{ post.excerpt }}
+                    </div>
+                    <div class="author">
+                        <p>
+                            <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+                            {{ author.forname }} {{ author.surname }} <span class="date">{{ post.date }}</span>
+                        </p>
+                    </div>
+                    <div class="date">
+                        
+                    </div>
+                </div>
+                
+                
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
 
 <!-- Pagination links -->
 
-<nav aria-label="...">
+<nav aria-label="..." style="margin-top: 50px;" class="container">
     <ul class="pagination">
     {% if paginator.previous_page %}
         <li class="page-item">
