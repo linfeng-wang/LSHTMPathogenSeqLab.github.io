@@ -4,7 +4,7 @@ pid: jthorpe
 forname: Joseph
 surname: Thorpe
 title: Research fellow
-Important-fact: Java is the best language there is dont @ me
+Important-fact: Passionate chess player and Roman history geek
 tags:
   - Malaria
   - Bioinformatics

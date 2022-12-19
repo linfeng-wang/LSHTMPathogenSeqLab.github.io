@@ -2,52 +2,55 @@
 layout: default
 title: Funding
 ---
+
+<links>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> </links>
+
+<style>
+
+.text-align h1 {
+  color:white;   font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 40px;
+}
+
+</style>
+
 <body id="Funding">
-This page will list funders
+
 <div class="main">
-    <section class="heading" style="background-color:  rgb(49,48,48);height: 75vh;">
+    <section class="heading" style="background-color:  rgb(49,48,48);height: 25vh; position: relative;">
         <div class="container" >
-            <div class="col-4"  >
-                <h1 style="color: rgb(0,191,111);display: inline-block;font-family: 'Heebo', sans-serif;">TAGC </h1><h1 style="display: inline-block; font-family: 'Heebo', sans-serif;margin: 10px;color: white;">LATEST NEWS</h1>
-            </div>
-            <div class="col-8" style="margin-top: 20px; ">
-                <img src="/assets/img/background/scientists-working.jpg" id="mainPhoto" style="object-fit: contain;max-width:100%;
-                max-height:50vh;">
+            <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 100px;">
+                <h1 >OUR FUNDERS</h1>
             </div>
             
-            <div class="col-4 grid-1 module" id="grid">
-                <p>Here they are doing stuff</p>
-            </div>
-            <div class="col-4 grid-2 module" id="grid2">
-                <p>Here they are doing stuff</p>
-            </div>
-            <div class="col-4 grid-3 module" id="grid3">
-                <p>Here they are doing stuff</p>
-            </div>
-            <div class="bottomevents" style=" font-family: 'Heebo', sans-serif;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); background-color: white; position: absolute; bottom: 0; width: 100%; height: 50px;">
-                <h3 style="margin-left: 20px; margin-top: 5px;">Upcoming Events</h3>
-            </div>
-        </div>
+        
     </section>
-    <section class="funders">
+    <section class="funders" style="margin-top: 200px;">
         <div class="container">
-            <div class="row">
-                {% for funder in site.funders %}
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top p-2" src="/assets/img/funders/{{funder.did}}.png" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">{{funder.name}}</p>
-                                <p class="card-text">{{funder.description}}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="{{funder.link}}" class="btn btn-sm btn-outline-secondary">Homepage</a>
-                                    </div>
-                                </div>
-                            </div>
+          {% for funder in site.funders %}
+            <div class="row" style="margin-bottom: 100px;">
+                
+                    <div class="col-md-8">
+                        <div class="funder">
+                            <h4 class="card-text" style="">{{funder.name}}</h4>
+                            <p class="card-text" style="margin-top: 50px;">{{funder.excerpt}}</p>
                         </div>
                     </div>
-                {% endfor %}
+                        <div class="col-md-4">
+                            <div class="image" style="position: relative;">
+                              <img class="card-img-top p-2" style="height: 250px; width: auto; display:block;
+                              margin:auto;  align-items: center;" src="/assets/img/funders/{{funder.did}}.png" alt="Card image cap">
+                              <a href="{{funder.link}}" style="margin:0 auto;
+                              display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Homepage</a>
+                            </div>
+                        </div>
+                        </div>
+                        {% endfor %}
+                </div>
+            </div>
+                
             </div>
         </div>
     </section>
