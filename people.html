@@ -25,27 +25,22 @@ margin: 20px;
   .team-list:hover{
     font-weight: 700;
   }
-  .col-4 {
-  
-    
-}
+
 @media (max-width: 767px) {
-    .col-4 {
+    .col-md-4 {
         height: 200%;
     } 
 }
 @media (min-width: 768px){
-.col-4 {
-  width: 33.333%;
+.col-md-4 {ss
+  height: 200%;
 }}
 .team-member .team-member-wrap {
   position: relative;
-  
   overflow: hidden;
   cursor: pointer;
   max-width: 402px;
   
-  width: 100%;
   height: inherit;
 
 }
@@ -179,7 +174,7 @@ h6 {
     {% for person in site.people %}
   
       {% assign my_counter = my_counter | plus: 1 %}
-      <div class="col-4 team-member" style="margin-bottom: 21px;">
+      <div class="col-md-4 team-member" style="margin-bottom: 21px;">
       
         <div class="team-member-wrap" style="position: relative;">
           <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
@@ -199,9 +194,9 @@ h6 {
             
             <div class="team-member-bio-wrap middle"   >
               
-              <h10 style="font-family: 'Quicksand',sans-serif;text-align: center;">{{person.excerpt}}</h10>
-              <h6 style="bottom:0; font-family: 'Anton', sans-serif; text-align: center;">IMPORTANT FACT</h6>
-              <p style="font-family: 'Quicksand',sans-serif;text-align: center;" >{{person.Important-fact}}</p>
+              <h10 style="font-family: 'Quicksand',sans-serif;text-align: center; font-size: 2vh;">{{person.excerpt}}</h10>
+              <h6 style="bottom:0; font-family: 'Anton', sans-serif; text-align: center; font-size: 2vh;">IMPORTANT FACT</h6>
+              <p style="font-family: 'Quicksand',sans-serif;text-align: center; font-size: 2vh;" >{{person.Important-fact}}</p>
             </div>
               
               
