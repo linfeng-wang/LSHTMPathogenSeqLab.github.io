@@ -9,6 +9,7 @@ title: people
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> 
   
 </head>
 <style>
@@ -26,15 +27,6 @@ margin: 20px;
     font-weight: 700;
   }
 
-@media (max-width: 767px) {
-    .col-md-4 {
-        height: 200%;
-    } 
-}
-@media (min-width: 768px){
-.col-md-4 {ss
-  height: 200%;
-}}
 .team-member .team-member-wrap {
   position: relative;
   overflow: hidden;
@@ -43,6 +35,9 @@ margin: 20px;
   
   height: inherit;
 
+}
+.row{
+  width: 100%;
 }
 .team-member-panel{
   background-color: white;
@@ -76,6 +71,15 @@ h6 {
   
 
 }
+@media (max-width: 767px) {
+    .col-md-4 {
+        height: 200%;
+    } 
+}
+@media (min-width: 768px){
+.col-md-4 {
+  height: 200%;
+}}
 .page-template-page-team .team-member .team-member-wrap .team-member-panel .team-member-bio-wrap {
   text-align: center;
   
@@ -93,6 +97,14 @@ h6 {
   transition: max-height 0.5s ease-in-out;
   color: white;
   background-color: rgb(0,191,111);
+}
+.text-align h1 {
+  color:white; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 40px;
+}
+@media (max-width: 900px) {
+    .text-align h1 {
+  color:white;  font-size: 20px; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 20px;
+}
 }
 
 </style>
@@ -119,14 +131,14 @@ h6 {
       padding-left: 0;
       padding-right: 0;">
         
-  <div class="box-wrapper" style="height: 300px;position: relative; background-image: url(/assets/img/background/back.jpg);">
-    <div class="heading" style="position:absolute;
-        padding :125px 0;
-        right: 0;
-        margin-right: 10px;">
-      <h1 style="font-family: 'Anton', sans-serif; color: white; text-align: center;"> <b>The Genomics Team</b></h1>
-      
-    </div>
+        <section class="heading" style="background-color:  rgb(49,48,48);height: 25vh; position: relative;">
+          <div class="container" >
+              <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 100px;">
+                  <h1 >THE GENOMICS TEAM</h1>
+              </div>
+              
+          
+      </section>
   
 </div>
 
@@ -169,12 +181,12 @@ h6 {
       <div class="teamsection" style="background-color: rgb(248, 248, 248);">
 <div class="wrapper team container" style="margin-top: 20px;">
   
-  <div class="row gy-5">
+  <div class="row ">
     {% assign my_counter = 0 %}
     {% for person in site.people %}
   
       {% assign my_counter = my_counter | plus: 1 %}
-      <div class="col-md-4 team-member" style="margin-bottom: 21px;">
+      <div class="col-xxl-4 team-member" style="margin-bottom: 21px; display: inline;">
       
         <div class="team-member-wrap" style="position: relative;">
           <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
@@ -194,9 +206,9 @@ h6 {
             
             <div class="team-member-bio-wrap middle"   >
               
-              <h10 style="font-family: 'Quicksand',sans-serif;text-align: center; font-size: 2vh;">{{person.excerpt}}</h10>
-              <h6 style="bottom:0; font-family: 'Anton', sans-serif; text-align: center; font-size: 2vh;">IMPORTANT FACT</h6>
-              <p style="font-family: 'Quicksand',sans-serif;text-align: center; font-size: 2vh;" >{{person.Important-fact}}</p>
+              <h10 style="font-family: 'Quicksand',sans-serif;text-align: center; ;">{{person.excerpt}}</h10>
+              <h6 style="bottom:0; font-family: 'Anton', sans-serif; text-align: center;">IMPORTANT FACT</h6>
+              <p style="font-family: 'Quicksand',sans-serif;text-align: center;" >{{person.Important-fact}}</p>
             </div>
               
               
