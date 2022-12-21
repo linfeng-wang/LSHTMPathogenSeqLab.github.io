@@ -1,6 +1,6 @@
 ---
 layout: default
-name: Plasmo Maps3
+name: Plasmo Maps2
 theme: malaria
 pid: pmaps
 desc: This project page describes Plasmo maps
