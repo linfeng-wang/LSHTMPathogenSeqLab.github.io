@@ -3,6 +3,7 @@ layout: people
 pid: gnapier
 forname: Gary
 surname: Napier
+title: 
 Important-fact: 
 tags:
   - Tuberculosis
@@ -12,3 +13,4 @@ tags:
 Hello! My name is Gary, I love phylogenetic trees and fine wine!
 
 I analyse Mtb NGS data.
+

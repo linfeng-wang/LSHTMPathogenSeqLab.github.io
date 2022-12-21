@@ -1,5 +1,5 @@
 ---
-layout: publications    
+layout: default
 title: Publications
 ---
 
@@ -9,10 +9,53 @@ title: Publications
         float: left;
         display: inline;
     }
+    .text-align h1 {
+  color:white; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 40px;
+}
+@media (max-width: 900px) {
+    .text-align h1 {
+  color:white;  font-size: 20px; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 20px;
+}
+}
 </style>
-
+<links>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> </links>
+  
 
 <body id="publications">
-    {{page.url}}
-    {{content}}
+    <div class="main">
+        {% assign my_array = "" | split: ',' %}
+        <section class="heading" style="background-color:  rgb(49,48,48);height: 25vh; position: relative;">
+            <div class="container" >
+                <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 100px;">
+                    <h1 >PUBLICATIONS</h1>
+                </div>
+                
+            
+        </section>
+   
+    <div class="container" style="margin-top: 75px;" id="years">{% assign my_counter = 0 %}
+        <p style="width: fit-content;">The genomics centre has published in the most prestigious and scientific journals for the entire world. Our goal is to improve the global understanding of infectious diseases and improve healthcare and learning worldwide</p>
+        <h3 style="display: inline;">Search for publications by year</h3>
+        <div class="container" style="height: 100px; margin-top: 50px;">
+            <ul class="yearList" style="height: 100px;list-style: none;box-sizing: border-box;
+             text-align: center;
+             padding: 0; " >
+                {% for pub in site.data.publications %}
+                {% unless my_array contains pub.Year %}
+                {% assign my_array = my_array | push: pub.Year %}
+                {% endunless %}
+                {% endfor %}
+                {% for item in my_array %}
+            <li>
+                <a href="/publications/{{item}}"> {{item}}</a>
+            </li>
+            {% endfor %}
+            </ul>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>

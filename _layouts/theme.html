@@ -41,38 +41,12 @@ section{
   align-items: center;
 }
 
- .text-container{
-   display: flex;
-   align-items: center;
-}
-.text-container h3{
-  font-family: 'Anton', sans-serif;
-  
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  position: absolute;
-  top: 25%;
-  left: 50%;
-}
-.text-container p{
-  font-family: 'Anton', sans-serif;
-  
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-}
+
 .text-container button{
   
   background-color: rgb(0,191,111);;
   color: azure;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  position: absolute;
-  top: 75%;
-  left: 50%;
+  clear:both;
   text-align: center;
 }
 .text-container button:hover{
@@ -81,6 +55,16 @@ section{
   color: black;
   
 }
+.text-container .description{
+  height: 50%;
+  word-wrap: break-word;
+display: table;
+word-break: break-word;
+}
+.text-container .p{
+ display: table-row;
+}
+
 .text-container .btn:focus {
   outline: none;
   box-shadow: none;
@@ -217,6 +201,17 @@ flex-direction: column;
 .hidden-text-container img{
   margin-top: 100px;
 }
+.text-container{
+        
+        width:300px; 
+        height: 300px; line-height: 50px;
+        position: absolute;
+        top: 50%; margin-top:-100px;
+        left: 50%; margin-left:-200px;
+       
+        text-transform: uppercase;
+        text-align:center
+    }
 </style>
 <scripts>
 
@@ -322,12 +317,13 @@ window.addEventListener("scroll", reveal);
       <div class="col-8" style="max-width: 100%;
       max-height: 100%;
       overflow:hidden;">
-        <img src="/assets/img/projects/{{project.theme}}/{{projects.pid}}.png "
+      
+        <img src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png "
         style="
         
         align-items: center;
         justify-content: center;
-        
+        margin-top: 50px;
         object-fit: cover;
     overflow: hidden;">
       </div>
@@ -356,18 +352,30 @@ window.addEventListener("scroll", reveal);
             {% assign value = my_counter | modulo:2 %}
             {% if value == 0 %}
             <div class='col-4 reveal' id="first{{my_counter}}">
-                <div class="text-container">
-                    <h3 style="text-align: center;">{{projects.name}}</h3>
+                <div class="text-container" style="">
+                  <div class="header  display: flex;
+                  justify-content: center;
+                  align-items: center;">
+                    <h3  style="text-align: center">{{projects.name}}</h3>
+                  </div>
+                  <div class="description" style="">
                     <p>{{projects.desc}}</p>
-                    <button id="button{{my_counter}}" type="button" class="btn"> Show me more </button>
-                </div></div>
+                  </div>
+                  <div class="button" style=" display: flex;
+                  justify-content: center;
+                  align-items: center; ">
+                    <button  id="button{{my_counter}}" type="button" class="btn">Show me more</button>
+                   </div>
+                </div>
+            </div>
             <div class='col-8 reveal' id="first{{my_counter}}">
                 <img class="revealUp" src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png "  style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
                 transform: translate(-50%,-50%);
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                border-radius: 25px;">
+                border-radius: 25px;
+                ">
             </div>
            
             {% else %} 
@@ -382,10 +390,17 @@ window.addEventListener("scroll", reveal);
               
             </div>
             <div class='col-4 reveal' id="first{{my_counter}}">
-                <div class="text-container">
-                <h3  style="text-align: center">{{projects.name}}</h3>
-                <p>{{projects.desc}}</p>
-                <button  id="button{{my_counter}}" type="button" class="btn">Show me more</button>
+                <div class="text-container" >
+                  <div class="header">
+                    <h3  style="text-align: center">{{projects.name}}</h3>
+                  </div>
+                  <div class="description">
+                    <p>{{projects.desc}}</p>
+                  </div>
+                  <div class="button">
+                    <button  id="button{{my_counter}}" type="button" class="btn">Show me more</button>
+                  </div>
+                
             </div></div>
             
             {% endif %}

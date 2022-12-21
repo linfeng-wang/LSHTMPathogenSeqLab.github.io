@@ -23,6 +23,7 @@ margin: 20px;
 
 
   }
+  
   .team-list:hover{
     font-weight: 700;
   }
@@ -106,6 +107,17 @@ h6 {
   color:white;  font-size: 20px; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 20px;
 }
 }
+.button-container{
+  position: relative;
+}
+.button-container a{
+background-color: rgb(49,48,48);
+color: rgb(0,191,111);
+position: absolute;
+
+left: 26%;
+
+}
 
 </style>
 
@@ -170,6 +182,7 @@ h6 {
     </ul></div>
     <script>
       function expand(a){
+        console.log(a)
        
       const contain = document.getElementById("container"+a);
       contain.classList.toggle("expanded");
@@ -209,11 +222,15 @@ h6 {
               <h10 style="font-family: 'Quicksand',sans-serif;text-align: center; ;">{{person.excerpt}}</h10>
               <h6 style="bottom:0; font-family: 'Anton', sans-serif; text-align: center;">IMPORTANT FACT</h6>
               <p style="font-family: 'Quicksand',sans-serif;text-align: center;" >{{person.Important-fact}}</p>
-            </div>
               
+            </div>
+            <div class="button-container" style="height: 50px; z-index:10;">
+              <a href="./{{person.pid}}"  class="btn " >Learn more about me</a>
+            </div>    
               
           
-          </div>       
+          </div>   
+          
         </div>
       </div>
       
