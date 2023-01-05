@@ -33,7 +33,8 @@ title: About
                         }
       
           .slick-slide {
-            margin: 0px 
+            margin: 0px;
+            
           }
           .items {
             position: relative;
@@ -42,6 +43,7 @@ title: About
           .slick-slide img {
             width: 100%;
             height: 600px;
+
           }
           
       
@@ -51,7 +53,8 @@ title: About
           }
            
           .slick-slide {
-            transition: all ease-in-out .5s;
+            transition: all ease-in-out .5s;border-radius: 25px;
+
           
           }
           .slider .priv_arrow{
@@ -95,12 +98,14 @@ title: About
          
             text-align: center;
           }
-          #do:hover{
+          #do-0:hover,#do-1:hover,#do-2:hover{
             background-color: rgb(0,191,111);
             cursor: pointer;
             background-position:left bottom;
+            color: white;
+  font-weight: bold;
           }
-          #do{
+          #do-0,#do-1,#do-2{
             height: 100px;
             display: flex;
   justify-content: center;
@@ -111,6 +116,11 @@ title: About
             border-radius: 20px;
  
           }
+          #do-0.active, #do-1.active, #do-2.active {
+  background: rgb(0,191,111);
+  color: white;
+  font-weight: bold;
+}
           #dont{
             height: 100px;
             display: flex;
@@ -119,13 +129,16 @@ title: About
             }
 
             .newsSlick .slick-list .slick-track{
-              height: 475px;
+              height: 470px;
+              border-radius: 25px;
             }
             .newsSlick .slick-slide{
               width: 720px;
+              border-radius: 25px;
             }
             .backvid{
               width: 100%;
+              border-radius: 50%;
 height: 100vh;
 display:block;
 position: relative;
@@ -152,6 +165,7 @@ video {
     
     
 }
+
 .content{
   position: absolute;
   z-index: 0;
@@ -171,6 +185,16 @@ video {
 rgba(0,0,0,0));
   z-index: 2;
   clear: both;
+}
+@media (max-width: 600px) {
+  .fa-solid {
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+  }
+  .mt-3{
+    font-size: 15px;
+  }
 }
         </style>
         
@@ -200,7 +224,10 @@ rgba(0,0,0,0));
            
             $(".regular").slick({
               dots: false,
-             
+              autoplay: true,
+              autoplayspeed: 100,
+              speed:2500,
+              easing:'easOutQuint',
               infinite: true,
               slidesToShow: 1,
               slidesToScroll: 1,
@@ -240,8 +267,17 @@ $('.newsSlick').on('beforeChange', function(event, slick, currentSlide, nextSlid
         <script type="text/javascript">
           function newsItem(a){
             $('.newsSlick').slick('slickGoTo', a);
+   
+           var elements = document.querySelectorAll('.active');
+           
+            for (var i = 0; i < elements.length; i++) {
+             elements[i].classList.remove('active');
+            }
+            var id = document.getElementById("do-"+a);
+  id.classList.add('active');
            
           }
+          
           
           </script>
           
@@ -260,42 +296,42 @@ $('.newsSlick').on('beforeChange', function(event, slick, currentSlide, nextSlid
 
   <p>We are a diverse group of researchers developing methods to analyse next generation sequence data from:</p>
 </div>
-<div class="col-md-4 "style=" overflow: hidden;
+<div class="col-4 "style=" overflow: hidden;
       position: relative;" >
       <div class="mt-3">
         <p>Malaria</p>
     </div>
       <span><i class="fa-solid fa-mosquito-net fa-2x"></i></span>
 </div>
-<div class="col-md-4 "style=" overflow: hidden;
+<div class="col-4"style=" overflow: hidden;
 position: relative;" >
 <div class="mt-3">
     <p>TB</p>
 </div>
       <span><i class="fa-solid fa-bacterium fa-2x"></i></span>
 </div>
-<div class="col-md-4 "style="overflow: hidden;
+<div class="col-4"style="overflow: hidden;
 position: relative;">
 <div class="mt-3">
     <p>Vectors</p>
 </div>
       <span><i class="fa-solid fa-disease fa-2x"></i></span>
 </div>
-<div class="col-md-4 "style="overflow: hidden;
+<div class="col-4"style="overflow: hidden;
 position: relative;">
 <div class="mt-3">
     <p>AMR</p>
 </div>
       <span><i class="fa-solid fa-shield-virus fa-2x"></i></span>
 </div>
-<div class="col-md-4 "style=" overflow: hidden;
+<div class="col-4"style=" overflow: hidden;
 position: relative;">
 <div class="mt-3">
     <p>Viruses</p>
 </div>
       <span><i class="fa-solid fa-virus-covid fa-2x"></i></span>
 </div>
-<div class="col-md-4 "style="overflow: hidden;
+<div class="col-4"style="overflow: hidden;
 position: relative;">
 <div class="mt-3">
     <p>Software</p>
@@ -347,20 +383,20 @@ position: relative;">
             </div>
            <div class="col-md-4" style="margin-top:10px">
             
-            <div class="newsSlick slider" style="width: 130%; height: 100%; border-radius: 50%;">
-              <div class="newsItems" id="1"  >
-                  <img style="border-radius: 25px;" src="http://upload.wikimedia.org/wikipedia/commons/6/62/Berkeley-San_Francisco-Oakland--Sunset-Panorama.jpg">
+            <div class="newsSlick slider" style="width: 131.5%; height: 100%; border-radius: 25px;">
+              <div class="newsItems" id="1" style="height: 470px;"  >
+                  <img style="border-radius: 25px; height: inherit;" src="http://upload.wikimedia.org/wikipedia/commons/6/62/Berkeley-San_Francisco-Oakland--Sunset-Panorama.jpg">
                   
                 
                 </div>
               
               
-              <div class="newsItems" id="2">
-                  <img style="border-radius: 25px;" src="/assets/img/homepage/PXL_20220707_091150444.jpg">
+              <div class="newsItems" id="2" style="height: 470px;">
+                  <img style="border-radius: 25px; height: inherit;" src="/assets/img/homepage/PXL_20220707_091150444.jpg">
                   
               </div>
-              <div class="newsItems" id="3">
-                  <img style="border-radius: 25px;" src="/assets/img/test/george-prentzas-SRFG7iwktDk-unsplash.jpg">
+              <div class="newsItems" id="3" style="height: 470px;">
+                  <img style="border-radius: 25px; height: inherit;" src="/assets/img/test/george-prentzas-SRFG7iwktDk-unsplash.jpg">
                   
               </div>
               
@@ -378,7 +414,7 @@ position: relative;">
           <div class="row" >
             <div class="col-2 ">
             </div>
-            <div class="col"id="do" onclick="newsItem(0)" >
+            <div class="col active"id="do-0" onclick="newsItem(0)" >
               <p class="" >Kevin Tetteh and Daniel Ward visits the Ministry of Public Health in Thailand</p>
             </div>
           </div>
@@ -386,7 +422,7 @@ position: relative;">
           <div class="row" >
             <div class="col-2 ">
             </div>
-            <div class="col "id="do" onclick="newsItem(1)">
+            <div class="col "id="do-1" onclick="newsItem(1)">
               <p> Members of the Clark/Campino groups recently organised a genomics capacity strengthening workshop in Siriraj Hospital - Mahidol University, Thailand</p>
             </div>
           </div>
@@ -394,7 +430,7 @@ position: relative;">
           <div class="row" >
             <div class="col-2 ">
             </div>
-            <div class="col" id="do" onclick="newsItem(2)" >
+            <div class="col " id="do-2" onclick="newsItem(2)" >
               <p> webstuff</p>
             </div>
           </div>
@@ -414,26 +450,3 @@ position: relative;">
 
 </body>
            
-            <!--
-                
-            <h3><a href="/2018/08/20/bangkok-genomics-course.html">Bangkok Genomics Course</a></h3>
-            <p class="author">
-                <p>
-                    <img src="/assets/img/jphelan.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-                    <a href="/people/jphelan.html">Jody Phelan</a>
-                </p>
-                <span class="date">2018-08-20 00:00:00 +0100</span>
-            </p>
-            <div class="content">
-                <p>Members of the Clark/Campino groups recently organised a genomics capacity strengthening workshop in Siriraj Hospital - Mahidol University, Thailand. This follows a successful symposium in the Pampanga State Agricultural University (The Philippines) focused on AMR and TB genomics. Other funded genomics workshops will take place in Bangladesh and Vietnam later this year.</p>
-                
-            </div>
-            
-            <p>
-                <a class="btn btn-primary" href="/news/" role="button">More</a>
-            </p>
-            <hr>
-        </div></div> </div></div> 
-    </body>
-</html>
-Kevin Tetteh and Daniel Ward recently visited the Ministry of Public Health in Thailand, and trained their staff in serological methods and Oxford Nanopore sequencing, as part of funded TB and COVID-19 projects (photo attached). Members of the Ministry of Public Health are visiting the LSHTM during July/August. Please contact Taane Clark if keen to meet with them. -->

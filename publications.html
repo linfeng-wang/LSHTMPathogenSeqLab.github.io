@@ -2,7 +2,7 @@
 layout: default
 title: Publications
 ---
-
+<html id="top">
 <style>
     .yearList li{
         width: 12.5%;
@@ -12,18 +12,51 @@ title: Publications
     .text-align h1 {
   color:white; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 40px;
 }
+.main p{
+    text-align: center;
+}
 @media (max-width: 900px) {
     .text-align h1 {
   color:white;  font-size: 20px; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 20px;
 }
+
 }
+i {
+    font-size: 22px;
+}
+hr{
+  color: rgb(0,191,111);
+}
+
+.arrow-container {
+    position: fixed;
+    bottom: 50px;
+    right: 150px;
+    
+    cursor: pointer;
+    color: rgb(0,191,111);
+    z-index: 10;
+  
+  } 
+  .fa-arrow-up{
+    font-size: 40px;
+    
+  }
+  footer {
+    z-index: 9; 
+  
+}
+
 </style>
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> </links>
-  
-
+ 
+<scripts>
+  <script src="https://kit.fontawesome.com/f8a9821c7d.js" crossorigin="anonymous"></script>
+</scripts>
+ 
 <body id="publications">
     <div class="main">
         {% assign my_array = "" | split: ',' %}
@@ -37,7 +70,7 @@ title: Publications
         </section>
    
     <div class="container" style="margin-top: 75px;" id="years">{% assign my_counter = 0 %}
-        <p style="width: fit-content;">The genomics centre has published in the most prestigious and scientific journals for the entire world. Our goal is to improve the global understanding of infectious diseases and improve healthcare and learning worldwide</p>
+        <p style="width: fit-content;">The genomics centre has published in the most prestigious and scientific journals for the entire world. Our goal is to improve the global understanding of infectious diseases and improve healthcare and learning worldwide.</p>
         <h3 style="display: inline;">Search for publications by year</h3>
         <div class="container" style="height: 100px; margin-top: 50px;">
             <ul class="yearList" style="height: 100px;list-style: none;box-sizing: border-box;
@@ -49,13 +82,67 @@ title: Publications
                 {% endunless %}
                 {% endfor %}
                 {% for item in my_array %}
-            <li>
-                <a href="/publications/{{item}}"> {{item}}</a>
-            </li>
-            {% endfor %}
+                <li>
+                  <a href="/publications/{{ item }}" > {{item}}</a>
+                </li>
+                {% endfor %}
+            
             </ul>
             </ul>
         </div>
-    </div>
+        {% for year in my_array %}
+  <div class="divvy" id="{{ year }}" style="display:none;  ">
+    <ul style="list-style: none;box-sizing: border-box;
+    text-align: center;
+    padding: 0; ">
+      {% for publication in site.data.publications %}
+      {% if publication.Year == year %}
+      <li style="border: 1px solid rgb(0,191,111); margin-bottom: 10px;  padding: 20px; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);" ><h4 style="margin-bottom: 40px;">{{ publication.Title }}</h4>
+      
+      <p>{{publication.Authors}}</p>
+      <p>{{publication.Journal}}</p>
+      <div class="buttons" style="margin:10px;">
+        <button type="button"  class="btn btn-outline-dark" href="https://doi.org/{{publication.DOI}}">DOI: {{publication.DOI}}
+          &nbsp;<i class="fa-solid fa-right-from-bracket "></i></button>
+          <button type="button"  class="btn btn-outline-dark" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC{{publication.PMCID}}">PMCID {{publication.PMCID}}
+           &nbsp;<i class="fa-solid fa-right-from-bracket "></i></button>
+      </div>
+      </li>
+      
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
 </div>
+</div>
+<div class="arrow-container" onclick="document.getElementById('top').scrollIntoView()">
+  <i class="fas fa-arrow-up" title="Back to the top"></i>
+</div>      
+    </div>
+    
+</div>
+
+<script>
+  function showYear(year) {
+    
+   
+  
+  var div = document.querySelectorAll(".divvy");
+  div.forEach(box => {
+  
+  box.style.display="none";
+});
+    document.getElementById(year).style.display = 'block';
+  }
+  
+  var url = new URL(window.location.href);
+var parts = url.pathname.split('/');
+var year = parts[parts.length - 1];
+  
+  if (year) {
+    showYear(year);
+    
+  }
+  </script>
 </body>
