@@ -3,8 +3,8 @@ layout: people
 pid: mhiggins
 forname: Matt
 surname: Higgins
-title: Research
-Important-fact: Skeptical optimist  
+title: Research Fellow
+Important-fact: Skeptical Optimist  
 tags:
   - Molecular Biology
   - Diagnostic Design
