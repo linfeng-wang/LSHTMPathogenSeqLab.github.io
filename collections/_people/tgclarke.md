@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: false
 pid: tgclark
 forname: Taane
 surname: Clark

@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: false
 pid: jphelan
 forname: Jody
 surname: Phelan

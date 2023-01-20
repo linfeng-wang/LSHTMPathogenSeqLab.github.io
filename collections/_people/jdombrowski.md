@@ -1,5 +1,6 @@
 --- 
 layout: people 
+alumni: false
 pid: jdombrowski 
 forname: Jamille 
 surname: Dombrowski 

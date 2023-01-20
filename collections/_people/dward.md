@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: false
 pid: dward
 forname: Daniel
 surname: Ward

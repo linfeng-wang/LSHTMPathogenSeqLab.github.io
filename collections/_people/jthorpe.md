@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: false
 pid: jthorpe
 forname: Joseph
 surname: Thorpe

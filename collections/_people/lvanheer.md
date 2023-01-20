@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: false
 pid: lvanheer
 forname: Leen
 surname: Vanheer

@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: false
 pid: lwang
 forname: Linfeng
 surname: Wang

@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: false
 pid: aibrahim
 forname: Amy
 surname: Ibrahim

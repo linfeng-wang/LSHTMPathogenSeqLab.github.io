@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: true
 pid: gnapier
 forname: Gary
 surname: Napier
