@@ -55,7 +55,7 @@ h6 {
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
-#container1, #container2, #container3, #container4{
+#container1, #container2, #container3, #container4, #container5, #container6, #container7, #container8, #container9, #container10, #container11, #container12, #container13{
   width: 100%;
   position: absolute;
   max-width: 100%;
@@ -70,6 +70,12 @@ h6 {
   
   
 
+}
+h10{
+    font-size: .6vw;
+}
+.fact{
+  font-size: .7vw;
 }
 @media (max-width: 767px) {
     .col-md-4 {
@@ -91,7 +97,7 @@ h6 {
   -o-transition: .3s all 0s ease-in-out;
   
 }
-#container1.expanded,#container2.expanded,#container3.expanded,#container4.expanded{
+#container1.expanded,#container2.expanded,#container3.expanded,#container4.expanded,#container5.expanded,#container6.expanded,#container7.expanded,#container8.expanded,#container9.expanded,#container10.expanded,#container11.expanded,#container12.expanded,#container13.expanded{
   max-height: 200%;
 
   transition: max-height 0.5s ease-in-out;
@@ -220,7 +226,7 @@ left: 26%;
               
               <h10 style="font-family: 'Quicksand',sans-serif;text-align: center; ;">{{person.excerpt}}</h10>
               <h6 style="bottom:0; font-family: 'Anton', sans-serif; text-align: center;">IMPORTANT FACT</h6>
-              <p style="font-family: 'Quicksand',sans-serif;text-align: center;" >{{person.Important-fact}}</p>
+              <p class="fact" style="font-family: 'Quicksand',sans-serif;text-align: center;" >{{person.Important-fact}}</p>
               
             </div>
             <div class="button-container" style="height: 50px; z-index:10;">

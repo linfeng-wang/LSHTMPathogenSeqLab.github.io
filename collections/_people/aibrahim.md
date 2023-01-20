@@ -3,6 +3,7 @@ layout: people
 pid: aibrahim
 forname: Amy
 surname: Ibrahim
+title: Research fellow
 Important-fact:
 tags:
   - Malaria
@@ -11,3 +12,4 @@ tags:
 Hello! My name is Amy, I love SWGA and pale pils!
 
 I analyse Malaria NGS data.
+

@@ -14,3 +14,4 @@ tags:
 Most of my time is spent looking at the genomic diversity of pathogens (_Mycobacterium tuberculosis, NTMs, Plasmodium spp._) using next generation sequencing.
 
 My research entails the design and implementation of data analysis pipelines to process and collate terabytes of data from various structured and unstructured sources to provide biological insights such as population structure, transmission and drug resistance
+
