@@ -11,4 +11,4 @@ tags:
   - Drug-resistance
 ---
 
-Graduated from Cranfield University after studying bioinformatics, where he learned to visualise genomic data via fancy websites and create Java applications.
+Initially graduated in Biomedicine from Nottingham Trent university, I decided to take a different direction and graduated with an MSc in Bioinformatics from Cranfield University. From there I learned how to visualise genomic data via fancy websites and create Java applications.
