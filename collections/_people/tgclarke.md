@@ -1,11 +1,12 @@
 ---
 layout: people
 alumni: false
-pid: tgclark
+pid: tgclarke
 forname: Taane
 surname: Clark
 title: Professor of Genomics and Global Health
 Important-fact: Born in Porirua, New Zealand.
+Leader: true
 tags:
   - Malaria
   -  Tuberculosis
