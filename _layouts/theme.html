@@ -1,0 +1,416 @@
+---
+layout: default
+title: theme
+---
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head> 
+<links>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></links>
+</links>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Cairo');
+html, body {
+    height: 100%;   
+   
+}
+section .container {
+   min-width: 100% !important;/*Set your own width %; */
+}
+#first1,#first2,#first3,#first4,#first5,#first6{
+    
+  
+    height: 100vh;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Asap", sans-serif;
+}
+
+section{
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text-container button{
+  
+  background-color: rgb(0,191,111);;
+  color: azure;
+  clear:both;
+  text-align: center;
+}
+.text-container button:hover{
+  
+  background-color: rgb(0,191,111);
+  color: black;
+  
+}
+.text-container .description{
+  height: 50%;
+  word-wrap: break-word;
+display: table;
+word-break: break-word;
+}
+.text-container .p{
+ display: table-row;
+}
+
+.text-container .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+@media (max-width: 900px){
+  section h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+  section .text-container{
+    flex-direction: column;
+  }
+}
+
+.reveal:nth-child(1){
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+  background-color: rgb(49,48,48);
+  color:white;
+}
+.reveal:nth-child(2){
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+  background-color: rgb(49,48,48);
+  color:white;
+}
+.reveal:nth-child(3){
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+  background-color: rgb(30, 81, 40);
+  color:white;
+}
+.reveal:nth-child(4){
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+  background-color: rgb(30, 81, 40);
+  color:white;
+}
+.reveal:nth-child(5){
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+  background-color: rgb(78, 159, 61)
+  ;color:white;
+
+}
+.reveal:nth-child(6){
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+  background-color: rgb(78, 159, 61);
+  color:white;
+}
+.reveal:nth-child(7){
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+  background-color: rgb(216, 233, 168);
+  color:black;
+}
+.reveal:nth-child(8){
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+  background-color: rgb(216, 233, 168);
+  color:black;
+}
+.reveal.active:nth-child(1){
+  transform: translateY(0);
+  opacity: 1;
+}
+.reveal.active:nth-child(2){
+  transform: translateY(0);
+  opacity: 1;
+}
+.reveal.active:nth-child(3){
+  transform: translateY(0);
+  opacity: 1;
+}.reveal.active:nth-child(4){
+  transform: translateY(0);
+  opacity: 1;
+}.reveal.active:nth-child(5){
+  transform: translateY(0);
+  opacity: 1;
+}.reveal.active:nth-child(6){
+  transform: translateY(0);
+  opacity: 1;
+}.reveal.active:nth-child(5){
+  transform: translateY(0);
+  opacity: 1;
+}.reveal.active:nth-child(6){
+  transform: translateY(0);
+  opacity: 1;
+}.reveal.active:nth-child(7){
+  transform: translateY(0);
+  opacity: 1;
+}.reveal.active:nth-child(8){
+  transform: translateY(0);
+  opacity: 1;
+}
+#hiddenDiv1, #hiddenDiv2 , #hiddenDiv3 , #hiddenDiv4 { display:none; 
+  
+}
+.hidden-text-container{
+  display:flex;
+min-height:100vh;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
+}
+.hidden-text-container p{
+  font-family: 'Quicksand', sans-serif;
+ 
+  
+  
+  text-align: center;
+}
+.hidden-text-container img{
+  margin-top: 100px;
+}
+.text-container{
+        
+        width:300px; 
+        height: 300px; line-height: 50px;
+        position: absolute;
+        top: 50%; margin-top:-100px;
+        left: 50%; margin-left:-200px;
+       
+        text-transform: uppercase;
+        text-align:center
+    }
+</style>
+<scripts>
+
+    <script type="text/javascript">
+    function reveal() {
+        
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 200;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
+
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+    $("#button1").click(function() {
+        $("#hiddenDiv2").hide("slow");
+        $("#hiddenDiv3").hide("slow");
+        $("#hiddenDiv4").hide("slow");
+        $("#hiddenDiv1").show("slow");
+        $("#textForHeader").hide("slow")
+        $('html,body').animate({
+   scrollTop: $(".heading").offset().top
+});
+    });
+    $("#button2").click(function() {
+        $("#hiddenDiv1").hide("slow");
+        $("#hiddenDiv3").hide("slow");
+        $("#hiddenDiv4").hide("slow");
+        $("#hiddenDiv2").show("slow");
+        $("#textForHeader").hide("slow")
+        $('html,body').animate({
+   scrollTop: $(".heading").offset().top
+});
+    });
+    $("#button3").click(function() {
+        $("#hiddenDiv1").hide("slow");
+        $("#hiddenDiv2").hide("slow");
+        $("#hiddenDiv4").hide("slow");
+        $("#hiddenDiv3").show("slow");
+        $("#textForHeader").hide("slow")
+        $('html,body').animate({
+   scrollTop: $(".heading").offset().top
+});
+    });
+    $("#button4").click(function() {
+        $("#hiddenDiv1").hide("slow");
+        $("#hiddenDiv2").hide("slow");
+        $("#hiddenDiv3").hide("slow");
+        $("#hiddenDiv4").show("slow");
+        $("#textForHeader").hide("slow")
+        $('html,body').animate({
+   scrollTop: $(".heading").offset().top
+});
+    });
+    $("#thirdRadio").click(function() {
+        $("#firstHiddenDiv, #secondHiddenDiv").hide("slow"); 
+    });
+});
+    </script>
+
+</scripts>
+
+<body id="research">
+<div class="main">
+    <section class="heading" style="height: 100vh;">
+        
+    <div class="text" id="textForHeader" style="position: absolute;
+    top: 50%;
+   
+    margin-top: -50px;
+    
+    width: 100%;
+    text-align: center;">
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+            <h1 style="font-family: Cairo;text-align: center; text-transform: uppercase;">Our {{page.name}} Projects</h1>
+        </div>
+        
+       
+    </div></div>
+    <div class="hidden-div" style="height: 100vh;">{% assign my_counter = 0 %}
+      {% for projects in site.projects %}
+      {% if projects.theme == page.name%}
+      
+      {% assign my_counter = my_counter | plus: 1  %}
+      
+      
+  <div id='hiddenDiv{{my_counter}}' style="height: 100%;width: 100%;">
+    <div class="row" style="height: 100%;width: 100%;">
+      <div class="col-8" style="max-width: 100%;
+      max-height: 100%;
+      overflow:hidden;">
+      
+        <img src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png "
+        style="
+        
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        object-fit: cover;
+    overflow: hidden;">
+      </div>
+      <div class="col-4" id="decription{{my_counter}}">
+        <div class="hidden-text-container">
+          
+          <p>{{projects.excerpt}}</p>
+  </div></div></div>
+  
+    </div>
+    {% endif %}
+              {% endfor %}
+</section>
+
+ 
+<section class="project-list">
+
+    <div class="container" >
+       
+        <div class="row  " style=" ">
+            {% assign my_counter = 0 %}
+            {% for projects in site.projects %}
+            {% if projects.theme == page.name%}
+            
+            {% assign my_counter = my_counter | plus: 1  %}
+            {% assign value = my_counter | modulo:2 %}
+            {% if value == 0 %}
+            <div class='col-4 reveal' id="first{{my_counter}}">
+                <div class="text-container" style="">
+                  <div class="header  display: flex;
+                  justify-content: center;
+                  align-items: center;">
+                    <h3  style="text-align: center">{{projects.name}}</h3>
+                  </div>
+                  <div class="description" style="">
+                    <p>{{projects.desc}}</p>
+                  </div>
+                  <div class="button" style=" display: flex;
+                  justify-content: center;
+                  align-items: center; ">
+                    <button  id="button{{my_counter}}" type="button" class="btn">Show me more</button>
+                   </div>
+                </div>
+            </div>
+            <div class='col-8 reveal' id="first{{my_counter}}">
+                <img class="revealUp" src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png "  style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border-radius: 25px;
+                ">
+            </div>
+           
+            {% else %} 
+           
+            <div class='col-8 reveal' id="first{{my_counter}}" style="  ">
+                <img src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png " style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border-radius: 25px;">
+              
+            </div>
+            <div class='col-4 reveal' id="first{{my_counter}}">
+                <div class="text-container" >
+                  <div class="header">
+                    <h3  style="text-align: center">{{projects.name}}</h3>
+                  </div>
+                  <div class="description">
+                    <p>{{projects.desc}}</p>
+                  </div>
+                  <div class="button">
+                    <button  id="button{{my_counter}}" type="button" class="btn">Show me more</button>
+                  </div>
+                
+            </div></div>
+            
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        
+         </div>
+
+</section>
+</div>
+
+</body>
