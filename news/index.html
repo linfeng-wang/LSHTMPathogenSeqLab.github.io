@@ -3,25 +3,225 @@ layout: default
 title: My Blog
 ---
 
+
+<style>
+    @media (min-width: 1200px) {
+    .container{
+        max-width: 1500px
+    }
+}
+
+@media (max-width: 800px) {
+    img{
+        display: none;
+    }
+    .grid-1, .grid-2,.grid-3{
+        width: 100%;
+    }
+}
+.heading .container {
+  padding: 0 60px;
+  box-sizing: border-box;
+  content: "";
+display: table;
+clear: both;
+border-spacing: 0;
+position: relative;
+height: 60vh;
+  min-height: 100%;
+
+}
+.pastEvents .container{
+    padding: 0 60px;
+  box-sizing: border-box;
+    margin-top: 100px;
+
+
+}
+.col-4 .h1{
+     border: 1px solid black;
+    width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.events .container{
+    padding: 0 60px;
+  box-sizing: border-box;
+height: 200px;
+display: table;
+clear: both;
+border-spacing: 0;
+position: relative;
+}
+.col-8 {
+  width: 60.66667%;
+  object-fit: contain;
+  position: absolute;
+    margin-top: 20px;
+  clear: both;
+ 
+}
+
+.col-4{
+    object-fit: contain;
+}
+@media (min-width: 800px) {
+    
+    .grid-1, .grid-2,.grid-3{
+        width: 33.3%;
+    }
+}
+.grid-1 {
+  
+  min-height: 1px;
+box-sizing: border-box;
+height: 100px;
+float: right;
+color: white;
+position: absolute;
+top: 10vh;
+    right: 0px;
+    border-style: solid;
+    border-color: rgb(0,191,111);
+    align-items: center;
+    text-align: center;display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.grid-2{
+    
+  min-height: 1px;
+box-sizing: border-box;
+float: right;
+color: white;
+position: absolute;
+height: 100px;
+top: 30vh;
+    right: 0px;
+    border-color: rgb(0,191,111);
+    text-align: center;border-style: solid;display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.grid-3{
+    
+  min-height: 1px;
+  height: 100px;
+box-sizing: border-box;border-style: solid;
+    border-color: rgb(0,191,111);float: right;
+color: white;
+position: absolute;
+top: 50vh;
+    right: 0px;
+    text-align: center;   border-color: rgb(0,191,111);
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  
+    border-style: solid;
+}
+
+.grid-1:hover{
+
+}
+</style>
+<links>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> 
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+</links>
+
+<body id="News">
 <!-- This loops through the paginated posts -->
-{% for post in paginator.posts %}
+<div class="main">
+    <section class="heading" style="background-color:  rgb(49,48,48);height: 75vh;">
+        <div class="container" >
+            <div class="text-align"  >
+                <h1 style="color: rgb(0,191,111);display: inline-block;font-family: 'Heebo', sans-serif;">TAGC </h1><h1 style="display: inline-block; font-family: 'Heebo', sans-serif;margin: 10px;color: white;">LATEST NEWS</h1>
+            </div>
+            <div class="col-8" style="margin-top: 20px; margin-right: 10px; ">
+                <img src="/assets/img/background/scientists-working.jpg" id="mainPhoto" style="object-fit: contain;max-width:100%;
+                max-height:50vh;">
+            </div>
+            
+            <div class="col-4 grid-1 module" id="grid">
+                <p>Here they are doing stuff</p>
+            </div>
+            <div class="col-4 grid-2 module" id="grid2">
+                <p>Here they are doing stuff</p>
+            </div>
+            <div class="col-4 grid-3 module" id="grid3">
+                <p>Here they are doing stuff</p>
+            </div>
+            <div class="bottomevents" style=" font-family: 'Heebo', sans-serif;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); background-color: white; position: absolute; bottom: 0; width: 90%; height: 50px;">
+                <h3 style="margin-left: 20px; margin-top: 5px;">Upcoming Events</h3>
+            </div>
+        </div>
+    </section>
+    <section class="events">
+        <div class="container">
+          <div class="bottomevents" style="box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); 
+          background-color: white;  width: 90%; height: 200px; position: absolute; top: 0;">
+            <div class="row" style="height: inherit;">
+              <div class="col-4" style="display: flex; align-items: center; justify-content: center; height: inherit;">
+                <p style="margin:0" >doing some teaching</p>
+              </div>
+              <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
+                <p style="margin: 0;">meeting some people</p>
+              </div>
+              <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
+                <p style="margin: 0;">going bangladesh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+      
+    <section class="pastEvents">
+        <div class="container">
+            <h3 style="font-family: 'Heebo', sans-serif; border-bottom: 2px solid rgb(0,191,111); border-bottom-width: thin;">
+                Past Events
+            </h3>
+            <div class="row" style="margin-top: 70px;">
+                {% for post in paginator.posts %}
     {% assign author = site.people | where: "pid", post.author | sample %}
-    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-    <p class="author">
-        <p>
-            <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-            {{ author.forname }} {{ author.surname }}
-        </p>
-        <span class="date">{{ post.date }}</span>
-    </p>
-    <div class="content">
-        {{ post.excerpt }}
-    </div>
-{% endfor %}
+    
+                <div class="col-xl-4" style="max-height: 300px; overflow-y: hidden;">
+                    <div class="title">
+                        <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    </div>
+                    
+                    
+                    <div class="content">
+                        {{ post.excerpt }}
+                    </div>
+                    <div class="author">
+                        <p>
+                            <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+                            {{ author.forname }} {{ author.surname }} <span class="date">{{ post.date }}</span>
+                        </p>
+                    </div>
+                    <div class="date">
+                        
+                    </div>
+                </div>
+                
+                
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
 
 <!-- Pagination links -->
 
-<nav aria-label="...">
+<nav aria-label="..." style="margin-top: 50px;" class="container">
     <ul class="pagination">
     {% if paginator.previous_page %}
         <li class="page-item">
@@ -63,4 +263,100 @@ title: My Blog
 
     </ul>
 </nav>
+</div>
+</div>
+<scripts>
+    <script>
+       
+        function changeImage(element){
+            document.getElementById(element).style.backgroundColor = "rgb(0,191,111)"
+        }
+    </script>
+    <script type="text/javascript">
+        
 
+        let colours = ["rgb(0,191,111)","rgb(49,48,48)"];
+        let index = 0;
+        let div = document.getElementsByClassName("module");
+        let img = document.getElementsByTagName("img")
+        let images = ["/assets/img/background/scientists-working.jpg", "/assets/img/homepage/peeps.jpg",
+         '/assets/img/homepage/PXL_20220707_091150444.jpg'];
+         const imgElement = document.querySelector('#mainPhoto');
+        var counter = 0;
+        function doSomething(){
+            div[counter].style.backgroundColor = "rgb(0,191,111)";
+    imgElement.src = images[counter]
+    if(counter ===1){
+        
+        div[counter-1].style.backgroundColor = "rgb(49,48,48)"
+        div[counter+1].style.backgroundColor = "rgb(49,48,48)"
+    }else if (counter ===0){
+        div[counter+1].style.backgroundColor = "rgb(49,48,48)"
+        div[counter+2].style.backgroundColor = "rgb(49,48,48)"
+    }else if(counter===2){
+        div[counter-1].style.backgroundColor = "rgb(49,48,48)"
+        div[counter-2].style.backgroundColor = "rgb(49,48,48)"
+    }
+    
+    counter++;
+    if(counter === 3) {
+        
+        counter=0
+        setInterval(i);
+    }
+}
+        
+
+    // do your thing
+    
+doSomething();
+var timer = setInterval(doSomething,5000)
+$('#grid').hover(function(ev){
+    clearInterval(timer);
+    imgElement.src = "/assets/img/background/scientists-working.jpg"
+    $(this).css("background", "rgb(0,191,111)");
+    var grid1 = $('#grid2')[0];
+    var grid2 = $('#grid3')[0];
+    $(grid1).css("background", "rgb(49,48,48)")
+    $(grid2).css("background", "rgb(49,48,48)")
+    
+}, function(ev){
+   
+   timer = setInterval(doSomething,5000)
+
+});
+
+$('#grid2').hover(function(ev){
+    clearInterval(timer);
+    imgElement.src = "/assets/img/homepage/peeps.jpg"
+    $(this).css("background", "rgb(0,191,111)");
+    var grid1 = $('#grid')[0];
+    var grid2 = $('#grid3')[0];
+    $(grid1).css("background", "rgb(49,48,48)")
+    $(grid2).css("background", "rgb(49,48,48)")
+    
+}, function(ev){
+ 
+   timer = setInterval(doSomething,5000)
+
+});
+$('#grid3').hover(function(ev){
+    clearInterval(timer);
+    imgElement.src = "/assets/img/homepage/PXL_20220707_091150444.jpg"
+    $(this).css("background", "rgb(0,191,111)");
+    var grid1 = $('#grid')[0];
+    var grid2 = $('#grid2')[0];
+    $(grid1).css("background", "rgb(49,48,48)")
+    $(grid2).css("background", "rgb(49,48,48)")
+
+}, function(ev){
+   
+   timer = setInterval(doSomething,5000)
+
+});
+
+
+    </script>
+
+</scripts>
+</body>

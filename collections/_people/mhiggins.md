@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: false
 pid: mhiggins
 forname: Matt
 surname: Higgins
