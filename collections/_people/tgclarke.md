@@ -9,11 +9,11 @@ Important-fact: Born in Porirua, New Zealand.
 Leader: true
 tags:
   - Malaria
-  -  Tuberculosis
-  -  AMR
+  - Tuberculosis
+  - AMR
   - Bioinformatics
   - Drug-resistance
-  -  Vectors
+  - Vectors
   - Transmission
   - Capacity strengthening
 

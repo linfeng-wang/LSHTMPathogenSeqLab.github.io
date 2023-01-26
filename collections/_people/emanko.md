@@ -12,4 +12,4 @@ tags:
   - Population Genetics
 
 ---
-Bioinformatician by training and with the Campinop/Clark group since September 2019. On daily basis, I work with large-scale genome sequencing data from the _Plasmodium_ parasites on comperative and population genomics, both exploring novel data, getting new insights from existing datasets and also working on assemblies for new reference genomes.
+Bioinformatician by training and with the Campino/Clark group since September 2019. On daily basis, I work with large-scale genome sequencing data from the _Plasmodium_ parasites on comperative and population genomics, both exploring novel data, getting new insights from existing datasets and also working on assemblies for new reference genomes.

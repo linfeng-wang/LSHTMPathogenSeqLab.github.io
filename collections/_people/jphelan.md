@@ -5,6 +5,7 @@ pid: jphelan
 forname: Jody
 surname: Phelan
 title: Assistant Professor
+Leader: true
 Important-fact: I know the genomic coordinates of way more Mtb variants than I'd like to admit
 tags:
   - Tuberculosis

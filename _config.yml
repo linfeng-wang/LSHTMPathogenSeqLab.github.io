@@ -44,7 +44,7 @@ collections:
   funders:
     output: false
 
-paginate: 2
+paginate: 4
 paginate_path: "/news/page:num/"
 
 # Exclude from processing.

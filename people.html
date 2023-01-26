@@ -57,7 +57,7 @@ margin: 20px;
   transition: 0.4s;
   color: white;
 }
-#overlord1 h6,#overlord2 h6{
+#overlord1 h6,#overlord2 h6,#overlord3 h6{
   text-transform: uppercase;
   font-weight: bold;
   line-height: 1.4;
@@ -85,7 +85,7 @@ h6 {
   transform: translate(-50%, -50%);
 
 }
-#overlord1,#overlord2{
+#overlord1,#overlord2,#overlord3{
   width: 100%;
   position: absolute;
   max-width: 100%;
@@ -97,11 +97,11 @@ h6 {
   transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
   transform: translate(-50%, -50%);
 }
-#overlord1 h10,#overlord2 h10{
+#overlord1 h10,#overlord2 h10, #overlord3 h10{
   font-size: 16px;
 }
 
-#overlord1 .fact,#overlord2 .fact{
+#overlord1 .fact,#overlord2 .fact,#overlord3 .fact{
   font-size: 20px;
 }
 h10{
@@ -131,7 +131,7 @@ h10{
   color: white;
   background-color: rgb(0,191,111);
 }
-#overlord1.expanded,#overlord2.expanded{
+#overlord1.expanded,#overlord2.expanded,#overlord3.expanded{
   max-height: 200%;
 
   transition: max-height 0.5s ease-in-out;
@@ -149,7 +149,7 @@ h10{
 .button-container{
   position: relative;
 }
-#overlord1 .button-container a, #overlord2 .button-container a {
+#overlord1 .button-container a, #overlord2 .button-container a,#overlord3 .button-container a {
   background-color: rgb(49,48,48);
 color: rgb(0,191,111);
 position: absolute;
@@ -227,7 +227,7 @@ left: 26%;
               <div class="span12 widget-span widget-type-header" style=" margin-top: 150px;" data-widget-type="header" data-x="0" data-w="12">
                 <div class="cell-wrapper layout-widget-wrapper">
                   <span class="small-wrapper" style="text-align: center;" data-hs-cos-general-type="widget" data-hs-cos-type="header">
-                    <h2 style="  font-family: 'Quicksand', sans-serif;color: black; text-align: center;line-height: 1.2; margin-bottom: 50px;">Our fearless leaders</h2>
+                    <h2 style="  font-family: 'Quicksand', sans-serif;color: black; text-align: center;line-height: 1.2; margin-bottom: 50px;">Our leaders</h2>
                     <p  style="  font-family: 'Quicksand', sans-serif;color: black; text-align: center;">Meet the leaders of our team</p>
                   </span></div>
               </div>
@@ -243,7 +243,7 @@ left: 26%;
             {% if person.Leader == true %}
             {% assign overlords = overlords | plus: 1 %}
             
-              <div class="col-xxl-6 team-leader" style="margin-bottom: 21px; display: inline;">
+              <div class="col-xxl-4 team-leader" style="margin-bottom: 21px; display: inline;">
               
                 <div class="team-leader-wrap" style="position: relative;">
                   <div  class="team-leader-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
