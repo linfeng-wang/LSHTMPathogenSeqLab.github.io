@@ -77,8 +77,8 @@ hr{
              text-align: center;
              padding: 0; " >
                 {% for pub in site.data.publications %}
-                {% unless my_array contains pub.Year %}
-                {% assign my_array = my_array | push: pub.Year %}
+                {% unless my_array contains pub.year %}
+                {% assign my_array = my_array | push: pub.year | sort | reverse %}
                 {% endunless %}
                 {% endfor %}
                 {% for item in my_array %}
@@ -96,15 +96,15 @@ hr{
     text-align: center;
     padding: 0; ">
       {% for publication in site.data.publications %}
-      {% if publication.Year == year %}
-      <li style="border: 1px solid rgb(0,191,111); margin-bottom: 10px;  padding: 20px; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);" ><h4 style="margin-bottom: 40px;">{{ publication.Title }}</h4>
+      {% if publication.year == year %}
+      <li style="border: 1px solid rgb(0,191,111); margin-bottom: 10px;  padding: 20px; box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);" ><h4 style="margin-bottom: 40px;">{{ publication.title }}</h4>
       
-      <p>{{publication.Authors}}</p>
-      <p>{{publication.Journal}}</p>
+      <p>{{publication.Author}}</p>
+      <p>{{publication.journal}}</p>
       <div class="buttons" style="margin:10px;">
-        <button type="button"  class="btn btn-outline-dark" href="https://doi.org/{{publication.DOI}}">DOI: {{publication.DOI}}
+        <button type="button"  class="btn btn-outline-dark" href="https://doi.org/{{publication.doi}}">doi: {{publication.doi}}
           &nbsp;<i class="fa-solid fa-right-from-bracket "></i></button>
-          <button type="button"  class="btn btn-outline-dark" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC{{publication.PMCID}}">PMCID {{publication.PMCID}}
+          <button type="button"  class="btn btn-outline-dark" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC{{publication.PMID}}">PMID {{publication.PMID}}
            &nbsp;<i class="fa-solid fa-right-from-bracket "></i></button>
       </div>
       </li>
