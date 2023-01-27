@@ -1,9 +1,9 @@
 ---
 layout: default
 did: mrc
-name: Wellcome Trust
-link: https://wellcome.org/
+name: Medical Research Council
+link: https://www.ukri.org/councils/mrc/
 current: true
 ---
 
-Wellcome is a global charitable foundation. We want everyone to benefit from science’s potential to improve health and save lives.
+An organisation that brings together the seven disciplinary research councils, Research England, which is responsible for supporting research and knowledge exchange at higher education institutions in England, and the UK’s innovation agency, Innovate UK.

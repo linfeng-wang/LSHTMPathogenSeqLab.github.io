@@ -1,5 +1,5 @@
 ---
-layout: courses
+layout: default
 upcoming: true
 pid: GWAS
 name: Introduction to Genetic Epidemiology in the GWAS era 
