@@ -1,6 +1,6 @@
 ---
 layout: workshops
-pid: OmicsPH
+pid: IDOPH
 workshopname: One health 'Omics workshop
 country: The Philippines
 year: 2021

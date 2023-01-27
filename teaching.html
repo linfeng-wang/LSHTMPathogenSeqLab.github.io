@@ -22,6 +22,7 @@ title: Teaching
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
         </links>
       
 
@@ -38,7 +39,7 @@ title: Teaching
 }
 }
 body{
-  background-color: #eee;
+  
 }
 .testimonials__list-item .fa {
   display: inline-block;
@@ -155,6 +156,50 @@ color: #eee;
  
 }
 
+#Author {
+	 height:50vh;
+   margin-top: 200px;
+	 display: grid;
+	 grid-gap: 0.5rem;
+	 grid-template-columns: 1fr 1fr;
+	 align-items: center;
+}
+ #Author .logo {
+	 width: 100%;
+	 overflow: auto;
+}
+ @media (min-width: 900px) {
+	 #Author .logo .image {
+		 width: 500px;
+		 height: 500px;
+		 border-radius: 50%;
+		 float: right;
+		 display: block;
+	}
+}
+ @media (max-width: 900px) {
+	 #Author .image {
+		 width: 90%;
+		 height: 90%;
+		 border-radius: 50%;
+		 float: right;
+		 display: block;
+	}
+}
+ #Author .first-text {
+	 font-family: 'Quicksand', sans-serif;
+	 vertical-align: top;
+	 text-align: center;
+}
+ #Author button {
+	 margin-left: 10px;
+	 margin-top: 10px;
+}
+ #Author .back{
+  height: inherit;
+  width: inherit;
+  background-color: #eee;
+ }
 </style>
 
 <body id="Capacity"> 
@@ -168,43 +213,69 @@ color: #eee;
         </div>
       </div>
      </section>
-     <section class="headers" style="margin-top: 100px;">
-      <div class="container">
-        <h4 class="text-align">
-          Our team provides workshops and courses to enhance the knowledge of individuals regarding Infectious diseases
-        </h4>
-      </div>
-     </section>
+     <section id="Author">
+      <div class="logo">
+        <div class="back">
 
-     <section class="teaching-and-workshops" style="margin-top: 100px; height: 200vh;">
-      <div class="container-fluid" style="height:100vh ;">
-        
-          <div class="row align-items-center" style="height: inherit; background-color: #eee;">
-            <div class="col-4 d-flex justify-content-center align-items-center" style="height:inherit;">
-              <div style="text-align: center;">
-              <h4 class="">Our workshops</h4>
-              <p class="">Get involved with our workshops both online and offline!</p>
-              <button type="button" class="btn btn-outline-success">View more</button>
-              </div>
-            </div>
-            <div class="col-md-8">
-            <img style="width: 100%;" src="/assets/img/workshops/infectiousDiseasesvietnam2022.jpg">
-
-            </div>
-          </div>
-          <div class="row d-flex" style="height: inherit; background-color: #eee;"">
-            <div class="col-md-8" >
-            </div>
-            <div class="col-4 d-flex justify-content-center align-items-center" style=" justify-content: center;">
-              <div style="text-align: center;">
-              <h4>Our courses</h4>
-              <p>Along with the Royal Veterinary College, we provide teaching for the faculty for MSc courses and beyond</p>
-              <a href="./courses" type="button" class="btn btn-outline-success">View more</a>
-              </div>
-            </div>
-          </div>
         </div>
+  <img class="image"  id="mainPhoto"src="./assets/img/course/IDO21.jpg" alt="Main photo">
+  </div>
+  <div class="first-text">
+  <p >  Our team provides workshops and courses to enhance the knowledge of individuals regarding Infectious diseases</p>
+  </div>
+  </section >
+     
+     <section class="workshopsandcourses" style="margin-top: 200px;">
+      <div class="container  d-flex align-items-center justify-content-center">
+        <div class="row"id="workshops_courses" class="row align-items-center justify-content-center" >
+          <div class="col-md-6 "  >
+            
+              <div class="block"  id="grid1" style=" background-color: rgb(49,48,48); color: white; height: 500px; border-radius: 50px;  box-shadow: 0 1px 6px rgb(255,255,255,0.1), 0 1px 4px rgba(255,255,255,0.5);">
+                <div class="d-flex align-items-center justify-content-center" style="height: 50%;">
+                  <i class="fa-solid fa-briefcase fa-8x"></i>
+                </div>
+                <div class="header" style="text-align: center; height: 10%;">
+                  Our workshops
+                </div>
+                <div class="text-body" style="height: 20%;">
+                  <p class="text" style="text-align: center; color: white;" >
+                    Get involved with our workshops both online and offline!
+                  </div> 
+                  <div class="button-body">
+                <div class="d-flex align-items-center justify-content-center" style="clear: both;">
+                  <a href="./workshops" type="button" class="btn btn-outline-success">View more</a>
+                </div>
+              </div> 
+              </div>
+              
+           
+          </div>
+          <div class="col-md-6 "  >
+            
+            <div class="block"  id="grid2" style=" background-color: rgb(49,48,48); color: white; height: 500px; border-radius: 50px;  box-shadow: 0 1px 6px rgb(255,255,255,0.1), 0 1px 4px rgba(255,255,255,0.5);">
+              <div class="d-flex align-items-center justify-content-center" style="height: 50%;">
+                <i class="fa-solid fa-person-chalkboard fa-8x" > </i>
+              </div>
+              <div class="header" style="text-align: center; height: 10%;">
+                Our courses
+              </div>
+              <div class="text-body" style="height: 20%;">
+                <p class="text" style="text-align: center; color: white;" >
+                  Along with the Royal Veterinary College, we provide teaching for the faculty for MSc courses and beyond                  </p></div>
+                  <div class="button-body">
+              <div class="d-flex  align-items-center justify-content-center" style="clear: both;">
+                <a href="./courses" type="button" class="btn btn-outline-success">View more</a>
+              </div>
+                  </div>
+            </div>    
+            </div></div> 
+            
+         
+        </div>
+         
+      
      </section>
+     
 
      <section class="opinions" style="margin-top: 100px;">
       <div class="container">
@@ -290,10 +361,31 @@ color: #eee;
           </div>
         </div>
     </div>
-    
+     
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+       const imgElement = document.querySelector('#mainPhoto');
+      $('#grid1').hover(function(ev){
+        
+        imgElement.src = "/assets/img/course/IDO21.jpg"
+        $(this).css("background", " rgb(0,191,111)");
+        var grid2 = $('#grid2')[0];
+        
+        $(grid2).css("background", "rgb(49,48,48)")
+        
+    })
+    $('#grid2').hover(function(ev){
+        console.log("hello")
+        imgElement.src = "/assets/img/workshops/infectiousDiseasesvietnam2022.jpg"
+        $(this).css("background", " rgb(0,191,111)");
+        var grid1 = $('#grid1')[0];
+        
+        $(grid1).css("background", "rgb(49,48,48)")
+        
+    })
+    </script>
   <script>
     
     $('.owl-carousel').owlCarousel({

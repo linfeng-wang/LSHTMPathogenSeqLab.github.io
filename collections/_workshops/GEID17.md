@@ -1,12 +1,10 @@
 ---
 layout: workshops
-pid: GEID
+pid: GEID17
 workshopname: International Workshop in Epidemiology in Infectious Diseases
-country: Malaysia
-year: 2018
-dates: 15th-20th October
+country: Philippenes
+year: 2017
+dates: 3rd-7th July
 
    
 ---
-
-Did something here
