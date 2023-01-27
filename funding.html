@@ -13,7 +13,22 @@ title: Funding
 .text-align h1 {
   color:white;   font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 40px;
 }
+.team-list{
+    font-family: "Mercury Text G1 A","Mercury Text G1 B",serif;
+font-style: italic;
+display: inline;
+cursor: pointer;
+margin: 20px;
 
+
+
+  }
+  #currText{
+    font-weight: 700;
+  }
+  .team-list:hover{
+    font-weight: 700;
+  }
 </style>
 
 <body id="Funding">
@@ -27,9 +42,17 @@ title: Funding
             
         
     </section>
+    <div class="list-section" style="margin-bottom: 200px; margin-top:200px;background-color: rgb(248, 248, 248);">
+        <ul style="list-style: none;box-sizing: border-box; text-align: center; " class="past-present">
+          <li class="team-list" id="currText" onclick="changeFunder('current')">Current Funders</li>
+          <li class="team-list" id="pastText" onclick="changeFunder('past')"> Past Funders</li>
+        </ul></div>
     <section class="funders" style="margin-top: 200px;">
         <div class="container">
           {% for funder in site.funders %}
+          {% if funder.current == true %}
+          <div class="current" id="current" style="display: block;">
+            
             <div class="row" style="margin-bottom: 100px;">
                 
                     <div class="col-md-8">
@@ -46,7 +69,29 @@ title: Funding
                               display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Homepage</a>
                             </div>
                         </div>
-                        </div>
+                    </div>
+                </div>
+                        {% else %}
+                        <div class="past" id="past" style="display: none;">
+                        <div class="row" style="margin-bottom: 100px;">
+                
+                            <div class="col-md-8">
+                                <div class="funder">
+                                    <h4 class="card-text" style="">{{funder.name}}</h4>
+                                    <p class="card-text" style="margin-top: 50px;">{{funder.excerpt}}</p>
+                                </div>
+                            </div>
+                                <div class="col-md-4">
+                                    <div class="image" style="position: relative;">
+                                      <img class="card-img-top p-2" style="height: 250px; width: auto; display:block;
+                                      margin:auto;  align-items: center;" src="/assets/img/funders/{{funder.did}}.png" alt="Card image cap">
+                                      <a href="{{funder.link}}" style="margin:0 auto;
+                                      display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Homepage</a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        {% endif %}
                         {% endfor %}
                 </div>
             </div>
@@ -54,6 +99,35 @@ title: Funding
             </div>
         </div>
     </section>
-    
+    <script type="text/javascript">
+        
+        function changeFunder(list){
+            console.log(list)
+            if (list == "past"){
+                var past = document.getElementsByClassName("past")
+                document.getElementById("pastText").style.fontWeight = "700"
+                document.getElementById("currText").style.fontWeight = "100"
+                
+                for(i = 0; i < past.length; i++) {
+                    past[i].style.display= 'block';
+                    }
+                    var current = document.getElementsByClassName("current")
+                for(i = 0; i < past.length; i++) {
+                    current[i].style.display= 'none';
+                    }
+                }else{
+                    var past = document.getElementsByClassName("past")
+                    document.getElementById("currText").style.fontWeight = "700"
+                    document.getElementById("pastText").style.fontWeight = "100"
+                
+                for(i = 0; i < past.length; i++) {
+                    past[i].style.display= 'none';
+                    }
+                    var current = document.getElementsByClassName("current")
+                for(i = 0; i < past.length; i++) {
+                    current[i].style.display= 'block';
+                    }
+                }}
+    </script>
 </div>
 </body>

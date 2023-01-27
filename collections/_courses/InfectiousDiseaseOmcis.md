@@ -2,7 +2,7 @@
 layout: courses
 upcoming: false
 pid: IDO
-coursename: Infectious disease omics
+name: Infectious disease omics
 online/offline: Online
 year: 2022
 dates: 5th-8th December

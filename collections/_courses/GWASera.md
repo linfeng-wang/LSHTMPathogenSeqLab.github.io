@@ -2,9 +2,9 @@
 layout: courses
 upcoming: true
 pid: GWAS
-coursename: Introduction to Genetic Epidemiology in the GWAS era 
+name: Introduction to Genetic Epidemiology in the GWAS era 
 online/offline: Offline
-year: 2023
+year: 2022
 dates: 3rd-6th December
 deadline: -
 teachers: 
