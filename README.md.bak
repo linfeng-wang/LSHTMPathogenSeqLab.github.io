@@ -12,23 +12,18 @@ It is fairly straightforward to add pages. At the moment you can add yourself in
 If you want to add yourself to the "People" page then create a markdown file in `/collections/_people/` using the first character of your forname and your full surname. E.g. Jody Phelan -> `/collections/_people/jphelan.md`. Use the follwing template:
 
 ```
---- 
+---
 layout: people
-alumni: false
-pid: jthorpe
-forname: Joseph
-surname: Thorpe 
-title: Research fellow 
-Important-fact: Passionate chess player and Roman history geek 
-tags:   
-- Malaria
-- Bioinformatics   
-- Drug-resistance 
-
+pid: jphelan
+forname: Jody
+surname: Phelan
+tags:
+  - Tuberculosis
+  - Bioinformatics
+  - Drug-resistance
 ---
 
-Initially graduated in Biomedicine from Nottingham Trent university, I decided to take a different direction and graduated with an MSc in Bioinformatics from Cranfield University. From there I learned how to visualise genomic data via fancy websites and create Java applications.
-
+Hello! My name is Jody.
 ```
 The top section demarked by "---" are variables which the system needs to populate your page:
  - layout - keep this as "people"
