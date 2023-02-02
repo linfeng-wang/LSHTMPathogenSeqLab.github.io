@@ -160,13 +160,13 @@ top: 50vh;
     {% assign postDay = post.date | date: "%-d" | plus: 0 %}
     {%- if currentYear == postYear and postDay > currentDay_minus_30_days and postDay <= currentDay  -%}
     
-    
-                <div class="col-8" style="margin-top: 20px; margin-right: 10px; ">
-                    <img src="/assets/img/news pics/{{post.pid}}.png" id="mainPhoto" style="object-fit: contain;max-width:100%;
+    {% assign image = post.pid  %}
+                <div class="col-8" id="img{{my_counter}}" style="margin-top: 20px; margin-right: 10px; ">
+                    <img src = "/assets/img/news_pics/{{image}}.png" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: contain;max-width:100%;
                     max-height:50vh;">
                 </div>
                 
-                <div class="col-4 grid-{{my_counter}} module" id="grid{{my_counter}}">
+                <div class="col-4 grid-{{my_counter}} module" onmouseleave="startTimer()" data-optionid="{{post.pid}}"onmouseover="changeImage{{my_counter}}('{{image}}')" id="grid{{my_counter}}">
                     <p>{{post.title}}</p>
                 </div>
                 
@@ -329,21 +329,41 @@ top: 50vh;
         
         let div = document.getElementsByClassName("module");
         let img = document.getElementsByTagName("img")
-        let images = ["/assets/img/news_pics/wellbeing.png", "/assets/img/homepage/peeps.jpg",
-         '/assets/img/homepage/PXL_20220707_091150444.jpg'];
-         const imgElement = document.querySelector('#mainPhoto');
+        let img1 = document.getElementById("img1")
+        let img2 = document.getElementById("img2")
+        let img3 = document.getElementById("img3")
+        
+        
+        const imgElement1 = document.getElementById('mainPhoto1')
+        const imgElement2 = document.getElementById('mainPhoto2');
+        const imgElement3 = document.getElementById('mainPhoto3');
         var counter = 0;
+        var image;
         function doSomething(){
-            div[counter].style.backgroundColor = "rgb(0,191,111)";
-    imgElement.src = images[counter]
+              div[counter].style.backgroundColor = "rgb(0,191,111)";
+    
     if(counter ===1){
         
         div[counter-1].style.backgroundColor = "rgb(49,48,48)"
+        img1.style.display = "none"
+        img2.style.display = "block"
+        img3.style.display = "none"
+        
+        
         div[counter+1].style.backgroundColor = "rgb(49,48,48)"
     }else if (counter ===0){
+        img1.style.display = "block"
+        img2.style.display = "none"
+        img3.style.display = "none"
         div[counter+1].style.backgroundColor = "rgb(49,48,48)"
+        
         div[counter+2].style.backgroundColor = "rgb(49,48,48)"
     }else if(counter===2){
+        img1.style.display = "none"
+   
+
+   img2.style.display = "none"
+   img3.style.display = "block"
         div[counter-1].style.backgroundColor = "rgb(49,48,48)"
         div[counter-2].style.backgroundColor = "rgb(49,48,48)"
     }
@@ -352,7 +372,7 @@ top: 50vh;
     if(counter === 3) {
         
         counter=0
-        setInterval(i);
+        setInterval(counter);
     }
 }
         
@@ -361,50 +381,50 @@ top: 50vh;
     
 doSomething();
 var timer = setInterval(doSomething,5000)
-$('#grid1').hover(function(ev){
-    clearInterval(timer);
-    imgElement.src = "/assets/img/news_pics/wellbeing.png"
-    $(this).css("background", "rgb(0,191,111)");
-    var grid1 = $('#grid2')[0];
-    var grid2 = $('#grid3')[0];
-    $(grid1).css("background", "rgb(49,48,48)")
-    $(grid2).css("background", "rgb(49,48,48)")
+function changeImage1(image){
     
-}, function(ev){
-   
-   timer = setInterval(doSomething,5000)
-
-});
-
-$('#grid2').hover(function(ev){
     clearInterval(timer);
-    imgElement.src = "/assets/img/homepage/peeps.jpg"
-    $(this).css("background", "rgb(0,191,111)");
-    var grid1 = $('#grid1')[0];
-    var grid2 = $('#grid3')[0];
-    $(grid1).css("background", "rgb(49,48,48)")
-    $(grid2).css("background", "rgb(49,48,48)")
-    
-}, function(ev){
+    img1.src = "/assets/img/news_pics/"+image+".png"
+    var string = image
+    $('#grid1').css("background", "rgb(0,191,111)");
+    $('#grid3').css("background", "rgb(49,48,48)")
+    $('#grid2').css("background", "rgb(49,48,48)")
+    img1.style.display = "block"
+        img2.style.display = "none"
+        img3.style.display = "none"
  
-   timer = setInterval(doSomething,5000)
+} 
 
-});
-$('#grid3').hover(function(ev){
+function changeImage2(image){
     clearInterval(timer);
-    imgElement.src = "/assets/img/homepage/PXL_20220707_091150444.jpg"
-    $(this).css("background", "rgb(0,191,111)");
-    var grid1 = $('#grid1')[0];
-    var grid2 = $('#grid2')[0];
-    $(grid1).css("background", "rgb(49,48,48)")
-    $(grid2).css("background", "rgb(49,48,48)")
+    var string = image
+    imgElement2.src = "/assets/img/news_pics/"+image+".png"
+    $('#grid2').css("background", "rgb(0,191,111)");
+    $("#grid1").css("background", "rgb(49,48,48)")
+    $("#grid3").css("background", "rgb(49,48,48)")
+    img1.style.display = "none"
+        img2.style.display = "block"
+        img3.style.display = "none"
+      
+}
+function changeImage3(image){
+    clearInterval(timer); var string = image
+    imgElement3.src = "/assets/img/news_pics/"+image+".png"
+    $('#grid3').css("background", "rgb(0,191,111)");
 
-}, function(ev){
+    $('#grid1').css("background", "rgb(49,48,48)")
+    $('#grid2').css("background", "rgb(49,48,48)")
+    img1.style.display = "none"
    
-   timer = setInterval(doSomething,5000)
 
-});
-
+   img2.style.display = "none"
+   img3.style.display = "block"
+   
+}
+function startTimer(){
+    
+    timer=setInterval(doSomething,5000)  
+}
 
     </script>
 
