@@ -47,7 +47,7 @@ height: 60vh;
 .events .container{
     padding: 0 60px;
   box-sizing: border-box;
-height: 200px;
+height: 250px;
 display: table;
 clear: both;
 border-spacing: 0;
@@ -126,6 +126,9 @@ top: 50vh;
 .grid-1:hover{
 
 }
+.author{
+    height:fit-content;
+}
 </style>
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,25 +142,38 @@ top: 50vh;
 <body id="News">
 <!-- This loops through the paginated posts -->
 <div class="main">
+    {% assign currentYear = site.time | date: "%Y" %}
+{% assign currentDay = site.time | date: "%j" | plus: 0 %}
+{% assign currentDay_minus_30_days = site.time | date: "%j" | minus: 30  %}
+
     <section class="heading" style="background-color:  rgb(49,48,48);height: 75vh;">
         <div class="container" >
-            <div class="text-align"  >
-                <h1 style="color: rgb(0,191,111);display: inline-block;font-family: 'Heebo', sans-serif;">TAGC </h1><h1 style="display: inline-block; font-family: 'Heebo', sans-serif;margin: 10px;color: white;">LATEST NEWS</h1>
+            <div class="title">
+                <div class="text-align"  >
+                    <h1 style="color: rgb(0,191,111);display: inline-block;font-family: 'Heebo', sans-serif;">TAGC </h1><h1 style="display: inline-block; font-family: 'Heebo', sans-serif;margin: 10px;color: white;">LATEST NEWS</h1>
+                </div>
             </div>
-            <div class="col-8" style="margin-top: 20px; margin-right: 10px; ">
-                <img src="/assets/img/news pics/wellbeing.png" id="mainPhoto" style="object-fit: contain;max-width:100%;
-                max-height:50vh;">
+            <div class="newsitems">
+                {% for post in site.posts  limit:3 %}
+                {% assign my_counter = my_counter | plus: 1 %}
+    {% assign postYear = post.date | date: "%Y" %}
+    {% assign postDay = post.date | date: "%-d" | plus: 0 %}
+    {%- if currentYear == postYear and postDay > currentDay_minus_30_days and postDay <= currentDay  -%}
+    
+    
+                <div class="col-8" style="margin-top: 20px; margin-right: 10px; ">
+                    <img src="/assets/img/news pics/{{post.pid}}.png" id="mainPhoto" style="object-fit: contain;max-width:100%;
+                    max-height:50vh;">
+                </div>
+                
+                <div class="col-4 grid-{{my_counter}} module" id="grid{{my_counter}}">
+                    <p>{{post.title}}</p>
+                </div>
+                
+                {%- endif -%}
+                {% endfor %}
             </div>
             
-            <div class="col-4 grid-1 module" id="grid">
-                <p>Wellbeing day</p>
-            </div>
-            <div class="col-4 grid-2 module" id="grid2">
-                <p>Here they are doing stuff</p>
-            </div>
-            <div class="col-4 grid-3 module" id="grid3">
-                <p>Here they are doing stuff</p>
-            </div>
             <div class="bottomevents" style=" font-family: 'Heebo', sans-serif;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); background-color: white; position: absolute; bottom: 0; width: 90%; height: 50px;">
                 <h3 style="margin-left: 20px; margin-top: 5px;">Upcoming Events</h3>
             </div>
@@ -188,35 +204,68 @@ top: 50vh;
             <h3 style="font-family: 'Heebo', sans-serif; border-bottom: 2px solid rgb(0,191,111); border-bottom-width: thin;">
                 Past Events
             </h3>
-            <div class="row" style="margin-top: 70px;">
+            <div class="row" style="margin-top: 30px;">
+                
                 {% for post in paginator.posts %}
-    {% assign author = site.people | where: "pid", post.author | sample %}
-    
-                <div class="col-xl-4" style="max-height: 300px; overflow-y: hidden;">
+                {% assign author = site.people | where: "pid", post.author | sample %}
+
+                {% assign postYear = post.date | date: "%Y" %}
+                
+                {% assign postDay = post.date | date: "%j" | plus: 0 %}
+                
+                {% if postYear != currentYear %}
+                
+                <div class="col-xl-4" style="max-height: 340px; overflow-y: hidden;">
                     <div class="title">
                         <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ post.url }}">{{ post.title }}</a></h3>
                     </div>
                     
                     
                     <div class="content">
-                        {{ post.excerpt }}
+                        {{ post.brief }}
+                        
                     </div>
                     <div class="author">
+                        <hr>
                         <p>
                             <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-                            {{ author.forname }} {{ author.surname }} <span class="date">{{ post.date }}</span>
+                            {{ author.forname }} {{ author.surname }} <span class="date">{{post.date | date: "%-d %B %Y" }}</span>
                         </p>
                     </div>
                     <div class="date">
                         
                     </div>
+                  
                 </div>
-                
-                
+                {% elsif postYear == currentYear and postDay < currentDay_minus_30_days %}
+               
+                <div class="col-xl-4" style="max-height: 340px; overflow-y: hidden;">
+                    <div class="title">
+                        <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    </div>
+                    
+                    
+                    <div class="content">
+                        {{ post.brief }}
+                        
+                    </div>
+                    <div class="author">
+                        <hr>
+                        <p>
+                            <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+                            {{ author.forname }} {{ author.surname }} <span class="date">{{post.date | date: "%-d %B %Y" }}</span>
+                        </p>
+                    </div>
+                    <div class="date">
+                        
+                    </div>
+                  
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
-    </section>
+    
 
 
 <!-- Pagination links -->
@@ -265,6 +314,7 @@ top: 50vh;
 </nav>
 </div>
 </div>
+</section>
 <scripts>
     <script>
        
@@ -276,7 +326,7 @@ top: 50vh;
         
 
         let colours = ["rgb(0,191,111)","rgb(49,48,48)"];
-        let index = 0;
+        
         let div = document.getElementsByClassName("module");
         let img = document.getElementsByTagName("img")
         let images = ["/assets/img/news_pics/wellbeing.png", "/assets/img/homepage/peeps.jpg",
@@ -311,7 +361,7 @@ top: 50vh;
     
 doSomething();
 var timer = setInterval(doSomething,5000)
-$('#grid').hover(function(ev){
+$('#grid1').hover(function(ev){
     clearInterval(timer);
     imgElement.src = "/assets/img/news_pics/wellbeing.png"
     $(this).css("background", "rgb(0,191,111)");
@@ -330,7 +380,7 @@ $('#grid2').hover(function(ev){
     clearInterval(timer);
     imgElement.src = "/assets/img/homepage/peeps.jpg"
     $(this).css("background", "rgb(0,191,111)");
-    var grid1 = $('#grid')[0];
+    var grid1 = $('#grid1')[0];
     var grid2 = $('#grid3')[0];
     $(grid1).css("background", "rgb(49,48,48)")
     $(grid2).css("background", "rgb(49,48,48)")
@@ -344,7 +394,7 @@ $('#grid3').hover(function(ev){
     clearInterval(timer);
     imgElement.src = "/assets/img/homepage/PXL_20220707_091150444.jpg"
     $(this).css("background", "rgb(0,191,111)");
-    var grid1 = $('#grid')[0];
+    var grid1 = $('#grid1')[0];
     var grid2 = $('#grid2')[0];
     $(grid1).css("background", "rgb(49,48,48)")
     $(grid2).css("background", "rgb(49,48,48)")

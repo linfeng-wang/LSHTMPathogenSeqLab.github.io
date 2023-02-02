@@ -48,7 +48,7 @@ collections:
   workshops:
     output: true
 
-paginate: 4
+paginate: 3
 paginate_path: "/news/page:num/"
 
 # Exclude from processing.
