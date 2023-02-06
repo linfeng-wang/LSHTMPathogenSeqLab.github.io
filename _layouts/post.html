@@ -19,7 +19,11 @@ img{
 <links>
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> </links>
+ <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+ <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+ </links>
 
 
 <body id="News">
@@ -39,7 +43,7 @@ img{
         <div class="container"  style="margin-top: 200px;">
             <div class="row">
                 <div class="col-8 justify-content-center align-self-center">
-                    <img class="newsimage" src="/assets/img/news pics/test1.png"></img>
+                    <img class="newsimage" src="/assets/img/newspics/{{page.pid}}.png"></img>
                 </div>
                 <div class="col-4 ">
                     <div class="excerpt">
@@ -59,3 +63,12 @@ img{
         </div>
      </section>
  </div>
+<script>
+$("img").one("load", function() {
+    // do stuff
+  }).each(function() {
+    if(this.complete) {
+        $(this).load(); // For jQuery < 3.0 
+        // $(this).trigger('load'); // For jQuery >= 3.0 
+    }
+  });</script>

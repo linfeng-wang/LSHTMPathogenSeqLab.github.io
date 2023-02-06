@@ -123,11 +123,20 @@ top: 50vh;
     border-style: solid;
 }
 
-.grid-1:hover{
-
+ a{
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: 'Heebo', sans-serif;
 }
 .author{
     height:fit-content;
+}
+.pastEvents a{
+    color: rgb(49,48,48);
+}
+.pastEvents a:hover{
+    color:rgb(0,191,111);
 }
 </style>
 <links>
@@ -156,21 +165,23 @@ top: 50vh;
             <div class="newsitems">
                 {% for post in site.posts  limit:3 %}
                 {% assign my_counter = my_counter | plus: 1 %}
-    {% assign postYear = post.date | date: "%Y" %}
-    {% assign postDay = post.date | date: "%-d" | plus: 0 %}
-    {%- if currentYear == postYear and postDay > currentDay_minus_30_days and postDay <= currentDay  -%}
     
     {% assign image = post.pid  %}
                 <div class="col-8" id="img{{my_counter}}" style="margin-top: 20px; margin-right: 10px; ">
-                    <img src = "/assets/img/news_pics/{{image}}.png" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: contain;max-width:100%;
+                    <img src = "/assets/img/newspics/{{image}}.png" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: contain;max-width:100%;
                     max-height:50vh;">
                 </div>
+                {% if post.link != "none" %}
+                {% assign link = post.link %}
+                {% else %}
+                {% assign link = post.url %}
+                
+                {% endif %}
                 
                 <div class="col-4 grid-{{my_counter}} module" onmouseleave="startTimer()" data-optionid="{{post.pid}}"onmouseover="changeImage{{my_counter}}('{{image}}')" id="grid{{my_counter}}">
-                    <p>{{post.title}}</p>
+                    <a href="{{link}}">{{post.title}}</a>
                 </div>
                 
-                {%- endif -%}
                 {% endfor %}
             </div>
             
@@ -197,7 +208,7 @@ top: 50vh;
         </div>
       </div>
     </section>
-    
+    {% assign count = 0 %}
       
     <section class="pastEvents">
         <div class="container">
@@ -207,63 +218,32 @@ top: 50vh;
             <div class="row" style="margin-top: 30px;">
                 
                 {% for post in paginator.posts %}
-                {% assign author = site.people | where: "pid", post.author | sample %}
-
-                {% assign postYear = post.date | date: "%Y" %}
-                
-                {% assign postDay = post.date | date: "%j" | plus: 0 %}
-                
-                {% if postYear != currentYear %}
-                
-                <div class="col-xl-4" style="max-height: 340px; overflow-y: hidden;">
-                    <div class="title">
-                        <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                    </div>
-                    
-                    
-                    <div class="content">
+                {% if post.hidden != true %}
+                  {% assign author = site.people | where: "pid", post.author | sample %}
+                  {% if post.link != "none" %}
+                  {% assign link = post.link %}
+                  {% else %}
+                  {% assign link = post.url %}
+                  
+                  {% endif %}
+                    <div class="col-xl-4" style="max-height: 400px; overflow-y: hidden;">
+                      <div class="title">
+                        <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ link }}">{{ post.title }}</a></h3>
+                      </div>
+                      <div class="content">
                         {{ post.brief }}
-                        
-                    </div>
-                    <div class="author">
+                      </div>
+                      <div class="author">
                         <hr>
                         <p>
-                            <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-                            {{ author.forname }} {{ author.surname }} <span class="date">{{post.date | date: "%-d %B %Y" }}</span>
+                          <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
+                          {{ author.forname }} {{ author.surname }} <span class="date">{{post.date | date: "%-d %B %Y" }}</span>
                         </p>
+                      </div>
                     </div>
-                    <div class="date">
-                        
-                    </div>
-                  
-                </div>
-                {% elsif postYear == currentYear and postDay < currentDay_minus_30_days %}
-               
-                <div class="col-xl-4" style="max-height: 340px; overflow-y: hidden;">
-                    <div class="title">
-                        <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                    </div>
-                    
-                    
-                    <div class="content">
-                        {{ post.brief }}
-                        
-                    </div>
-                    <div class="author">
-                        <hr>
-                        <p>
-                            <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-                            {{ author.forname }} {{ author.surname }} <span class="date">{{post.date | date: "%-d %B %Y" }}</span>
-                        </p>
-                    </div>
-                    <div class="date">
-                        
-                    </div>
-                  
-                </div>
-                {% endif %}
+                   {% endif %}
                 {% endfor %}
-            </div>
+              </div>
         </div>
     
 
@@ -290,7 +270,7 @@ top: 50vh;
         {% else %}
             {% assign link = "/news/page" | append: i %}
         {% endif %}
-
+        
         {% if i==paginator.page %}
             <li class="page-item active" aria-current="page">
                 <a class="page-link" href="{{ link }}">{{ i }}</a>
@@ -317,7 +297,7 @@ top: 50vh;
 </section>
 <scripts>
     <script>
-       
+
         function changeImage(element){
             document.getElementById(element).style.backgroundColor = "rgb(0,191,111)"
         }
@@ -384,7 +364,7 @@ var timer = setInterval(doSomething,5000)
 function changeImage1(image){
     
     clearInterval(timer);
-    img1.src = "/assets/img/news_pics/"+image+".png"
+    img1.src = "/assets/img/newspics/"+image+".png"
     var string = image
     $('#grid1').css("background", "rgb(0,191,111)");
     $('#grid3').css("background", "rgb(49,48,48)")
@@ -398,7 +378,7 @@ function changeImage1(image){
 function changeImage2(image){
     clearInterval(timer);
     var string = image
-    imgElement2.src = "/assets/img/news_pics/"+image+".png"
+    imgElement2.src = "/assets/img/newspics/"+image+".png"
     $('#grid2').css("background", "rgb(0,191,111)");
     $("#grid1").css("background", "rgb(49,48,48)")
     $("#grid3").css("background", "rgb(49,48,48)")
@@ -409,7 +389,7 @@ function changeImage2(image){
 }
 function changeImage3(image){
     clearInterval(timer); var string = image
-    imgElement3.src = "/assets/img/news_pics/"+image+".png"
+    imgElement3.src = "/assets/img/newspics/"+image+".png"
     $('#grid3').css("background", "rgb(0,191,111)");
 
     $('#grid1').css("background", "rgb(49,48,48)")

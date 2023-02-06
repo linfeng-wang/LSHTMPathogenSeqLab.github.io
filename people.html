@@ -61,14 +61,6 @@ font-size: 20px;
   transition: 0.4s;
   color: white;
 }
-#overlord1 h6,#overlord2 h6,#overlord3 h6{
-  text-transform: uppercase;
-  font-weight: bold;
-  line-height: 1.4;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-  font-size: 20px;
-}
 .past h6{
 
   text-transform: uppercase;
@@ -85,7 +77,7 @@ h6 {
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
-#container1, #container2, #container3, #container4, #container5, #container6, #container7, #container8, #container9, #container10, #container11, #container12, #container13{
+#container1, #container2, #container3, #container4, #container5, #container6, #container7, #container8, #container9, #container10, #container11, #container12, #container13,#overlord1,#overlord2,#overlord3{
   width: 100%;
   position: absolute;
   max-width: 100%;
@@ -98,25 +90,8 @@ h6 {
   transform: translate(-50%, -50%);
 
 }
-#overlord1,#overlord2,#overlord3{
-  width: 100%;
-  position: absolute;
-  max-width: 100%;
-  margin-bottom: 200px;
- 
- left:50%;
-  max-height: 50%;
-  height:195%;
-  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-  transform: translate(-50%, -50%);
-}
-#overlord1 h10,#overlord2 h10, #overlord3 h10{
-  font-size: 16px;
-}
 
-#overlord1 .fact,#overlord2 .fact,#overlord3 .fact{
-  font-size: 20px;
-}
+
 h10{
     font-size: .6vw;
 }
@@ -137,20 +112,14 @@ h10{
   -o-transition: .3s all 0s ease-in-out;
   
 }
-#container1.expanded,#container2.expanded,#container3.expanded,#container4.expanded,#container5.expanded,#container6.expanded,#container7.expanded,#container8.expanded,#container9.expanded,#container10.expanded,#container11.expanded,#container12.expanded,#container13.expanded{
+#container1.expanded,#container2.expanded,#container3.expanded,#container4.expanded,#container5.expanded,#container6.expanded,#container7.expanded,#container8.expanded,#container9.expanded,#container10.expanded,#container11.expanded,#container12.expanded,#container13.expanded,#overlord1.expanded,#overlord2.expanded,#overlord3.expanded{
   max-height: 200%;
 
   transition: max-height 0.5s ease-in-out;
   color: white;
   background-color: rgb(0,191,111);
 }
-#overlord1.expanded,#overlord2.expanded,#overlord3.expanded{
-  max-height: 200%;
 
-  transition: max-height 0.5s ease-in-out;
-  color: white;
-  background-color: rgb(0,191,111);
-}
 .text-align h1 {
   color:white; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 40px;
 }
@@ -162,13 +131,7 @@ h10{
 .button-container{
   position: relative;
 }
-#overlord1 .button-container a, #overlord2 .button-container a,#overlord3 .button-container a {
-  background-color: rgb(49,48,48);
-color: rgb(0,191,111);
-position: absolute;
 
-left: 35.5%;
-}
 .button-container a{
 background-color: rgb(49,48,48);
 color: rgb(0,191,111);
@@ -276,7 +239,7 @@ left: 26%;
                       {{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
                     <p class="italic-serif team-leader-title" 
                     style=" align-content: center; justify-content: center;
-                     text-align: center; margin-bottom: 50px;">{{person.title | capitalize}}</p>
+                     text-align: center; ">{{person.title | capitalize}}</p>
                     
                     <div class="team-leader-bio-wrap middle">
                       
