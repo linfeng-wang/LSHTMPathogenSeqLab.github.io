@@ -3,7 +3,7 @@ layout: default
 name: Malaria SWGA
 theme: malaria
 pid: swga
-desc: This project page describes the SWGA approach for malaria parasites
+link: none
 people:
   - aibrahim
 ---

@@ -9,7 +9,7 @@ title: people
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> 
-  
+  <script src="https://kit.fontawesome.com/f8a9821c7d.js" crossorigin="anonymous"></script>
 </head>
 <style>
   .team-list{
@@ -296,9 +296,28 @@ left: 26%;
     {% for person in site.people %}
     {% if person.Leader != true %}
       {% assign my_counter = my_counter | plus: 1 %}
-      <div class="col-xxl-4 team-member" style="margin-bottom: 21px; display: inline;">
       
+      <div class="col-xxl-4 team-member" style="margin-bottom: 21px; display: inline;">
+        
         <div class="team-member-wrap" style="position: relative;">
+          {% if person.pid == "emanko" %}
+         
+          <div  class="team-member-photo" style="width: 100%;
+          background-color: #888;
+          position: relative;
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          padding-bottom: 57.13862%;
+          margin-top: 20px;background-position: bottom;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ">
+            <i class="fa-solid fa-e fa-6x" style="align-self: center;"></i>
+            <i class="fa-solid fa-m fa-6x" style="align-self: center;"> </i>
+          </div>
+          {% else %}
           <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
           background-color: #888;
           position: relative;
@@ -310,6 +329,7 @@ left: 26%;
           ">
 
           </div>
+          {% endif %}
           <div  class="team-member-panel" id="container{{my_counter}}" onclick="expand({{my_counter}})" style=" clear: both; ; 
           ">
             <h6 class="team-member-name " style=" padding:10px 0; align-content: center; justify-content: center; text-align: center; ">{{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>

@@ -9,22 +9,20 @@ title: theme
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></links>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>      
+</links>
 </links>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Cairo');
 html, body {
     height: 100%;   
-   
+    overflow-x: hidden; 
 }
-section .container {
-   min-width: 100% !important;/*Set your own width %; */
-}
-#first1,#first2,#first3,#first4,#first5,#first6{
+
     
   
-    height: 100vh;
-}
 
 @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
 *{
@@ -33,385 +31,479 @@ section .container {
   box-sizing: border-box;
   font-family: "Asap", sans-serif;
 }
-
 section{
-  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-.text-container button{
-  
-  background-color: rgb(0,191,111);;
-  color: azure;
-  clear:both;
+@media (min-width: 1000px) {
+  .heading .col-sm-6 h1{
+  font-family: Cairo;
   text-align: center;
-}
-.text-container button:hover{
+  text-transform: uppercase;
   
-  background-color: rgb(0,191,111);
-  color: black;
+font-size: 8rem;
+}
+.heading .col-sm-6 h3{
+  font-family: Cairo;
+  text-align: center;
+  text-transform: uppercase;
   
+font-size: 3rem;
 }
-.text-container .description{
-  height: 50%;
-  word-wrap: break-word;
-display: table;
-word-break: break-word;
 }
-.text-container .p{
- display: table-row;
+@media (max-width: 1000px) {
+  .heading .col-sm-6 h1{
+  font-family: Cairo;
+  text-align: center;
+  text-transform: uppercase;
+  
+font-size: 50px;
+}
+.heading .col-sm-6 h3{
+  font-family: Cairo;
+  text-align: center;
+  text-transform: uppercase;
+  
+font-size: 30px;
+}
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@keyframes slideUp1 {
+    0%,
+    20% {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+    40% {
+      transform: translateY(50%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0%);
+      opacity: 0;
+    }
+     
+    60% {
+      transform: translateY(-30%);
+    }
+    80%{
+      transform: translateY(0%);
+      opacity: 1;
+    }
+    80%{
+      transform: translateY(10%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    
+    
+    }
+  }
+  @keyframes slideUp2 {
+    0%,
+    20% {
+      transform: translateY(70%);
+      opacity: 0;
+    }
+    40% {
+      transform: translateY(-70%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(0%);
+      opacity: 0;
+    }
+     
+    60% {
+      transform: translateY(40%);
+    }
+    80%{
+      transform: translateY(0%);
+      opacity: 1;
+    }
+    80%{
+      transform: translateY(-10%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    
+    
+    }
+  }
+  @keyframes big_it {
+    from {width:0px;}
+    to {width:400px;}
+}
+@keyframes center-animate {
+    0% {
+        transform: scaleX(121);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+.slideup1{ 
+  opacity: 1;
+animation: fadein 0.4s ;
+transform-style: preserve-3d;
+animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: slideUp1;
+    
+    animation-timing-function: ease-in;
+         }
+
+  .slideup2{
+    opacity: 1;
+animation: fadein 0.4s ;
+transform-style: preserve-3d;
+animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: slideUp2;
+    
+    animation-timing-function: ease-in;
+  }
+
+.pageName {
+  transition: width 1s ;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
-.text-container .btn:focus {
+.pageName:hover {
+background-color: rgba(0,191,111,0.2);
+border-radius: 50px;
+cursor: pointer;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+.hiddenBit #container {
+    width: 0;
+    transition: width 1s ease-out;
+    top: 100vh;
+    left: 0%;
+    transform: translateX(0%);
+    margin-top: -250px;
+}
+
+.hiddenBit #container.expanded {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(0);
+}
+
+
+.pageName.highlighted {
+background-color: rgba(0,191,111,0.2);
+border-radius: 50px;
+cursor: pointer;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border-radius: 100px;
+}
+
+.project h4 {
+  margin: 0 0 1.33333rem;
+  padding: 0 0 2rem;
+  font-size: 22px;
+  text-align: center;
+  margin-top: 10px;
+}
+.owl-carousel .owl-item .project__card img {
+  border-radius: 50%;
+  width: 100%;
+  height: 1400%;
+}
+
+
+.owl-carousel {
+  display: none;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+ .owl-item {
+  padding-right: 2rem;
+  overflow: visible;
+  position: relative;
+  min-height: 1px;
+float: left;
+user-select: none;
+overflow: hidden;
+
+}
+@media (min-width: 1000px) {
+  .project__card {
+border-radius: 50%;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -spec-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -spec-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -spec-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  position: relative;
+  padding: 2rem 1rem 2rem;
+  border: 1px solid #CACCD6;
+  background-color: #fff;
+  justify-content: center;
+  text-align: center;
+  width:500px; height: 500px;
+ 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
+  transition: 0.5s ease-out;
+}
+
+}
+@media (max-width: 1000px) {
+  .project__card {
+border-radius: 50%;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -spec-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -spec-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -spec-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  position: relative;
+  padding: 2rem 1rem 2rem;
+  border: 1px solid #CACCD6;
+  background-color: #fff;
+  justify-content: center;
+  text-align: center;
+  width:300px; height: 300px;
+ 
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.5s ease-out;
+}
+
+}
+
+.disabled{
+  display: none;
+}
+.projectName {
+  --b: 0.1em;   
+  --c: rgb(0,191,111); 
+  
+  color: #0000;
+  padding-block: var(--b);
+  background: 
+    linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  font-family: Cairo; 
+}
+.projectName:hover {
+  --_p: 100%;
+  --_s: .3s;
+  cursor: pointer;
+  
+}
+.project__card:hover{
+  box-shadow: 0 5px 15px rgba(0,0,0,.2);
+  transform: translate3d(0,-2px,0);
+  cursor: pointer;
+}
+
+.modal, .modal-header .modal-title, .modal-body{
+  text-align: center;
+  width: 100%;
+  font-family: Cairo;
+}
+.btn-primary{
+  background-color: rgb(49,48,48);
+  color: white;
+  border-color: rgb(49,48,48) !important;
+  font-family: Cairo;
+}
+.btn-primary:hover{
+  background-color: rgb(0,191,111);
+}
+
+.btn-primary:active,.btn-primary:focus{
+  background-color: rgb(0,191,111);
+  color: white;
+  border-color: rgb(49,48,48) !important;
   outline: none;
   box-shadow: none;
 }
 
+.modal-body {
+  font-family: Cairo; 
+  font-size: 14px; 
+}
+.modal.animated {
+  animation-duration: 0.75s;
+  animation-fill-mode: both;
+  animation-name: bounceDown;
+}
 
-
-@media (max-width: 900px){
-  section h1{
-    font-size: 2rem;
-    text-align: center;
+@keyframes bounceDown {
+  0% {
+    transform: translateY(-2000px);
+    animation-timing-function: ease-out;
   }
-  section .text-container{
-    flex-direction: column;
+  60% {
+    transform: translateY(30px);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: translateY(-10px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
-.reveal:nth-child(1){
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-  background-color: rgb(49,48,48);
-  color:white;
-}
-.reveal:nth-child(2){
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-  background-color: rgb(49,48,48);
-  color:white;
-}
-.reveal:nth-child(3){
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-  background-color: rgb(30, 81, 40);
-  color:white;
-}
-.reveal:nth-child(4){
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-  background-color: rgb(30, 81, 40);
-  color:white;
-}
-.reveal:nth-child(5){
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-  background-color: rgb(78, 159, 61)
-  ;color:white;
-
-}
-.reveal:nth-child(6){
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-  background-color: rgb(78, 159, 61);
-  color:white;
-}
-.reveal:nth-child(7){
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-  background-color: rgb(216, 233, 168);
-  color:black;
-}
-.reveal:nth-child(8){
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-  background-color: rgb(216, 233, 168);
-  color:black;
-}
-.reveal.active:nth-child(1){
-  transform: translateY(0);
-  opacity: 1;
-}
-.reveal.active:nth-child(2){
-  transform: translateY(0);
-  opacity: 1;
-}
-.reveal.active:nth-child(3){
-  transform: translateY(0);
-  opacity: 1;
-}.reveal.active:nth-child(4){
-  transform: translateY(0);
-  opacity: 1;
-}.reveal.active:nth-child(5){
-  transform: translateY(0);
-  opacity: 1;
-}.reveal.active:nth-child(6){
-  transform: translateY(0);
-  opacity: 1;
-}.reveal.active:nth-child(5){
-  transform: translateY(0);
-  opacity: 1;
-}.reveal.active:nth-child(6){
-  transform: translateY(0);
-  opacity: 1;
-}.reveal.active:nth-child(7){
-  transform: translateY(0);
-  opacity: 1;
-}.reveal.active:nth-child(8){
-  transform: translateY(0);
-  opacity: 1;
-}
-#hiddenDiv1, #hiddenDiv2 , #hiddenDiv3 , #hiddenDiv4 { display:none; 
-  
-}
-.hidden-text-container{
-  display:flex;
-min-height:100vh;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-
-}
-.hidden-text-container p{
-  font-family: 'Quicksand', sans-serif;
- 
-  
-  
-  text-align: center;
-}
-.hidden-text-container img{
-  margin-top: 100px;
-}
-.text-container{
-        
-        width:300px; 
-        height: 300px; line-height: 50px;
-        position: absolute;
-        top: 50%; margin-top:-100px;
-        left: 50%; margin-left:-200px;
-       
-        text-transform: uppercase;
-        text-align:center
-    }
 </style>
-<scripts>
-
-    <script type="text/javascript">
-    function reveal() {
-        
-  var reveals = document.querySelectorAll(".reveal");
-
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 200;
-
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    } else {
-      reveals[i].classList.remove("active");
-    }
-  }
-}
-
-window.addEventListener("scroll", reveal);
-
-
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-    $("#button1").click(function() {
-        $("#hiddenDiv2").hide("slow");
-        $("#hiddenDiv3").hide("slow");
-        $("#hiddenDiv4").hide("slow");
-        $("#hiddenDiv1").show("slow");
-        $("#textForHeader").hide("slow")
-        $('html,body').animate({
-   scrollTop: $(".heading").offset().top
-});
-    });
-    $("#button2").click(function() {
-        $("#hiddenDiv1").hide("slow");
-        $("#hiddenDiv3").hide("slow");
-        $("#hiddenDiv4").hide("slow");
-        $("#hiddenDiv2").show("slow");
-        $("#textForHeader").hide("slow")
-        $('html,body').animate({
-   scrollTop: $(".heading").offset().top
-});
-    });
-    $("#button3").click(function() {
-        $("#hiddenDiv1").hide("slow");
-        $("#hiddenDiv2").hide("slow");
-        $("#hiddenDiv4").hide("slow");
-        $("#hiddenDiv3").show("slow");
-        $("#textForHeader").hide("slow")
-        $('html,body').animate({
-   scrollTop: $(".heading").offset().top
-});
-    });
-    $("#button4").click(function() {
-        $("#hiddenDiv1").hide("slow");
-        $("#hiddenDiv2").hide("slow");
-        $("#hiddenDiv3").hide("slow");
-        $("#hiddenDiv4").show("slow");
-        $("#textForHeader").hide("slow")
-        $('html,body').animate({
-   scrollTop: $(".heading").offset().top
-});
-    });
-    $("#thirdRadio").click(function() {
-        $("#firstHiddenDiv, #secondHiddenDiv").hide("slow"); 
-    });
-});
-    </script>
-
-</scripts>
 
 <body id="research">
 <div class="main">
-    <section class="heading" style="height: 100vh;">
-        
-    <div class="text" id="textForHeader" style="position: absolute;
-    top: 50%;
-   
-    margin-top: -50px;
-    
-    width: 100%;
-    text-align: center;">
+  <section class="heading" style="height: 80vh;">
+    <div class="text" id="textForHeader" style="width: 100%; text-align: center;">
         <div class="row">
-            <div class="col-sm-6 mx-auto">
-            <h1 style="font-family: Cairo;text-align: center; text-transform: uppercase;">Our {{page.name}} Projects</h1>
+            <div class="col-sm-6 mx-auto" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                <h3 class="slideup1">Our</h3>
+                <div class="pageName" id="pageName">
+                    <h1>{{page.name}}</h1>
+                </div>
+                <h3 class="slideup2">Projects</h3>
+            </div>
         </div>
-        
-       
-    </div></div>
-    <div class="hidden-div" style="height: 100vh;">{% assign my_counter = 0 %}
+    </div>
+</section>
+<section class="hiddenBit" id="hiddenBit" style="margin-bottom: 400px;">
+  <div class="container-fluid" id="container">
+  <div class="owl-carousel" style="margin-top: 100px;">
+    {% assign my_counter = 0 %}
+    {% for projects in site.projects %}
+    {% if projects.theme == page.name %}
+    
+    {% assign my_counter = my_counter | plus: 1  %}
+    <div class="project" id="projectPicture">
+      <button type="button" class="project__card" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" style="background-image: url('/assets/img/projects/{{page.name}}/{{projects.pid}}.png');">
+      </button>
+       <h4 class="projectName" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" >
+        {{projects.name}}
+      </h4>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div></div>
+</section>
+<section>
+  
+  
+  <div class="modals">
+    {% assign my_counter = 0 %}
       {% for projects in site.projects %}
       {% if projects.theme == page.name %}
       
       {% assign my_counter = my_counter | plus: 1  %}
-      
-      
-  <div id='hiddenDiv{{my_counter}}' style="height: 100%;width: 100%;">
-    <div class="row" style="height: 100%;width: 100%;">
-      <div class="col-8" style="max-width: 100%;
-      max-height: 100%;
-      overflow:hidden;">
-      
-        <img src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png "
-        style="
+  <div class="modal fade animated bounce-down" id="exampleModal{{my_counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
         
-        align-items: center;
-        justify-content: center;
-        margin-top: 50px;
-        object-fit: cover;
-    overflow: hidden;">
-      </div>
-      <div class="col-4" id="decription{{my_counter}}">
-        <div class="hidden-text-container">
-          
-          <p>{{projects.excerpt}}</p>
-  </div></div></div>
-  
-    </div>
-    {% endif %}
-              {% endfor %}
-</section>
-
- 
-<section class="project-list">
-
-    <div class="container" >
-       
-        <div class="row  " style=" ">
-          
-            {% assign my_counter = 0 %}
-            {% for projects in site.projects %}
-            {% if projects.theme == page.name %}
-            
-            {% assign my_counter = my_counter | plus: 1  %}
-            {% assign value = my_counter | modulo:2 %}
-            {% if value == 0 %}
-            <div class='col-4 reveal' id="first{{my_counter}}">
-                <div class="text-container" style="">
-                  <div class="header  display: flex;
-                  justify-content: center;
-                  align-items: center;">
-                    <h3  style="text-align: center">{{projects.name}}</h3>
-                  </div>
-                  <div class="description" style="">
-                    <p>{{projects.desc}}</p>
-                  </div>
-                  <div class="button" style=" display: flex;
-                  justify-content: center;
-                  align-items: center; ">
-                    <button  id="button{{my_counter}}" type="button" class="btn">Show me more</button>
-                   </div>
-                </div>
-            </div>
-            <div class='col-8 reveal' id="first{{my_counter}}">
-                <img class="revealUp" src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png "  style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
-                transform: translate(-50%,-50%);
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                border-radius: 25px;
-                ">
-            </div>
-           
-            {% else %} 
-           
-            <div class='col-8 reveal' id="first{{my_counter}}" style="  ">
-                <img src="/assets/img/projects/{{projects.theme}}/{{projects.pid}}.png " style="height: auto; max-width: 65%; -webkit-transform: translate(-50%,-50%);
-                transform: translate(-50%,-50%);
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                border-radius: 25px;">
-              
-            </div>
-            <div class='col-4 reveal' id="first{{my_counter}}">
-                <div class="text-container" >
-                  <div class="header">
-                    <h3  style="text-align: center">{{projects.name}}</h3>
-                  </div>
-                  <div class="description">
-                    <p>{{projects.desc}}</p>
-                  </div>
-                  <div class="button">
-                    <button  id="button{{my_counter}}" type="button" class="btn">Show me more</button>
-                  </div>
-                
-            </div></div>
-            
-            {% endif %}
-            {% endif %}
-            {% endfor %}
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{projects.name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        
-         </div>
+        <div class="modal-body">
+          <p>{{projects.excerpt}}</p>
+          <br>
+          {% assign people = projects.people %}
+          
+          {% for peep in people %}
+          
+            <p class="" >{{peep}}</p>{% assign image = peep %} <img src="/assets/img/{{image}}.jpg" style="width:50px;height: 50px;">
+          {% endfor %}
+        </div>
+        <div class="modal-footer">
+          {% if projects.link != "none" %}
+                  
+          <button type="button" class="btn btn-primary check-it-out" href="#" data-link="{{projects.link}}">Check it out!</button>
+          {% else %}
 
+          {% endif %}
+
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  </div>
 </section>
 </div>
 
 </body>
+
+<script>
+$("#pageName").click(function() {
+  $("#container").toggleClass("expanded");
+  $("#pageName").toggleClass("highlighted");
+  $(".owl-carousel").slideToggle(1000)
+  $('html,body').animate({
+        scrollTop: $(".expanded").offset().top-=300},
+        'slow');
+
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    
+  $('.owl-carousel').owlCarousel({
+      loop: true,
+  nav: false,
+  margin:10,
+  dots:false,
+  autoWidth:true
+  })
+
+  </script>
+<script type="text/javascript">
+$(document).on("click", ".check-it-out", function() {
+  var link = $(this).data("link");
+  window.location.href = link;
+});
+</script>

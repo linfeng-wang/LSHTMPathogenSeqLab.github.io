@@ -3,7 +3,7 @@ layout: default
 name: Plasmo Maps
 theme: amr
 pid: pmaps
-desc: This project page describes Plasmo maps
+link: none
 people:
   - jthorpe
 ---

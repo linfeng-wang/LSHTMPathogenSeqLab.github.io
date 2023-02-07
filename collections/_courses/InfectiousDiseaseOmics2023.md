@@ -1,9 +1,9 @@
 ---
 layout: courses
-pid: IDO22
-name: Infectious disease omics 2022
+pid: IDO18
+name: Infectious disease omics 2018
 online/offline: Online
-year: 2022
+year: 2018
 dates: 5th-8th December
 deadline: 18th November
 teachers: 

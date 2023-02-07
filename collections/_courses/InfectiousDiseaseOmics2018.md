@@ -1,20 +1,16 @@
 ---
 layout: courses
-upcoming: false
-pid: IDO18
-name: Infectious disease omics 2018
+pid: IDO23
+name: Infectious disease omics 2023
 online/offline: Online
-year: 2018
+year: 2023
 dates: 5th-8th December
 deadline: 18th November
 teachers: 
     - Taane Clark
     - Susana Campino
 
-objectives:
-  - Process raw sequence into a set of informative variants, through mapping to a reference genome or using de novo or reference-free assembly approaches;
-  - Conduct transcriptomic and proteomic analysis, in an integrated systems biology approach
-  - Perform downstream population genetic and association analysis
+link: https://www.lshtm.ac.uk/study/courses/short-courses/infectious-disease-omics
 
 ---
 
