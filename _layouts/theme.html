@@ -19,6 +19,7 @@ title: theme
 html, body {
     height: 100%;   
     overflow-x: hidden; 
+    font-family: Cairo;
 }
 
     
@@ -374,7 +375,9 @@ border-radius: 50%;
   animation-fill-mode: both;
   animation-name: bounceDown;
 }
-
+p{
+  color: black;
+}
 @keyframes bounceDown {
   0% {
     transform: translateY(-2000px);
@@ -392,6 +395,15 @@ border-radius: 50%;
     transform: translateY(0);
   }
 }
+.badge{
+  display: inline;
+      margin: 10px;
+      text-align: center;
+}
+.peep,.image{
+  margin: 10px;
+}
+
 
 </style>
 
@@ -449,12 +461,22 @@ border-radius: 50%;
         <div class="modal-body">
           <p>{{projects.excerpt}}</p>
           <br>
-          {% assign people = projects.people %}
-          
-          {% for peep in people %}
-          
-            <p class="" >{{peep}}</p>{% assign image = peep %} <img src="/assets/img/{{image}}.jpg" style="width:50px;height: 50px;">
-          {% endfor %}
+          <div class="tags " >
+            <p>People who worked on this project:</p>
+            {% assign people = projects.people  %}
+            <span class="badge d-flex justify-content-center align-self-center" >
+
+        {% for peep in people %}
+            <p class="peep">{{peep}}</p>
+        {% endfor %}
+      </span>
+      <span class="badge d-flex justify-content-center align-self-center" >
+        {% for peep in people %}
+        <img class="image" src="/assets/img/{{peep}}.jpg" style="width: 40px; height: 40px;" >
+        {% endfor %}
+
+      </span>
+          </div>
         </div>
         <div class="modal-footer">
           {% if projects.link != "none" %}

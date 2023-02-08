@@ -357,7 +357,7 @@ left: 26%;
   <div class="past" style="display: none;">
     <div class="row ">
       {% assign my_counter = 0 %}
-      {% for person in site.data.alumni %}
+      {% for person in site.data.alumni | reverse %}
       
       
         <div class="col-xxl-12 alumni" style="margin-bottom: 21px; display: inline;">
