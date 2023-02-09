@@ -7,6 +7,7 @@ surname: Campino
 title: Professor of Genomics and Infectious Diseases
 Important-fact: 
 Leader: true
+link: https://www.lshtm.ac.uk/aboutus/people/campino.susana
 tags:
   - Malaria
   -  Tuberculosis
