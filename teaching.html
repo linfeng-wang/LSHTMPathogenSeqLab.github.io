@@ -151,7 +151,7 @@ color: #eee;
 }
 
 #Author {
-	 height:50vh;
+	 height:20vh;
    margin-top: 200px;
 	 display: grid;
 	 grid-gap: 0.5rem;
@@ -166,7 +166,7 @@ color: #eee;
 	 #Author .logo .image {
 		 width: 300px;
 		 height: 300px;
-		 border-radius: 50%;
+		 border-radius: 50px;
 		 float: right;
      margin-right: 140px;
 		 display: block;
@@ -195,6 +195,10 @@ color: #eee;
   height: inherit;
   width: inherit;
   background-color: #eee;
+ }
+ .btn-outline-success{
+  background-color: rgb(0,191,111);
+  color: white;
  }
 </style>
 
@@ -366,19 +370,15 @@ color: #eee;
       $('#grid1').hover(function(ev){
         
         imgElement.src = "/assets/img/course/IDO21.jpg"
-        $(this).css("background", " rgb(0,191,111)");
         var grid2 = $('#grid2')[0];
         
-        $(grid2).css("background", "rgb(49,48,48)")
         
     })
     $('#grid2').hover(function(ev){
         console.log("hello")
         imgElement.src = "/assets/img/workshops/infectiousDiseasesvietnam2022.jpg"
-        $(this).css("background", " rgb(0,191,111)");
         var grid1 = $('#grid1')[0];
         
-        $(grid1).css("background", "rgb(49,48,48)")
         
     })
     </script>
