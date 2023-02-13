@@ -138,9 +138,13 @@ top: 50vh;
 .pastEvents a:hover{
     color:rgb(0,191,111);
 }
+.heading a:hover{
+color: rgb(49,48,48);
+}
 .newsitems .col-4{
     cursor: pointer;
 }
+
 </style>
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -229,6 +233,7 @@ top: 50vh;
                   {% assign link = post.url %}
                   
                   {% endif %}
+                  
                     <div class="col-xl-4" style="max-height: 450px; overflow-y: hidden;">
                       <div class="title">
                         <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ link }}">{{ post.title }}</a></h3>
@@ -239,8 +244,8 @@ top: 50vh;
                       <div class="author">
                         <hr>
                         <p>
-                          <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;"" alt="..." onerror="this.onerror=null; this.src='https://via.placeholder.com/320'">
-                          {{ author.forname }} {{ author.surname }} <span class="date">{{post.date | date: "%-d %B %Y" }}</span>
+                          <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;" alt="..." onerror="this.onerror=null">
+                          {{author.forname}} {{author.surname}} <span class="date">{{post.date | date: "%-d %B %Y" }}</span>
                         </p>
                       </div>
                     </div>

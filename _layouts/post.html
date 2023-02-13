@@ -54,7 +54,7 @@ img{
                         <img src="/assets/img/{{page.author}}.jpg" style="width: 3rem;">
                     </div>
                     <div class="date">
-                         {{page.date}}
+                         {{page.date | date: "%-d %B %Y" }} 
                     </div>
 
                 </div>
