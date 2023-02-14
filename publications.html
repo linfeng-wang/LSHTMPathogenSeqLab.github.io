@@ -46,9 +46,19 @@ hr{
     z-index: 9; 
   
 }
+#unselectable{
+  -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   cursor: pointer;
+}
 
 </style>
-<links>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> </links>
@@ -56,6 +66,8 @@ hr{
 <scripts>
   <script src="https://kit.fontawesome.com/f8a9821c7d.js" crossorigin="anonymous"></script>
 </scripts>
+</head>
+
  
 <body id="publications">
     <div class="main">
@@ -83,7 +95,7 @@ hr{
                 {% endfor %}
                 {% for item in my_array %}
                 <li>
-                  <a href="{{site.url}}/publications/{{ item }}" > {{item}}</a>
+                  <a class="{{item}}" id="unselectable" > {{item}}</a>
                 </li>
                 {% endfor %}
             
@@ -122,25 +134,23 @@ hr{
 </div>
 
 <script>
-  function showYear(year) {
-    
-   
   
-  var div = document.querySelectorAll(".divvy");
-  div.forEach(box => {
+    for (let i =2001; i<2024;i++){
+      
+    $("."+i).click(function(event) {
+      
+  $(".divvy").each(function(){
+  $(this).slideUp(500)
   
-  box.style.display="none";
+        
 });
-    document.getElementById(year).style.display = 'block';
-  }
+      var id = $('#'+i) 
+      id.slideDown(2000)
+      
+})
+    }
   
-  var url = new URL(window.location.href);
-var parts = url.pathname.split('/');
-var year = parts[parts.length - 1];
+
   
-  if (year) {
-    showYear(year);
-    
-  }
   </script>
 </body>
