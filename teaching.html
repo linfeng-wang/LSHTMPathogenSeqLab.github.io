@@ -200,6 +200,52 @@ color: #eee;
   background-color: rgb(0,191,111);
   color: white;
  }
+ .text-align{
+  box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2);
+  background-color:rgb(0,191,111);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  
+  height: 100px;
+ }
+ @media (max-width: 800px) {
+  .text-align{
+  
+  width: 300px; 
+ 
+ }
+ .testimonials__list-item {
+
+width:300px;
+
+}
+.testimonials__list-item p{
+
+
+font-size: 14px; 
+}
+}
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .text-align{
+  
+  width: 500px; 
+ 
+ }
+}
+@media (min-width: 1000px) {
+  .text-align{
+  
+  width: 700px; 
+ 
+ }
+ 
+}.owl-carousel{
+    display: flex !important;  
+    flex-direction: row;   
+    justify-content: center;  
+}
+
 </style>
 
 <body id="Capacity"> 
@@ -208,7 +254,7 @@ color: #eee;
     {% assign my_array = "" | split: ',' %}
     <section class="heading" style="background-color:  rgb(49,48,48);height: 25vh; position: relative;">
       <div class="container" >
-        <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 100px;">
+        <div class="text-align">
           <h1 style="text-transform: uppercase;">Capacity strengthening</h1>
         </div>
       </div>
@@ -279,7 +325,7 @@ color: #eee;
 
      <section class="opinions" style="margin-top: 100px;">
       <div class="container">
-        <h4 class="text-align" style="text-align: center;">
+        <h4 class="text-aligns" style="text-align: center;">
          Opinions from people who have taken the courses at LSHTM
         </h4>
         
@@ -390,7 +436,9 @@ color: #eee;
     autoWidth:true,
     items:20,
     nav:true,
-    
+    center: true,
+    items:1,
+stagePadding: 250,
     responsive:{
             0:{
                 items:1
