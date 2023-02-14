@@ -31,29 +31,22 @@ font-size: 20px;
     font-weight: 700;
   }
 
-.team-member .team-member-wrap{
+.team-member .team-member-wrap,.team-leader, .team-leader-wrap{
   position: relative;
   overflow: hidden;
   cursor: pointer;
   max-width: 402px;
-  
+  margin: auto;
   height: inherit;
 
 }
-.team-leader, .team-leader-wrap{
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  max-width: 650px;
-  
-  height: inherit;
 
-}
 .row{
   width: 100%;
 }
 .team-member-panel,.team-leader-panel{
   background-color: white;
+  width: inherit+2px;
   
 }
 .team-member-panel:hover, .team-leader-panel:hover{
@@ -78,9 +71,9 @@ h6 {
   letter-spacing: 1px;
 }
 #container1, #container2, #container3, #container4, #container5, #container6, #container7, #container8, #container9, #container10, #container11, #container12, #container13,#overlord1,#overlord2,#overlord3{
-  width: 100%;
+  width: 101%;
   position: absolute;
-  max-width: 100%;
+  max-width: 101%;
   margin-bottom: 200px;
  
  left:50%;
@@ -93,10 +86,10 @@ h6 {
 
 
 h10{
-    font-size: .6vw;
+    font-size: 11px;
 }
 .fact{
-  font-size: .7vw;
+  font-size: 11px;
 }
 
 .page-template-page-team .team-member
@@ -140,9 +133,32 @@ position: absolute;
 left: 26%;
 
 }
-
+.btn{
+   z-index:10;
+   width: 200px;
+   font-size: 12px;
+}
+@media (max-width: 1400px) {
+  .col-4{
+  width:50%
+}    
+}
+@media (max-width: 990px) {
+  .col-4{
+    width: 200%;
+}    
+}
+@media (max-width: 700px) {
+  .col-4{
+    width: 150%;
+    margin-left: 10px;
+}    
+}
 </style>
-
+<script>
+  console.log($(window).height());
+console.log($(window).width())
+</script>
 <links>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,18 +235,21 @@ left: 26%;
             {% if person.Leader == true %}
             {% assign overlords = overlords | plus: 1 %}
             
-              <div class="col-xxl-4 team-leader" style="margin-bottom: 21px; display: inline;">
-              
-                <div class="team-leader-wrap" style="position: relative;">
-                  <div  class="team-leader-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
-                  ;
-                  position: relative;
-                  padding-bottom: 80.93862%;
-                  margin-top: 20px;background-position: bottom;
-                  background-size: cover;
-                  ">
+            <div class="col-4 team-member" style="margin-bottom: 21px; display: inline;">
         
-                  </div>
+              <div class="team-member-wrap" style="position: relative;">
+               
+                <div  class="team-member-photo" style="background-image: url('/assets/img/{{person.pid}}.jpg');   width: 100%;
+                background-color: white;
+                position: relative;
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                padding-bottom: 80.93862%;
+                margin-top: 20px;background-position: bottom;
+                background-size: cover;
+                ">
+      
+                </div>
                   <div  class="team-leader-panel" id="overlord{{overlords}}"
                    onclick="expand2({{overlords}})" style=" clear: both; ">
                     <h6 class="team-leader-name "
@@ -239,18 +258,19 @@ left: 26%;
                       {{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
                     <p class="italic-serif team-leader-title" 
                     style=" align-content: center; justify-content: center;
-                     text-align: center; ">{{person.title | capitalize}}</p>
+                     text-align: center; margin-bottom: 10px; ">{{person.title | capitalize}}</p>
                     
-                    <div class="team-leader-bio-wrap middle">
-                      
+                    <div class="team-member-bio-wrap middle">
+              
                       <h10 style="font-family: 'Quicksand',sans-serif;text-align: center; ;">{{person.excerpt}}</h10>
                       <h6 style="bottom:0; font-family: 'Anton', sans-serif; text-align: center;">IMPORTANT FACT</h6>
                       <p class="fact" style="font-family: 'Quicksand',sans-serif;text-align: center;" >{{person.Important-fact}}</p>
                       
                     </div>
-                    <div class="button-container" style="height: 50px; z-index:10;">
+                    <div class="button-container" >
                       <a href="{{person.link}}"  class="btn " >Learn more about me</a>
                     </div>    
+                      
                      
                   
                   </div>   
@@ -297,7 +317,7 @@ left: 26%;
     {% if person.Leader != true %}
       {% assign my_counter = my_counter | plus: 1 %}
       
-      <div class="col-xxl-4 team-member" style="margin-bottom: 21px; display: inline;">
+      <div class="col-4 team-member" style="margin-bottom: 21px; display: inline;">
         
         <div class="team-member-wrap" style="position: relative;">
          
@@ -325,7 +345,7 @@ left: 26%;
               <p class="fact" style="font-family: 'Quicksand',sans-serif;text-align: center;" >{{person.Important-fact}}</p>
               
             </div>
-            <div class="button-container" style="height: 50px; z-index:10;">
+            <div class="button-container" >
               <a href="{{site.url}}/people/{{person.pid}}"  class="btn " >Learn more about me</a>
             </div>    
               
