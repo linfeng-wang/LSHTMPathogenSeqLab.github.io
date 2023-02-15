@@ -233,7 +233,7 @@ console.log($(document).width())
     {% assign image = post.pid  %}
                 <div class="col-8" id="img{{my_counter}}" style="margin-top: 20px; margin-right: 10px; ">
                     <img src = "/assets/img/newspics/{{image}}.png" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: contain;max-width:100%;
-                    max-height:50vh;">
+                    max-height:50vh; border-radius: 25px;">
                 </div>
                 {% if post.link != "none" %}
                 {% assign link = post.link %}
