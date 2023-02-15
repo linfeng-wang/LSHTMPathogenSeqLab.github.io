@@ -2,7 +2,7 @@
 layout: default
 name: Malaria-Profiler
 theme: malaria
-pid: Mpapp
+pid: mpapp
 link: http://bioinformatics.lshtm.ac.uk/malaria-profiler/
 people:
   - jthorpe
