@@ -59,36 +59,7 @@ title: About
 
           
           }
-          .slider .priv_arrow{
-            color: black;
-            width: 50px;
-            height: 50px;
-            background-color: rgb(0,191,111);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 50px;
-            display:inline-block;
-            cursor: pointer;
-            position: absolute;
-            top: 45%;
-            left: 0;
-            z-index: 1;
-          }
-          .slider .next_arrow{
-            color: black;
-            width: 50px;
-            height: 50px;
-            background-color: rgb(0,191,111);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 50px;
-            display:inline-block;
-            cursor: pointer;
-            position: absolute;
-            top:45%;
-            right: 0;
-
-          }
+         
           .fa-solid{
             cursor: pointer;
             color: rgba(49, 48, 48,)
@@ -122,6 +93,7 @@ title: About
   background: rgb(0,191,111);
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
           #dont{
             height: 100px;
@@ -183,78 +155,28 @@ rgba(0,0,0,0));
   .fa-solid {
     display: block;
     margin: 0 auto;
-    font-size: 15px;
+    font-size: 22px;
   }
   .mt-3{
     font-size: 15px;
   }
 }
+.col-md-4{
+  z-index: 100000000;
+}
 .col-4 a{
   color: rgba(43, 44, 53);
+  font-size: 22px;
 }
 .col-4 a:hover{
   color: rgb(0,191,111);
 }
-.newsSlick{
-  width: 130%;
-}
-.newsSlick .slick-list .slick-track{
-  height: 470px;
-  border-radius: 25px;
-}
 
-.newsSlick .slick-slide {
-  border-radius: 25px;
+.newsImages{
+  height: inherit;
 }
 
 
-@media (max-width:1900px){
-  .newsSlick .slick-slide,.newsImage {
-  
-  width: 650px 
-}
-}
-@media (max-width:2000px){
-  .newsSlick .slick-slide,.newsImage {
-  
-  width: 650px 
-}
-}
-@media (max-width:1800px){
-  .newsSlick .slick-slide,.newsImage {
-  
-  width: 630px 
-}
-}
-@media (max-width:1700px){
-
-  .newsSlick .slick-slide,.newsImage {
-  
-  width: 580px
-}
-}
-@media (max-width:1700px){
- .newsSlick .slick-slide,.newsImage {
-  
-  width: 580px
-}
-
-}
-@media (max-width:1600px){
- .newsSlick .slick-slide,.newsImage {
-  
-  width: 500px
-}
-
-}
-
-@media (max-width:1500px){
- .newsSlick .slick-slide,.newsImage {
-  
-  width: 420px
-}
-
-}
 @media (max-width:1200px){
  .news{
   display: none;
@@ -262,16 +184,29 @@ rgba(0,0,0,0));
  .mobile{
   display: block !important;
  }
- .newsSlick .slick-active {
-width: 600px;
-height: auto;
-margin: 0 auto;
-  
-}
-.newsImage{
+ .newsImage{
+  height: inherit;
+  max-height: 533px;
+  width: auto;
+  border-radius: 25px;
+  max-width: inherit;
+ }
+ .newsItems{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ }
+.newsImages{
   margin: 0 auto;
+  width: 100%;
+ height: inherit;
+  border-radius: 25px;
+  z-index: -29999;
+  max-height: 533px;
 }
-
+#col-md-12{
+  max-height: 533px;
+}
 }
 @media (max-width:700px){
  .news{
@@ -280,39 +215,72 @@ margin: 0 auto;
  .mobile{
   display: block !important;
  }
- .newsSlick .slick-active {
-width: 400px;
-height: auto;
-margin: 0 auto;
 
-  
-}
 #col-md-12{
-  margin-bottom: -170px;
+  max-height: 340px;
 }
-}
-
-.newsSlick {
-  display: flex;
+.newsImage{
+  height: inherit;
+  max-height: 340px;
+  width: auto;
+  max-width: inherit;
+  border-radius: 25px;
+  
+ }
+ .newsItems{
   justify-content: center;
   align-items: center;
-}
-.newsImage {
+  text-align: center;
+ }
+.newsImages{
   margin: 0 auto;
   width: 100%;
+ height: inherit;
+  border-radius: 25px;
+  z-index: -29999;
+  max-height: 340px;justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+}
+#rows{
+  z-index: 888888;
+}
+.newsItems {
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+
+}
+
+.newsItems.display {
+    opacity: 1;
+    object-fit: contain;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
 }
 .mobile{
   display: none;
 }
-.newsSlick .slick-slide {
-  display: none;
+
+.regular .items img{
+  height: 300px;
+  width: auto;
 }
 
-.newsSlick .slick-active {
-  display: block !important;
-  
+
+@media (min-width:1200px){
+ 
+  .newsImage{
+  width: 120%;
+ height: auto;
+ max-height: 533px;
+  border-radius: 25px;
+ 
 }
 
+}
 </style>
         
 <body id="Home">
@@ -346,68 +314,56 @@ margin: 0 auto;
               dots: false,
               autoplay: true,
               autoplayspeed: 100,
-              speed:2500,
+              speed:1500,
               easing:'easOutQuint',
               infinite: true,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              prevArrow:'<span class="priv_arrow"><i class="fa-solid fa-arrow-left"></i></span>',
-              nextArrow:'<span class="next_arrow"><i class="fa-solid fa-arrow-right"></i></span>',
+              slidesToShow: 2,
+              slidesToScroll: 2,
               variableWidth:true
             });
            
           });
       </script>   
-      <script type="text/javascript">
-        $(document).on('ready', function() {
-         
-          $(".newsSlick").slick({
-            variableWidth:true,
-            dots: false,
-            arrows:false,
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite:false,
-            variableWidth:true,
-            draggable: false,
-            fade:true
-          });
-         
-        });
-        
-    </script>   
+    
 
-<script>
-  var colors = ["red", "orange", "yellow", "green", "blue"];
-var currentIndex = 0;
-$('.newsSlick').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  console.log(event.currentTarget);
-});
-</script>
        <script src="/assets/js/jquery/src/jquery.js" ></script>
         <script src="/assets/js/slick/slick.js" ></script>
         <script type="text/javascript">
+          
+          $( document ).ready(function() {
+            var element = document.getElementById("do-0");
+            var element1 = document.getElementById("do-4");
+            var element2 = document.getElementById("1");
+            var element3 = document.getElementById("5");
+
+            element.classList.add('active');
+            element1.classList.add('active');
+
+            element2.classList.add('display');
+            element3.classList.add('display');
+          
+          })
           function newsItem(a){
-            $('.newsSlick').slick('slickGoTo', a);
-   
-           var elements = document.querySelectorAll('.active');
+            
+            var elements = document.querySelectorAll('.active');
+            var elements2 = document.querySelectorAll('.display');
            
             for (var i = 0; i < elements.length; i++) {
              elements[i].classList.remove('active');
+
+            }
+            for (var i = 0; i < elements2.length; i++) {
+             elements2[i].classList.remove('display');
+
             }
             var id = document.getElementById("do-"+a);
+            var id2 = document.getElementById(a+1);
+            console.log(a)
   id.classList.add('active');
+  id2.classList.add('display')
+ 
            
           }
-          $( document ).ready(function() {
-            var element = document.getElementById("do-0");
-            element.classList.add('active');
-
-            
-          
-          })
-          
           </script>
           
          </scripts>
@@ -515,13 +471,13 @@ position: relative;">
             </div>
            <div class="col-md-4" style="margin-top:10px">
             
-            <div class="newsSlick slider" >
+            <div class="newsImages" >
               {% for post in site.posts  limit:3 %}
                 {% assign my_counter = my_counter | plus: 1 %}
     
                 {% assign image = post.pid  %}
-                <div class="newsItems" id="{{my_counter}}" style="height: 470px;"  >
-                  <img class="newsImage" style="border-radius: 25px; height: inherit;" src="/assets/img/newspics/{{image}}.png">
+                <div class="newsItems" id="{{my_counter}}">
+                  <img class="newsImage" src="/assets/img/newspics/{{image}}.png">
                   
                 
                 </div>
@@ -586,15 +542,15 @@ position: relative;">
           
          
           </div>
-         <div class="col-md-12" id="col-md-12" style="margin-top:10px">
+         <div class="col-md-12" id="col-md-12" >
           
-          <div class="newsSlick slider" >
+          <div class="newsImages" >
             {% for post in site.posts  limit:3 %}
               {% assign my_counter = my_counter | plus: 1 %}
   
               {% assign image = post.pid  %}
-              <div class="newsItems" id="{{my_counter}}"  >
-                <img class="newsImage" style="border-radius: 25px; height: inherit;" src="/assets/img/newspics/{{image}}.png">
+              <div class="newsItems" id="{{my_counter}}">
+                <img class="newsImage" src="/assets/img/newspics/{{image}}.png">
                 
               
               </div>
@@ -603,12 +559,12 @@ position: relative;">
          </div>
          
       <div class="col-md-12 " style="background-color: rgb(240, 240, 240); border-radius: 25px;">
-        <div class="row"  >
+        <div class="row" >
           <div class="col-2 " >  
           </div>
           <div class="col" id="dont">
           </div>
-          {% assign newCounter = 0 %}
+          {% assign newCounter = 4 %}
           {% for post in site.posts  limit:3 %}
               
   
@@ -619,7 +575,7 @@ position: relative;">
               {% assign link = post.url %}
             
               {% endif %}
-        <div class="row" >
+        <div class="row" id="rows" >
           
               <div class="col-2 ">
               </div>
