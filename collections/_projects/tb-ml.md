@@ -2,6 +2,7 @@
 layout: default
 name: TB-ML
 theme: tuberculosis
+pid: projectname
 link: none
 people:
     - jphelan
