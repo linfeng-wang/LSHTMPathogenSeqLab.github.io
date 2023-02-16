@@ -5,6 +5,9 @@ title: My Blog
 
 
 <style>
+    body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
     @media (min-width: 1200px) {
     .container{
         max-width: 1500px
@@ -18,6 +21,38 @@ title: My Blog
     .grid-1, .grid-2,.grid-3{
         width: 100%;
     }
+    .events .container{
+        padding: 0 60px;
+  box-sizing: border-box;
+height: 250px;
+display: table;
+clear: both;
+border-spacing: 0;
+ width: 89%;
+ font-size: 12px;
+ position: absolute;
+    
+}
+.bottomevents2 p{
+    text-align: center;
+   margin-left: 5px;
+   
+}
+.bottomevents{
+    font-family: 'Heebo', sans-serif;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    height: 50px;
+}
+.pastEvents{
+    margin-top:250px;
+}
+.content{
+    font-size: 14px;
+}
 }
 .heading .container {
   padding: 0 60px;
@@ -44,7 +79,8 @@ height: 60vh;
     overflow: hidden;
     white-space: nowrap;
 }
-.events .container{
+@media (min-width: 800px) {
+    .events .container{
     padding: 0 60px;
   box-sizing: border-box;
 height: 250px;
@@ -52,7 +88,22 @@ display: table;
 clear: both;
 border-spacing: 0;
 position: relative;
+ width: 100%;
 }
+.bottomevents{
+    font-family: 'Heebo', sans-serif;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 50px;
+}
+.grid-1, .grid-2,.grid-3{
+        width: 33.3%;
+    }
+}
+
 .col-8 {
   width: 60.66667%;
   object-fit: contain;
@@ -65,12 +116,7 @@ position: relative;
 .col-4{
     object-fit: contain;
 }
-@media (min-width: 800px) {
-    
-    .grid-1, .grid-2,.grid-3{
-        width: 33.3%;
-    }
-}
+
 .grid-1 {
   
   min-height: 1px;
@@ -87,6 +133,7 @@ top: 10vh;
     text-align: center;display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 5px 5px 5px 5px black;
 
 }
 .grid-2{
@@ -103,7 +150,7 @@ top: 30vh;
     text-align: center;border-style: solid;display: flex;
   justify-content: center;
   align-items: center;
-  
+  box-shadow: 5px 5px 5px 5px black;
 }
 .grid-3{
     
@@ -119,7 +166,7 @@ top: 50vh;
     display: flex;
   justify-content: center;
   align-items: center;
-  
+  box-shadow: 5px 5px 5px 5px black;
     border-style: solid;
 }
 
@@ -145,6 +192,15 @@ color: rgb(49,48,48);
     cursor: pointer;
 }
 
+.bottomevents2{
+    background-color: white;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    width: 90%;
+    height: 200px;
+    position: absolute;
+    top: 0;
+}
+
 </style>
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -154,7 +210,9 @@ color: rgb(49,48,48);
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 </links>
-
+<script>
+console.log($(document).width())
+</script>
 <body id="News">
 <!-- This loops through the paginated posts -->
 <div class="main">
@@ -176,7 +234,7 @@ color: rgb(49,48,48);
     {% assign image = post.pid  %}
                 <div class="col-8" id="img{{my_counter}}" style="margin-top: 20px; margin-right: 10px; ">
                     <img src = "/assets/img/newspics/{{image}}.png" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: contain;max-width:100%;
-                    max-height:50vh;">
+                    max-height:50vh; border-radius: 25px;">
                 </div>
                 {% if post.link != "none" %}
                 {% assign link = post.link %}
@@ -192,24 +250,23 @@ color: rgb(49,48,48);
                 {% endfor %}
             </div>
             
-            <div class="bottomevents" style=" font-family: 'Heebo', sans-serif;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); background-color: white; position: absolute; bottom: 0; width: 90%; height: 50px;">
+            <div class="bottomevents">
                 <h3 style="margin-left: 20px; margin-top: 5px;">Upcoming Events</h3>
             </div>
         </div>
     </section>
     <section class="events">
         <div class="container">
-          <div class="bottomevents" style="box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24); 
-          background-color: white;  width: 90%; height: 200px; position: absolute; top: 0;">
+          <div class="bottomevents2" >
             <div class="row" style="height: inherit;">
               <div class="col-4" style="display: flex; align-items: center; justify-content: center; height: inherit;">
-                <p style="margin:0" >AI and machine learning seminar</p>
+                <p  >AI and machine learning seminar</p>
               </div>
               <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
-                <p style="margin: 0;">Visit from team in Thailand</p>
+                <p>Visit from team in Thailand</p>
               </div>
               <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
-                <p style="margin: 0;">Dan travels to Bangladesh</p>
+                <p>Dan travels to Bangladesh</p>
             </div>
           </div>
         </div>

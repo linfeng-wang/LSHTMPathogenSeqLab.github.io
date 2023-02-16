@@ -279,7 +279,7 @@ border-radius: 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center; 
-  background-size: cover;
+  background-size: contain;
   transition: 0.5s ease-out;
 }
 
@@ -405,6 +405,11 @@ border-radius: 50%;
 }
 .peep,.image{
   margin: 10px;
+}
+@media (max-width: 990px) {
+  .owl-item{
+    width: 50%;
+}    
 }
 
 

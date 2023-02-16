@@ -20,4 +20,4 @@ tags:
 
 ---
  
-  Leader in ‘omics studies across infectious diseases, including malaria, tuberculosis, and AMR infections, to understand host susceptibility and pathogen transmission and drug resistance, as well as any related vector factors. This work involves collaborative projects in >20 countries, and strengthening the application of ‘omics for clinical and surveillance activities, including through the development of informatics tools and providing training (e.g., genomic epidemiology workshops and Infectious Disease ‘omics short courses).
+  Leader in ‘omics studies across infectious diseases, including malaria, tuberculosis, and AMR infections, to understand host susceptibility and pathogen transmission and drug resistance, as well and more. This work involves collaborative projects in >20 countries, and strengthening the application of ‘omics for clinical and surveillance activities, including through the development of informatics tools and providing training.
