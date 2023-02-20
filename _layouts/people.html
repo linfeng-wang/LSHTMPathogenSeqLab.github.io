@@ -61,7 +61,7 @@ min-height: 100vh;
 .part1 .container:nth-child(1){
   width:100%;
   margin-top: 50px;
-  padding:200px ;
+  padding:100px ;
   position: relative;
 }
 .part1 .image{
@@ -81,7 +81,6 @@ min-height: 100vh;
 .part1 .container:nth-child(2){
   width:100%;
   margin-top: -100px;
-  padding-left: 200px;
 }
 .arrow{
   font-size: 70px;
@@ -131,7 +130,7 @@ min-height: 100vh;
 #projectImage1,#projectImage2,#projectImage3,#projectImage4,#projectImage5 {
   height: auto;
   opacity: 0;
-
+  margin: 20px;
 }.startAnimation {
   animation-name: stretch;
   animation-duration: 1s;
@@ -167,7 +166,23 @@ min-height: 100vh;
 	cursor: pointer;
   scale:(2.0);
 }
+@media (min-width: 978px) {
+  .part1 .container:nth-child(1){
+  padding:200px
+ } 
+}
 
+@media (max-width: 978px) {
+  .imageArea{
+  
+ display: none
+ 
+ }
+ .part1 .container:nth-child(1){
+  padding:0px
+ }
+ 
+}
 .projectList img {
 	filter: grayscale();
 	width: 150px;
@@ -186,6 +201,7 @@ height: auto;
 }
 .project-image {
   transition: transform 0.5s ease;
+  
 }
 
 .title {
@@ -228,6 +244,9 @@ a{
 
 .title.show {
   opacity: 1;
+}
+#areaForImages{
+  padding:100px
 }
 </style>
 <body id="people">
@@ -283,7 +302,7 @@ a{
             </div>
             <div class="col-lg-4" id="backImage" >
               
-            <div class="container">
+            <div class="container" id="areaForImages">
               <div class="row">
                 {% assign my_counter = 0 %}
               {% for project in site.projects %}
