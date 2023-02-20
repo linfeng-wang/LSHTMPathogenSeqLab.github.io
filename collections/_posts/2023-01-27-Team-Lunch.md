@@ -3,7 +3,7 @@ layout: post
 pid: wellbeing
 author: jthorpe
 link: none
-hidden: true
+hidden: false
 brief: Whether we work, go to school, or play sports, we have all been a part of a team at some point. Some of these teams may have been fun, effective, and successful while others were stressful, ineffective, or taxing. While many teams work well together, true success comes from being on a cohesive team. Increased team cohesion in the workplace has resulted in increased success, work satisfaction, team member self-esteem, and decreased anxiety.
 ---
 

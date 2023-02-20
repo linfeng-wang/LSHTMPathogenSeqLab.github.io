@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: logo
-hidden: true
+hidden: false
 author: tgclark
 link: https://www.nature.com/articles/s41598-023-29368-4
 brief:  P. knowlesi falls into three main sub-populations distinguished by a combination of geographical location and macaque host (Macaca fascicularis and M. nemestrina). By gathering one of the largest collections of P. knowlesi whole-genome sequencing data, the analysis reveals differences in Borneo clusters linked to mosquito-related stages of the parasite cycle, in contrast to differences in host-related stages for the Peninsular group. Our work identifies new genetic exchange events, including introgressions between Malaysian Peninsular and M. nemestrina-associated clusters on various chromosomes

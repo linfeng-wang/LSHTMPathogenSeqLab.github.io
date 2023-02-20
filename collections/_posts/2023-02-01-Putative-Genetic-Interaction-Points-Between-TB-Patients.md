@@ -1,6 +1,6 @@
 ---
 layout: post
-pid: logo
+pid: tbpatients
 hidden: true
 author: tgclark
 link: https://pubmed.ncbi.nlm.nih.gov/36725857/

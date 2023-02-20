@@ -284,9 +284,7 @@ rgba(0,0,0,0));
 </style>
         
 <body id="Home">
-  <script>window.addEventListener("load", function() {
-    console.log("Window width: " + window.innerWidth);
-  });</script>
+ 
     <section class="backvid" >
       <div  class="overlay"></div>
       <div class="video_contain" >
@@ -313,12 +311,15 @@ rgba(0,0,0,0));
             $(".regular").slick({
               dots: false,
               autoplay: true,
-              autoplayspeed: 100,
-              speed:1500,
+              autoplay: true,
+              autoplaySpeed: 1,
+              speed: 3000,
+              pauseOnFocus: false,
+              pauseOnHover: false,
               easing:'easOutQuint',
               infinite: true,
               slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               variableWidth:true
             });
            
