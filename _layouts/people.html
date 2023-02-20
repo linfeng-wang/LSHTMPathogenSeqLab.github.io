@@ -126,7 +126,10 @@ min-height: 100vh;
   flex-shrink: 1;
   transition: all 400ms ease;
 }
+.arrows:hover{
+  cursor: pointer;
 
+}
 #projectImage1,#projectImage2,#projectImage3,#projectImage4,#projectImage5 {
   height: auto;
   opacity: 0;
@@ -196,8 +199,8 @@ height: auto;
 
 .projectList:hover img {
 	filter: none;
-  transform: scale(2);
-  transition: transform 0.3s ease;
+  transform: scale(3);
+  transition: transform 0.6s ease;
 }
 .project-image {
   transition: transform 0.5s ease;
@@ -208,7 +211,7 @@ height: auto;
   transition: transform 0.5s ease;
 }
 .p-3:hover .title {
-  transform: translateY(40px); 
+  transform: translateY(80px); 
 }
 
 .title {
@@ -285,7 +288,7 @@ a{
                   <p>Check out my projects</p>
                 </div>
                 <div class="col-4 arrow">
-                  <span class="arrows">&#10230;</span> 
+                  <span class="arrows"><i class="fa-solid fa-arrow-right-long"></i></span> 
                 </div>
               </div>
               <div class="container-fluid second"> 
@@ -294,7 +297,7 @@ a{
                   <p>Go back</p>
                 </div>
                 <div class="col backArrow">
-                  <span class="arrows">&larr;</span> 
+                  <span class="arrows"><i class="fa-solid fa-arrow-left-long"></i></span> 
                 </div>
               </div></div></div>
               </div>
