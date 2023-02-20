@@ -13,13 +13,12 @@ title: People
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
+  <script src="/assets/js/jquery/src/jquery.js" ></script><script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 </links>
-<script>window.addEventListener("load", function() {
-  console.log("Window width: " + window.innerWidth);
-});</script>
+
 <style>
   body{
-
+    background-color: rgb(49,48,48);
     overflow-x: hidden;
 color: white;
 min-height: 100vh;
@@ -33,46 +32,6 @@ min-height: 100vh;
     left:0;
     right:0;
   }
- @media (max-width:800px){
-  .part2 .profile {
-    width: 100vw;
-    margin-left: 0;
-  }
- }
-  .part2 .col{
-    width: 100%;
-  }
-  .aboutArea{
-    color: white;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/img/background/school-modified.jpg');
-  background-size: cover;
-  box-shadow: 8px 8px 8px 8px black;
-  min-width: 550px;
-  }
-  .part2 h1,h3,h4{
-    
-    padding:5px;
-    letter-spacing: 1px;
-    text-align: center;
-    
-  }
-  .part2 .col-4 img{
-    width:300px; height: auto; border-radius: 50%; margin: auto;
-    min-width: 250px; display: block
-}
-
-.part2 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.personarea{
- 
-  padding: 150px;
-  background-repeat: no-repeat;
- 
-}
-
 
 .tags {
   display: inline-flex;
@@ -81,176 +40,13 @@ min-height: 100vh;
 .gy-0{
   height: 100vh;
 }
-.part2 ul {
-  display:grid;
-  margin-top: 50px;
-  grid-template-rows: repeat(1fr
-    1fr
-    2fr
-    1fr
-  );
-  overflow:hidden;
-  
-}
- 
-.part2 li {
-  height:100%;
-  width: fit-content;
-  max-height: 400px;
-  grid-column:1/span 1;
-  
-  --offsetX:50%;
-}
 
-.part2 a {
-  display:block;
-  width:100%;
-  height:100%;
-}
-
-.part2 .imageforblur {
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  
-}
-
-.part2 li:first-of-type {
-  grid-row:1/span 4;
-  clip-path:polygon(100% calc(20% * -1), 0 calc(20%), 0 100%, 100% calc(20%*3));
-}
-
-.part2 li:nth-of-type(2) {
-  grid-row:3/span 5;
-  clip-path:polygon(100% 0, 0 calc(16.6%*2), 0 100%, 100% calc(16.6%*4));
-}
-
-.part2 li:nth-of-type(3) {
-  grid-row:6/span 5;
-  clip-path:polygon(100% 0, 0 calc(16.6%*2), 0 100%, 100% calc(16.6%*4));
-}
-
-.part2 li:last-of-type {
-  grid-row:span 4;
-  clip-path:polygon(100% 0, 0 calc(20%*2), 0 calc(20%*6), 100% calc(20%*4))
-}
-
-
-@keyframes o {
-  from {transform:translate(0);}
-}
-
-.part2 li:nth-of-type(odd) a {
-  transform:translate(var(--offsetX), calc(var(--offsetX) * 0.166 * -2));
-  animation:o 2s;
-} 
-
-.part2 li:nth-of-type(even) a {
-  transform:translate(calc(var(--offsetX)*-1), calc(var(--offsetX) * 0.166 * 2));
-  animation:o 2s;
-}
-
-
-
-.part2 li:first-of-type a {
-  transform:translate(var(--offsetX), calc(var(--offsetX) * 0.200 * -2));
-} 
-
-.part2 li:last-of-type a {
-  transform:translate(calc(var(--offsetX) * -1), calc(var(--offsetX) * 0.200 * 2));
-}
-.part2 .imageforblur {
-  animation:blr 2s;
-  filter:blur(3px);
-} @keyframes blr {
-  from {filter:blur(0)}
-}
-
-.part2 .projectname {
-  animation:blr 2s;
-  filter:blur(3px);
-} @keyframes blr {
-  from {filter:blur(0)}
-}
-
-.part2 li {
-  transition:opacity 0.3s;
-}
-.part2 li a {
-  transition:all 0.15s;
-  text-decoration: none;
-}
-.part2 li:hover a {
-  transition:transform 0.3s;
-  transform:translate(0);
-  width: 100%;
-  height: 100%;
-}
-
-.part2 ul:hover li {
-  opacity:0.5;
-}
-.part2 ul:hover li:hover {
-  opacity:1;
-  transition:clip-path 0.4s 0.3s;
-  clip-path:polygon(100% 0, 0 0, 0 100%, 100% 100%);
-  z-index:10;
-}
-
-.part2  .projectname{
-  filter:blur(3px);
-  transition:filter 0.7s;
-}
-.part2 .imageforblur {
-  filter:blur(3px);
-  transition:filter 0.7s;
-}
-.part2 li:hover .imageforblur {
-  filter: blur(0);
-}
-.part2 li:hover .projectname{
-  filter:blur(0);
-}
-.projectname{
-  color: black;
-  font-family: 'Shadows Into Light',cursive;
-}
-.projectArea{
-  background-color: white;
-  color: black;
-  box-shadow: 8px 8px 8px 8px black;
-  width: 100%;
-  min-width: 550px;
-  
-}
-.part2 .container-fluid{
-  width:90%
-}
-.text{
-  text-shadow: 0 1px 0 black;
-}
-.part2 .name{
-  font-family: 'Lobster', cursive;
-  text-shadow: 0 1px 0 black;
-}
-.part2 .header{
-  text-shadow: 0 1px 0 black;
-  font-family: 'Shadows Into Light', cursive;
-}
-.part1{
-  height: 120vh;
-
-  }
   .person{
     height: inherit;
   }
-  .part1 .container-fluid{
+  .part1 .container-fluid .first{
     height: inherit;
     width: 100%;
-  }
-  .row{
-    height: inherit;
   }
 .part1 .container-fluid .col-8{
   background-color: rgb(49,48,48);
@@ -267,8 +63,8 @@ min-height: 100vh;
   padding:200px ;
   position: relative;
 }
-.part1 img{
-    width:300px; height: auto; margin: auto;
+.part1 .image{
+    width:250px; height: auto; margin: auto;
     min-width: 250px; display: block; 
     border-radius: 500px 500px 0 0;
     box-shadow: 0px 0px 0px 25px  rgb(49,48,48);
@@ -280,7 +76,7 @@ min-height: 100vh;
 .part1 h1{
   font-size: 90px;
 }
-.part1 .image{
+.part1 .imageArea{
  right: -80px; position: absolute; top:100px 
 }
 .part1 .container:nth-child(2){
@@ -290,22 +86,65 @@ min-height: 100vh;
 }
 .arrow{
   font-size: 70px;
-  padding-bottom: 200px;
+  z-index: 9999;
+} 
+.col-4 .arrow:hover{
+  cursor: pointer;
+  transform: scale(1.5);
 }
 .text{
   margin-top: 40px;
 }
+ 
+.second .row{
+  display: none;
+  
+}
+.backArrow{
+  font-size: 70px;}
+.projectList{
+  display: none;
+  background-color: rgb(49,48,48);
+}
+.stat{
+  display: none;
+  margin: 0;
+}
+.projectList img{
+  height: 200px;
+  width: auto;
+}
+#move{
+  border-right: solid rgb(146, 145, 145);
+  border-top: solid rgb(146, 145, 145)
+}
+
+.row [class*='col-'] {
+    transition: all 0.5s ease-in-out;
+}
+.col-8 {
+  flex-grow: 1;
+  transition: all 400ms ease;
+}
+
+.col-4 {
+  flex-shrink: 1;
+  transition: all 400ms ease;
+}
+
+
+ 
 </style>
 <body id="people">
   <div class="main">
     <div class="part1">
       <section class="person">
-        <div class="container-fluid">
+        <div class="container-fluid first">
           <div class="row" >
-            <div class="col-8">
+            <div class="col-8 " id="move">
               
-              <div class="container" >
-                
+              <div class="container tomove" >
+                <div class="content">
                 <div class="name">
                   <h1>{{page.forname}} {{page.surname}}</h1>
                 </div>
@@ -321,100 +160,134 @@ min-height: 100vh;
                 <div class="about">
                   <p>{{page.excerpt}}</p>  
                 </div>
-                <div class="image" >
+                <div class="imageArea" >
                 
                   <img class="image" src="/assets/img/{{page.pid}}.jpg">  
                 
               </div>
-              </div>
-              <div class="container">
-                <div class="row">
-                  <div class="col-8 text">
-                    <p>Check out my projects</p>
-                  </div>
-                  <div class="col-4 ">
-                    <span class="arrow">&#10230;</span> 
-                  </div>
+              <div class="row toArrow">
+                <div class="col-8 text">
+                  <p>Check out my projects</p>
                 </div>
-                
+                <div class="col-4 arrow">
+                  <span class="arrows">&#10230;</span> 
+                </div>
               </div>
+              <div class="container-fluid second"> 
+              <div class="row otherrow">
+                <div class="col text">
+                  <p>Go back</p>
+                </div>
+                <div class="col backArrow">
+                  <span class="arrows">&larr;</span> 
+                </div>
+              </div></div></div>
+              </div>
+              
             </div>
             <div class="col-4 backImage" >
 
             </div>
           </div>
+          {% assign my_counter = 0 %}
+              {% for project in site.projects %}
+              
+              {% if project.people contains {{page.pid}} %} 
+              {% assign my_counter = my_counter | plus: 1  %}
+              {% if project.link != "none" %}
+              {% assign link = project.link %}
+            <div class="col-8" id="project{{my_counter}}">
+              <img src="/assets/img/projects/{{project.pid}}.png">
+
+
+            </div>
+            {% endif %}
+            {% endif %}
+             {% endfor %}
+                   
+                
+              
+            
+            <!-- <div class="col-6 projectList">
+              <div class="container-fluid" style="width: 100%;">
+                <div class="row" style="width: 100%;height: inherit;">
+                  {% assign my_counter = 0 %}
+                  {% for project in site.projects %}
+                  
+                  {% if project.people contains {{page.pid}} %} 
+                  {% assign my_counter = my_counter | plus: 1  %}
+                  {% if project.link != "none" %}
+                  {% assign link = project.link %}
+              <div class="col"><a href="{{link}}"><img class="imageforblur" src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" class="img-fluid"></a>
+              </div>
+        
+                  {% else %}
+                  
+              <div class="col"><a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}"><img src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" class="img-fluid"></a></div>
+                      
+                  {% endif %}
+              {% endif %}
+            {% endfor %}
+
+                  </div>
+                </div>
+              </div> -->
+
+           
           
         </div>
       </section>
     </div>
   
+  <div class="part2" style="margin-top: 200px;">
     
-  
-<!--
-  <div class="part2" style="margin-top: 2000px;" >
-    <section class="profile">
-      <div class="container-fluid">
-        <div class="row g-0"  >
-          <div class="col-lg aboutArea">
-            <div class="container d-flex personarea" style="height: inherit">
-              <div class="row align-self-center w-100" style="align-items: center; justify-content: center;" >
-                <div class="col-4" >
-                  <img class="image" src="/assets/img/{{page.pid}}.jpg">  
-                </div>
-              </div>
-              <div class="row align-self-center w-100"  style="align-items: center; justify-content: center;">
-                <div class="align-self-center " id="texty">
-                  <div class="text" style=" text-align: center;">
-                    <h1 class="name" style="text-align: center;">{{page.forname}} {{page.surname}}</h1>
-                   
-                  </div>
-                  <div class="row">  
-                    <div class="tags " >
-                     
-                      {% assign tags = page.tags | sample: 3 %}
-                  {% for tag in tags %}
-                  
-                    <span class="badge" >
-                      <p class="tag" >{{tag}}</p></span> 
-                  {% endfor %}
-                    </div>
-                    <div class="text">
-                      <p>
-                      {{page.excerpt}}
 
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                
-              </div>
-            </div>
-          </div>
-          <div class="col-lg projectArea">
-            
-            <ul>
-            {% assign my_counter = 0 %}
-          {% for project in site.projects %}
-          
-          {% if project.people contains {{page.pid}} %} 
-          {% assign my_counter = my_counter | plus: 1  %}
-          {% if project.link != "none" %}
-          {% assign link = project.link %}
-      <li><a href="{{link}}"><h4 class="projectname">{{project.name}}</h4><img class="imageforblur" src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" class="img-fluid"></a>
-        </li>
-
-          {% else %}
-          
-      <li><a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}"><h4 class="projectname">{{project.name}}</h4><img src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" class="img-fluid"></a></li>
-              
-          {% endif %}
-      {% endif %}
-    {% endfor %} </ul></div>
-        </div>
-      </div>
-      
-    </section>-->
+  </div>
   </div>
   </div>
 </body>
+
+<script>
+  window.addEventListener("load", function() {
+  console.log("Window width: " + window.innerWidth);
+});
+  $(".arrow").click(function() {
+    var Width = window.innerWidth;
+    var result = Width * 32 / 100
+    $("#move").removeClass("col-8");
+    $("#move").addClass("col-4");
+    $(".tomove").animate({"padding":"0px","height":"100%"},500);
+    $(".backImage").animate({"width":"00px"});
+    $(".content").animate({"padding-top":"300px"})
+    setTimeout(function() {
+  $('.backImage').hide();
+}, 1000);
+    $(".imageArea").animate({"top":"0px","right":"100px"})
+    $(".toArrow").hide();
+    $(".otherrow").show();
+    setTimeout(function() {
+  $('#gallery').show()
+  $("#gallery").css('display', 'flex');
+}, 1000);
+setTimeout(function() {
+  $.each(".card", function (i, item) {
+     setTimeout(function(){
+        $(item).addClass('animated fadeInLeft');
+     }, 400*i)           
+})
+}, 3000);
+     });
+ $(".backArrow").click(function() {
+    $("#move").removeClass("col-4");
+    $("#move").addClass("col-8");
+    $(".tomove").removeAttr('style'); 
+    $(".backImage").removeAttr('style'); 
+    $(".imageArea").removeAttr('style'); 
+    $(".content").removeAttr('style'); 
+    $(".toArrow").show();
+    $(".otherrow").hide();
+    
+
+ });
+ 
+</script>
