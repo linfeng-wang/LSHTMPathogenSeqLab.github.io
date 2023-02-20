@@ -304,11 +304,21 @@ console.log($(window).width())
                    onclick="expand2({{overlords}})" style=" clear: both; ">
                     <h6 class="team-leader-name "
                      style=" padding:10px 0; align-content: center;
-                      justify-content: center; text-align: center; ">
+                      justify-content: center; text-align: center;
+                      -moz-user-select: -moz-none;
+                      -khtml-user-select: none;
+                      -webkit-user-select: none;
+                      -ms-user-select: none;
+                      user-select: none; ">
                       {{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
                     <p class="italic-serif team-leader-title" 
                     style=" align-content: center; justify-content: center;
-                     text-align: center; margin-bottom: 10px; margin-top: -10px; ">{{person.title | capitalize}}</p>
+                     text-align: center; margin-bottom: 10px; margin-top: -10px;
+                     -moz-user-select: -moz-none;
+                      -khtml-user-select: none;
+                      -webkit-user-select: none;
+                      -ms-user-select: none;
+                      user-select: none; ">{{person.title | capitalize}}</p>
                     
                     <div class="team-member-bio-wrap middle">
               
