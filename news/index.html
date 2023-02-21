@@ -12,9 +12,18 @@ title: My Blog
     .container{
         max-width: 1500px
     }
+    .mainPhoto{
+    height:600px;
+width: auto;
+}
 }
 
 @media (max-width: 800px) {
+    .mainPhoto{
+    height:300px;
+    width:200px;
+
+}
     img{
         display: none;
     }
@@ -102,8 +111,19 @@ position: relative;
 .grid-1, .grid-2,.grid-3{
         width: 33.3%;
     }
-}
+    .mainPhoto{
+    height:600px;
+    width:600px;
 
+}
+}
+@media (max-width: 1000px) {
+    .mainPhoto{
+    height:600px;
+    width:300px;
+
+}
+}
 .col-8 {
   width: 60.66667%;
   object-fit: contain;
@@ -200,10 +220,7 @@ color: rgb(49,48,48);
     position: absolute;
     top: 0;
 }
-.mainPhoto{
-    width:400px;
-    height: auto;
-}
+
 </style>
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
