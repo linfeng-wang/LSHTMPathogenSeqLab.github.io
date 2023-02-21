@@ -4,21 +4,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></links>
         <style>
+            @media (max-width:990px){
+                nav.navbar li a {
+                    background-color: rgb(49,48,48);
+        }
+            }
             nav.navbar li a {
           color: white;
           font-family: 'Quicksand', sans-serif;
-          background-color: rgb(49,48,48);
          
-        }
+        }   
         nav.navbar li a:hover {
             font-weight: 900;
             color: white;
             background-color: rgb(0,191,111);;
         }
         #people  .nav-item-1, #Home .nav-item-2, #Capacity .nav-item-3, #publications .nav-item-4, #research .nav-item-5, #News .nav-item-6, #Funding  .nav-item-7{
-          background: rgb(0,191,111);
+            background: rgb(0,191,111);
         }
-    
+        
         </style>
         
         
@@ -29,10 +33,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse w-100" id="main_nav" style="background-color: rgba(49, 48, 48,0); margin-top: -10px;">
-                <ul class="navbar-nav w-100 justify-content-center">
+                <ul class="navbar-nav w-100 justify-content-center" >
                     <li class="nav-item-2 "> <a class="nav-link" href="/">Home </a> </li>
                     <li class="nav-item-1"><a class="nav-link" href="/people"> The team </a></li>
-                    <li class="nav-item-5 dropdown">
+                    <li class="nav-item-5 dropdown" style="background-color: rgba(49, 48, 48,0);">
                         <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"  aria-expanded="false">Our research</a>
                         <ul class="dropdown-menu" style="background-color: rgb(49,48,48);">
                             
