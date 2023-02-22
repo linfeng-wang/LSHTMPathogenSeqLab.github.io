@@ -481,11 +481,16 @@ border-radius: 50%;
 .arrowOther span:nth-child(3) {
     animation-delay: -0.4s;
 }
+.modal{
+  z-index: 99999999999999999999999999;
+}
 
 </style>
 
 <body id="research">
+  
 <div class="main">
+  
   <section class="heading" style="height: 80vh;">
     <div class="text" id="textForHeader" style="width: 100%; text-align: center;">
         <div class="row">
@@ -515,7 +520,7 @@ border-radius: 50%;
   <div class="owl-carousel" style="margin-top: 100px;">
     {% assign my_counter = 0 %}
     {% for projects in site.projects %}
-    {% if projects.theme == page.name %}
+    {% if projects.theme contains page.name %}
     
     {% assign my_counter = my_counter | plus: 1  %}
     <div class="project" id="projectPicture">
@@ -535,11 +540,11 @@ border-radius: 50%;
   <div class="modals">
     {% assign my_counter = 0 %}
       {% for projects in site.projects %}
-      {% if projects.theme == page.name %}
+      {% if projects.theme contains page.name %}
       
       {% assign my_counter = my_counter | plus: 1  %}
   <div class="modal fade animated bounce-down" id="exampleModal{{my_counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         
         <div class="modal-header">

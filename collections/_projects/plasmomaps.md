@@ -1,7 +1,9 @@
 ---
 layout: default
 name: Plasmo Maps
-theme: malaria
+theme: 
+  - malaria
+  - software
 pid: pmaps
 link: http://genomics.lshtm.ac.uk/malaria_profiler/#/
 people:

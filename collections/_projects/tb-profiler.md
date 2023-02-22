@@ -2,11 +2,13 @@
 layout: default
 name: TB-Profiler
 pid: tbprofiler
-theme: tuberculosis
+theme: 
+  - tuberculosis
+  - software
 link:  https://tbdr.lshtm.ac.uk/
 people:
   - gnapier
   - jphelan
 ---
 
- TB-Profiler - a pipeline which allows users to analyse M. tuberculosis whole genome sequencing data to predict lineage and drug resistance. Follow the instructions below to upload a new sample or view analysed runs. The pipeline searches for small variants and big deletions associated with drug resistance. It will also report the lineage. By default it uses Trimmomatic to trim the reads, BWA (or minimap2 for nanopore) to align to the reference genome and GATK (open source v4) to call variants. 
+Drug resistance in Mycobacterium tuberculosis is primarily due to small polymorphisms within the genome. Current molecular tests examine limited number of loci. Whole genome sequencing has potential to overcome such problems but the complexity of data interpretation has, thus far, restricted its application. We have compiled a library of more than 1,300 mutations predictive of resistance for 15 anti-tuberculosis drugs (isoniazid, rifampicin, ethambutol, streptomycin, pyrazinamide, ethionamide, moxifloxacin, ofloxacin, amikacin, capreomycin, kanamycin, para-aminosalicylic acid, linezolid, clofazimine and bedaquiline).(Drug Resistance Mutations Library) To progress sequencing towards real time management of patients we have developed TB profiler that rapidly analyses raw sequence data and predicts resistance and lineage. In addition to identifying known drug resistance conferring mutations, the tool also identifies other mutations in the candidate regions. TB profiler processes fastq files at a rate of 80,000 sequence reads per second. Access to rapid, accurate and user friendly analytical tools like TB profiler are required to accelerate the uptake of next generation sequencing for detecting drug resistance, improving access to effective therapy under clinical settings. 

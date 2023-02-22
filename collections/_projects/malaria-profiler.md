@@ -1,7 +1,9 @@
 ---
 layout: default
 name: Malaria-Profiler
-theme: malaria
+theme: 
+  - malaria
+  - software
 pid: mpapp
 link: http://bioinformatics.lshtm.ac.uk/malaria-profiler/
 people:

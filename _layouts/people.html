@@ -130,7 +130,8 @@ min-height: 100vh;
   cursor: pointer;
 
 }
-#projectImage1,#projectImage2,#projectImage3,#projectImage4,#projectImage5 {
+#projectImage1,#projectImage2,#projectImage3,#projectImage4,#projectImage5, #projectImage6,#projectImage7,#projectImage8,#projectImage9,#projectImage10 
+,#projectImage11,#projectImage12,#projectImage13,#projectImage14,#projectImage15 {
   height: auto;
   opacity: 0;
   margin: 20px;
@@ -487,7 +488,7 @@ color: white; }
                 <div class="col-4 projectList">
                     
                   <a class="p-3" href="{{link}}"  id="projectImage{{my_counter}}">
-                    <img  src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png">
+                    <img  src="/assets/img/projects/{{project.theme[0]}}/{{project.pid}}.png">
                     <div class="title">{{project.title}}</div>
                   </a>
                 </div>
