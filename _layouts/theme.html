@@ -204,7 +204,7 @@ border-radius: 100px;
     top: 100vh;
     left: 0%;
     transform: translateX(0%);
-    margin-top: -250px;
+    margin-top: -100px
 }
 
 .hiddenBit #container.expanded {
@@ -224,7 +224,7 @@ border-radius: 100px;
 
 .project h4 {
   margin: 0 0 1.33333rem;
-  padding: 0 0 2rem;
+  padding: 0 0 10px;
   font-size: 22px;
   text-align: center;
   margin-top: 10px;
@@ -277,7 +277,7 @@ border-radius: 50%;
   background-color: #fff;
   justify-content: center;
   text-align: center;
-  width:500px; height: 500px;
+  width:350px; height: 350px;
  
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -310,7 +310,7 @@ border-radius: 50%;
   background-color: #fff;
   justify-content: center;
   text-align: center;
-  width:300px; height: 300px;
+  width:250px; height: 250px;
  
   background-repeat: no-repeat;
   background-size: cover;
@@ -517,18 +517,19 @@ border-radius: 50%;
 </section>
 <section class="hiddenBit" id="hiddenBit" style="margin-bottom: 400px;">
   <div class="container-fluid" id="container">
-  <div class="owl-carousel" style="margin-top: 100px;">
+  <div class="owl-carousel" id="owl-carousel" >
     {% assign my_counter = 0 %}
     {% for projects in site.projects %}
     {% if projects.theme contains page.name %}
     
     {% assign my_counter = my_counter | plus: 1  %}
     <div class="project" id="projectPicture">
-      <button type="button" class="project__card" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" style="background-image: url('/assets/img/projects/{{page.name}}/{{projects.pid}}.png');">
-      </button>
-       <h4 class="projectName" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" >
+      <h4 class="projectName" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" >
         {{projects.name}}
       </h4>
+      <button type="button" class="project__card" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" style="background-image: url('/assets/img/projects/{{page.name}}/{{projects.pid}}.png');">
+      </button>
+       
     </div>
     {% endif %}
     {% endfor %}
@@ -607,13 +608,15 @@ $("#pageName").click(function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
     
-  $('.owl-carousel').owlCarousel({
-      loop: true,
+    $('.owl-carousel').owlCarousel({
+  loop: true,
   nav: false,
   margin:10,
   dots:false,
   autoWidth:true
-  })
+})
+
+
 
   </script>
 <script type="text/javascript">
