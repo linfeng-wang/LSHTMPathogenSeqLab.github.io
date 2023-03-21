@@ -4,7 +4,12 @@ from serpapi import GoogleSearch
 import pandas as pd
 import schedule
 import time
+import os
 
+if os.path.exists("_data/publications.json"):
+    os.remove("_data/publications.json")
+else:
+    print("File does not exist")
 author_article_results_data = []
 
 params = {
