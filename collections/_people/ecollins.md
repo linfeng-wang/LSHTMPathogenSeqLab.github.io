@@ -6,6 +6,9 @@ forname: Emma
 surname: Collins
 title: PhD student
 Important-fact: 
-tags:
+tags: 
+  - Vectors 
+  - Amplicon sequencing 
+  - bioinformatics
 ---
 
