@@ -429,34 +429,14 @@ position: relative;">
         </div>
       </div>
       <div class="regular slider" style="margin-top: 200px;" >
-        <div class="items" >
-            <img  src="/assets/img/homepage/Psau2022.jpg">
-            
-            
-        </div>
-        <div class="items">
-            <img src="/assets/img/homepage/peeps.jpg">
-            
-        </div>
-        <div class="items">
-            <img src="/assets/img/homepage/PXL_20220707_091150444.jpg">
-            
-        </div>
-        <div class="items" >
-          <img  src="/assets/img/homepage/Pampanga.jpg">
-          
-          
-      </div>
-      <div class="items" >
-        <img  src="/assets/img/homepage/Bangkok2022.jpg">
-        
-        
+        {% for image in site.static_files %}
+    {% if image.path contains 'img/homepage' %}
+    <div class="items">
+      <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
     </div>
-    <div class="items" >
-      <img  src="/assets/img/homepage/Nimpe2022.jpg">
       
-      
-  </div>
+    {% endif %}
+{% endfor %}
       </div>
   
         <div class="wrapper news" style="margin-top: 150px;">
