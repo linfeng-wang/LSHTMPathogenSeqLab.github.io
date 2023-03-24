@@ -62,3 +62,12 @@ print("Waiting for author articles to save..")
 with open('_data/publications.json', 'a') as f:
     json.dump(author_article_results_data, f)
 print("Author Articles Saved.")
+
+os.system("git add _data/publications.json")
+
+# Commit the changes with a message
+commit_msg = "Update every friday publications data"
+os.system(f"git commit -m '{commit_msg}'")
+
+# Push the changes to Github
+os.system("git push")
