@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: thailand
-hidden: true
+hidden: false
 author: jthorpe
 link: none
 brief:  Susana Campino and Taane Clark give talks at the Ministry of Public Health, Thailand

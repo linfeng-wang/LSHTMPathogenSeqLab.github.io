@@ -1,10 +1,16 @@
 ---
 layout: post
-pid: graduation
+pid: philippenesanalysis
 hidden: true
 author: jthorpe
 link: none
-brief:  Members of our team celebrate their PhD's on graduation day
+brief:  Members of the team ran a bioinformatic analysis clinic in the Department of Health, Philippines.
 ---
 
-Graduation day is a momentous occasion for anyone, but for our team, it was an even more special day. After years of hard work, dedication, and perseverance, some of our team members were celebrating their completed PhDs. The day was filled with a sense of pride, accomplishment, and joy, and we were all thrilled for each of them. On the day of the ceremony, our team members were dressed in their academic robes and caps, looking sharp and ready to receive their degrees, and as the ceremony began, we watched with pride as each of our members walked across the stage to receive their degree. It was a momentous occasion that marked the culmination of years of hard work and sacrifice. After the ceremony, we congratulated our members and took a few pictures to commemorate the occasion. As we parted ways, we couldn't help but feel a sense of satisfaction and fulfillment. The day had been a testament to the resilience and perseverance of our members, and we were proud to have been a part of their journey, whilst looking forward to our other team members future graduation days to come. In conclusion, the day was not just about receiving a degree. It was about recognizing the incredible hard work and dedication that goes into earning a PhD, the sacrifices that had been made, and the achievements that had been accomplished. It was a time to celebrate, to reflect, and to look forward to what the future holds for these remarkable individuals.
+In today's world, the field of bioinformatics has become increasingly important in the healthcare industry. With the explosion of genomic data, there is a need for trained professionals who can help interpret and analyze this data to improve patient outcomes. To this end, members of our team recently ran a bioinformatic analysis clinic at the Department of Health in the Philippines.
+
+The aim of the clinic was to provide training to healthcare professionals in the use of bioinformatic tools and techniques for the analysis of genomic data. The clinic covered a range of topics including DNA sequencing, variant calling, and functional annotation. Participants were also given hands-on training in the use of bioinformatic software tools such as the Genome Analysis Toolkit (GATK) and the Burrows-Wheeler Aligner (BWA).
+
+The clinic was well-received by the participants, who found the training to be valuable and informative. Many of the healthcare professionals who attended the clinic had little to no prior experience in bioinformatics, and were able to gain a better understanding of the field through the training provided. The clinic also provided an opportunity for networking and collaboration among healthcare professionals, which is essential for advancing the field of bioinformatics in healthcare.
+
+Overall, the bioinformatic analysis clinic in the Department of Health in the Philippines was a successful endeavor. By providing training and support to healthcare professionals in the use of bioinformatic tools and techniques, we hope to improve patient outcomes and advance the field of bioinformatics in the Philippines and beyond. We look forward to continuing our work in this area and helping to build a strong and capable workforce of bioinformatic professionals in the healthcare industry.
