@@ -290,7 +290,7 @@ rgba(0,0,0,0));
       <div class="video_contain" >
         
       <video autoplay muted loop id="myVideo">
-        <source src="/assets"  type="video/mp4">
+        <source src="/assets/vid/homepage.mp4"  type="video/mp4">
       </video>
       </div>
     </section> 
@@ -428,15 +428,17 @@ position: relative;">
           </div>       
         </div>
       </div>
-      <div class="regular slider" style="margin-top: 200px;" >
-        {% for image in site.static_files %}
-    {% if image.path contains 'img/homepage' %}
-    <div class="items">
-      <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-    </div>
-      
-    {% endif %}
-{% endfor %}
+      <div class="regular slider" style="margin-top: 200px;">
+        {% assign images = site.static_files | where_exp: "file", "file.path contains 'img/homepage'" %}
+        {% assign n = images | size %}
+        
+        {% assign shuffled_images = images | sample: n %}
+        
+        {% for image in shuffled_images %}
+          <div class="items">
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+          </div>
+        {% endfor %}
       </div>
   
         <div class="wrapper news" style="margin-top: 150px;">
