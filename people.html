@@ -377,6 +377,7 @@ console.log($(window).width())
     {% assign my_counter = 0 %}
     {% for person in site.people %}
     {% if person.Leader != true %}
+    {% if person.alumni != true %}
       {% assign my_counter = my_counter | plus: 1 %}
       
       <div class="col-4 team-member" style="margin-bottom: 21px; display: inline;">
@@ -417,6 +418,7 @@ console.log($(window).width())
           
         </div>
       </div>
+      {% endif %}
       {% endif %}
     {% endfor %}
   </div></div>
