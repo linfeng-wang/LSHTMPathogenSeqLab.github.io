@@ -44,12 +44,13 @@ font-size: 20px;
 .row{
   width: 100%;
 }
-.team-member-panel,.team-leader-panel{
+
+.team-member-panel,.team-leader-panel,.team-member-alumni{
   background-color: white;
   width: inherit+2px;
   
 }
-.team-member-panel:hover, .team-leader-panel:hover{
+.team-member-panel:hover, .team-leader-panel:hover,.team-member-alumni:hover{
   background-color: rgb(0,191,111);
   transition: 0.4s;
   color: white;
@@ -429,7 +430,7 @@ console.log($(window).width())
         
           <div class="alumni-wrap" style="position: relative;">
             
-            <div  class="team-member-panel" id="container{{my_counter}}" onclick="expand({{my_counter}})" style=" clear: both; ; 
+            <div  class="team-member-alumni" id="container{{my_counter}}" onclick="expand({{my_counter}})" style=" clear: both; ; 
             ">
               <h6 class="team-member-name " style=" padding:10px 0; align-content: center; justify-content: center; text-align: center; ">{{ person.forname | capitalize }} {{ person.surname | capitalize }}</h6>
               <p class="small italic-serif team-member-title" style=" align-content: center; justify-content: center; text-align: center;">{{person.title | capitalize}}</p>
