@@ -4,6 +4,6 @@ pid: bangkok-genomics
 author: jphelan
 hidden: false
 link: none
-brief: Members of the Clark/Campino groups recently organised a genomics capacity strengthening workshop in Siriraj Hospital - Mahidol University, Thailand. This follows a successful symposium in the Pampanga State Agricultural University (The Philippines) focused on AMR and TB genomics. Other funded genomics workshops will take place in Bangladesh and Vietnam later this year.
+brief: Members of the Clark/Campino groups recently organised a genomics capacity-strengthening workshop at Siriraj Hospital - Mahidol University, Thailand. This follows a successful symposium at Pampanga State Agricultural University (The Philippines) focused on AMR and TB genomics. Other funded genomics workshops will take place in Bangladesh and Vietnam later this year.
 ---
-Members of the Clark/Campino groups recently organised a genomics capacity strengthening workshop in Siriraj Hospital - Mahidol University, Thailand. This follows a successful symposium in the Pampanga State Agricultural University (The Philippines) focused on AMR and TB genomics. Other funded genomics workshops will take place in Bangladesh and Vietnam later this year.
+Members of the Clark/Campino groups recently organised a genomics capacity-strengthening workshop at Siriraj Hospital - Mahidol University, Thailand. This follows a successful symposium at Pampanga State Agricultural University (The Philippines) focused on AMR and TB genomics. Other funded genomics workshops will take place in Bangladesh and Vietnam later this year.
