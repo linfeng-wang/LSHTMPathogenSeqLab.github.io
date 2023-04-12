@@ -4,7 +4,7 @@ alumni: false
 pid: ecollins
 forname: Emma
 surname: Collins
-title: PhD Student
+title: BBSRC LIDO PhD Student
 Important-fact: 
 tags: 
   - Vectors 

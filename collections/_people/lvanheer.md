@@ -4,7 +4,7 @@ alumni: false
 pid: lvanheer
 forname: Leen
 surname: Vanheer
-title: PhD student
+title: PhD Student
 Important-fact: Pottery enthusiast and proud plant mom
 tags:
   - Malaria

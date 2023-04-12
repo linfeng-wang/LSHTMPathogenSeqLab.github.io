@@ -4,7 +4,7 @@ alumni: false
 pid: lwang
 forname: Linfeng
 surname: Wang
-title: BBSRC funded PhD research student
+title: BBSRC LIDO PhD research student
 Important-fact: Loves staring at phlyogenetic trees and find them mesmerising. 
 tags: 
   - Mycobacterium Tuberculosis 

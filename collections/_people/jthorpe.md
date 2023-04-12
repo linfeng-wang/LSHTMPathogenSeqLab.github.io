@@ -4,7 +4,7 @@ alumni: false
 pid: jthorpe
 forname: Joseph
 surname: Thorpe
-title: Research assistant
+title: Research Assistant
 Important-fact: Passionate chess player and Roman history geek
 tags:
   - Malaria

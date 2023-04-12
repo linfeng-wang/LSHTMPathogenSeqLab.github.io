@@ -4,7 +4,7 @@ alumni: false
 pid: gngwana
 forname: Gabrielle
 surname: Ngwana-Joseph
-title: PhD Student
+title: BBSRC LIDO PhD Student
 Important-fact: French speaker, wine lover, 90s R&B connoisseur
 tags:
   - Malaria

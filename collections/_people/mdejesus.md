@@ -4,7 +4,7 @@ alumni: false
 pid: mdejesus
 forname: Myrela
 surname: de Jesus
-title: PhD student
+title: PhD Student
 Important-fact: Passionate about books, strong coffee and dancing forró.
 tags:
   - Epidemiology 
