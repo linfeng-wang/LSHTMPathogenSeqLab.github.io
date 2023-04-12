@@ -4,7 +4,7 @@ alumni: false
 pid: aosborne
 forname: Ashley
 surname: Osborne
-title: PhD Student
+title: Research Fellow
 Important-fact: Do not approach prior to second coffee.
 tags:
   - Malaria
