@@ -1,6 +1,7 @@
 ---
 layout: post
 pid: dmsc-lshtm
+title: "Thailand Ministry Collab-oration"
 author: jphelan
 hidden: false
 link: none

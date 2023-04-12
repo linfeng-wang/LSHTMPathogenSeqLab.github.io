@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: logo
-title: "<em>Plasmodium Knowlesi</em> differences between Borneo and Penninsular"
+title: "<em>Plasmodium knowlesi</em> differences between Borneo and Penninsular"
 date: 2023-02-01
 hidden: false
 author: tgclark
