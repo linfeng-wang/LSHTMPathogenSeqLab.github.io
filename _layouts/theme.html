@@ -200,7 +200,7 @@ border-radius: 100px;
 }
 .hiddenBit #container {
     width: 0;
-    transition: width 1s ease-out;
+    transition: width 3.5s ease-out;
     top: 100vh;
     left: 0%;
     transform: translateX(0%);
@@ -221,7 +221,15 @@ cursor: pointer;
 -webkit-border-radius: 100px;
 border-radius: 100px;
 }
+.project{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 
+}
 .project h4 {
   margin: 0 0 1.33333rem;
   padding: 0 0 10px;
@@ -234,6 +242,7 @@ border-radius: 100px;
   border-radius: 50%;
   width: 100%;
   height: 1400%;
+
 }
 
 
@@ -278,7 +287,7 @@ border-radius: 50%;
   justify-content: center;
   text-align: center;
   width:350px; height: 350px;
- 
+    
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center; 
@@ -485,6 +494,35 @@ border-radius: 50%;
   z-index: 99999999999999999999999999;
 }
 
+.container-fluid{
+  
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header{
+  text-align: center;
+  padding: 50px;
+}
+.col-xxl-12{
+  padding:75px
+}
+@media (max-width: 1400px) {
+  .col-4,.col-6{
+  width:50%
+}    
+}
+@media (max-width: 990px) {
+  .col-4,.col-6{
+    width: 200%;
+}    
+}
+@media (max-width: 700px) {
+  .col-4,.col-6{
+    width: 150%;
+    margin-left: 10px;
+}    
+}
 </style>
 
 <body id="research">
@@ -516,33 +554,122 @@ border-radius: 50%;
     </div>
 </section>
 <section class="hiddenBit" id="hiddenBit" style="margin-bottom: 400px;">
+  {% assign my_counter = 0 %}
   <div class="container-fluid" id="container">
-  <div class="owl-carousel" id="owl-carousel" >
-    {% assign my_counter = 0 %}
-    {% for projects in site.projects %}
-    {% if projects.theme contains page.name %}
+    <div class="owl-carousel" style="margin-top: 20px;">
+      <div class="highlighted-project">
+        <div class="row">
+        <div class="header">
+          <h2><b>HIGHLIGHTED</b></h2>
+             <h2><b>PROJECTS</b></h2>
+        </div>
+        {% for projects in site.projects %}
+        {% if projects.theme contains page.name %}
+        {% if projects.highlighted == true  %}
+        {% assign my_counter = my_counter | plus: 1  %}
+        <div class="col-6">
+          <div class="project" id="projectPicture">
+            <h4 class="projectName align-self-center" data-bs-toggle="modal" data-bs-target="#highlightexampleModal{{my_counter}}" >
+              {{projects.name}}
+            </h4>
+            <button type="button" class="project__card" data-bs-toggle="modal" data-bs-target="#highlightexampleModal{{my_counter}}" style="background-image: url('/assets/img/projects/{{page.name}}/{{projects.pid}}.png'); background-size: contain; background-position: center;">
+            </button>
+            
+         
+          </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+      <div class="row ">
+        <div class="header">
+          <h2><b>PAST PROJECTS</b></h2>
+        </div>
+        {% assign my_counter = 0 %}
+        {% for projects in site.projects %}
+        {% if projects.theme contains page.name %}
+        {% if projects.highlighted != true  %}
+        {% assign my_counter = my_counter | plus: 1  %}
+        
+        
+        <div class="col-4 " style="margin-bottom: 21px; display: inline;">
     
-    {% assign my_counter = my_counter | plus: 1  %}
-    <div class="project" id="projectPicture">
-      <h4 class="projectName" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" >
-        {{projects.name}}
-      </h4>
-      <button type="button" class="project__card" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" style="background-image: url('/assets/img/projects/{{page.name}}/{{projects.pid}}.png');">
-      </button>
-       
+          <div class="project" id="projectPicture">
+            
+            <h4 class="projectName" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" >
+              {{projects.name}}
+            </h4>
+            <button type="button" class="project__card" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" style="background-image: url('/assets/img/projects/{{page.name}}/{{projects.pid}}.png');">
+            </button>
+             
+          </div>
+          </div>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
-    {% endif %}
-    {% endfor %}
-  </div></div>
 </section>
 <section>
   
-  
+  <div class="highmodals">
+    {% assign my_counter = 0 %}
+      {% for projects in site.projects %}
+      {% if projects.theme contains page.name %}
+      {% if projects.highlighted == true  %}
+      {% assign my_counter = my_counter | plus: 1  %}
+  <div class="modal fade animated bounce-down" id="highlightexampleModal{{my_counter}}" tabindex="-1" aria-labelledby="highlightexampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="highlightexampleModalLabel">{{projects.name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>{{projects.excerpt}}</p>
+          <br>
+          <div class="tags " >
+            <p>People who worked on this project:</p>
+            {% assign people = projects.people  %}
+            <span class="badge d-flex justify-content-center align-self-center" >
+
+        {% for peep in people %}
+            <p class="peep">{{peep}}</p>
+        {% endfor %}
+      </span>
+      <span class="badge d-flex justify-content-center align-self-center" >
+        {% for peep in people %}
+        <img class="image" src="/assets/img/{{peep}}.jpg" style="width: 40px; height: 40px;" >
+        {% endfor %}
+
+      </span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          {% if projects.link != "none" %}
+                  
+          <button type="button" class="btn btn-primary check-it-out" href="#" data-link="{{projects.link}}">Check it out!</button>
+          {% else %}
+
+          {% endif %}
+
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+  </div>
   <div class="modals">
     {% assign my_counter = 0 %}
       {% for projects in site.projects %}
       {% if projects.theme contains page.name %}
-      
+      {% if projects.highlighted != true  %}
       {% assign my_counter = my_counter | plus: 1  %}
   <div class="modal fade animated bounce-down" id="exampleModal{{my_counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
@@ -586,6 +713,7 @@ border-radius: 50%;
     </div>
   </div>
   {% endif %}
+  {% endif %}
   {% endfor %}
   </div>
 </section>
@@ -597,7 +725,7 @@ border-radius: 50%;
 $("#pageName").click(function() {
   $("#container").toggleClass("expanded");
   $("#pageName").toggleClass("highlighted");
-  $(".owl-carousel").slideToggle(1000)
+  $(".owl-carousel").slideToggle(2000)
   $('html,body').animate({
         scrollTop: $(".expanded").offset().top-=300},
         'slow');
@@ -605,20 +733,7 @@ $("#pageName").click(function() {
 });
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-    
-    $('.owl-carousel').owlCarousel({
-  loop: true,
-  nav: false,
-  margin:10,
-  dots:false,
-  autoWidth:true
-})
 
-
-
-  </script>
 <script type="text/javascript">
 $(document).on("click", ".check-it-out", function() {
   var link = $(this).data("link");
