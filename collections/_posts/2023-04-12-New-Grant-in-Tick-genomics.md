@@ -1,0 +1,11 @@
+---
+layout: post
+pid: ticks
+hidden: true
+author: tgclark
+link: none
+brief:  Recently, Susana and her team were awarded a UKRI-Defra grant to develop genomic tools (e.g., amplicon sequencing assays) and establish a consortium for a One Health approach to VBDs called the GenES_VBD network (Genomic Epidemiology Tools for the Surveillance of Vector-Borne Diseases applied to tick species, reservoirs, and pathogens). The consortium is coordinated by LSHTM (with Susana as the PI) and includes the UKHSA Medical Entomology & Zoonoses Ecology (MEZE) and Porton Down Genomics teams.
+excerpt_separator: "<!--more-->"
+---
+Ticks are hematophagous ectoparasites that feed on the blood of mammals, birds, and sometimes reptiles and amphibians. Globally, ticks act as vectors and reservoirs of human and animal pathogens. In the UK, ticks, along with mosquitoes, are the dominant vectors of vector-borne diseases (VBDs). They are responsible for the spread of many pathogens, including the bacterium Borrelia burgdorferi sensu lato, which is responsible for over 2,000 cases of Lyme borreliosis per year in England and Wales. Other pathogens established in the UK include Anaplasma phagocytophilum, Babesia spp., and louping-ill virus, which cause disease in farm and companion animals and present a constant challenge in many geographical areas of the UK. Entomological surveillance, involving genomic tools, is an essential component of an integrated strategy to control VBDs and raise awareness of tick-borne disease risk. Recently, Susana and her team were awarded a UKRI-Defra grant to develop genomic tools (e.g., amplicon sequencing assays) and establish a consortium for a One Health approach to VBDs called the GenES_VBD network (Genomic Epidemiology Tools for the Surveillance of Vector-Borne Diseases: applied to tick species, reservoirs, and pathogens). The consortium is coordinated by LSHTM (with Susana as the PI) and includes the UKHSA Medical Entomology & Zoonoses Ecology (MEZE) and Porton Down Genomics teams.
+<!--more-->

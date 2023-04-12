@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: philippenesanalysis
-hidden: true
+hidden: false
 author: jthorpe
 link: none
 brief:  Members of the team ran a bioinformatic analysis clinic in the Department of Health, Philippines.

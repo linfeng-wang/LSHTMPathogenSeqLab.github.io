@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: teamlunchmarch
-hidden: true
+hidden: false
 author: jthorpe
 link: none
 brief:  Following up on my previous article about team cohesion, I am excited to report on our recent team lunch event at Siam Central. Since we last met up, our team has faced some new challenges due to ongoing technical issues and other technicalities, as well as working from home and dealing with new team members without the same integration options as before. To combat this, we decided to organize a monthly team lunch where we can all get together and catch up in a relaxed and informal setting.

@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: logo
-hidden: true
+hidden: false
 author: tgclark
 title: "A new framework to compare AI models"
 date: 2023-03-23
