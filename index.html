@@ -31,9 +31,10 @@ title: About
   overflow: none; 
 }
 #myVideo {
-    width: 100%; /* Set the width of the video to 100% */
-    height: auto; /* Automatically adjust the height to maintain aspect ratio */
-    object-fit: cover; /* Resize the video to cover the entire element while maintaining aspect ratio */
+    width: 100%; 
+    height: inherit; 
+    object-fit: cover; 
+    
   }
 
  
@@ -162,7 +163,7 @@ video {
       background-position: center;
       background-attachment: fixed;
   width: 100%;
-  height: 108vh;
+  height: inherit;
   background-image: linear-gradient(to right, rgba(43, 44, 53, 0.5) 40%, 
 rgba(0,0,0,0));
   z-index: 2;
@@ -242,7 +243,7 @@ rgba(0,0,0,0));
   width: auto;
   max-width: inherit;
   border-radius: 25px;
-  max-width: 400px;
+  max-width: 100%;
   
  }
  .newsItems{
@@ -259,6 +260,7 @@ rgba(0,0,0,0));
   max-height: 340px;justify-content: center;
   align-items: center;
   text-align: center;
+  max-width: 300px;
 }
 }
 #rows{
