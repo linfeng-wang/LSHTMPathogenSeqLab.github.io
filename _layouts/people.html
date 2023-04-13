@@ -400,6 +400,93 @@ a{
  .text{
   font-size: 12px;
 color: white; }
+.modal, .modal-header .modal-title, .modal-body{
+  text-align: center;
+  width: 100%;
+  
+}
+.btn-primary{
+  background-color: rgb(49,48,48);
+  color: white;
+  border-color: rgb(49,48,48) !important;
+
+}
+.btn-primary:hover{
+  background-color: rgb(0,191,111);
+}
+
+.btn-primary:active,.btn-primary:focus{
+  background-color: rgb(0,191,111);
+  color: white;
+  border-color: rgb(49,48,48) !important;
+  outline: none;
+  box-shadow: none;
+}
+
+.modal-body {
+ 
+  font-size: 14px; 
+}
+.modal.animated {
+  animation-duration: 0.75s;
+  animation-fill-mode: both;
+  animation-name: bounceDown;
+}
+.modals p{
+  color: black;
+}
+@keyframes bounceDown {
+  0% {
+    transform: translateY(-2000px);
+    animation-timing-function: ease-out;
+  }
+  60% {
+    transform: translateY(30px);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: translateY(-10px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.badge{
+  display: inline;
+      margin: 10px;
+      text-align: center;
+}
+.peep,.image{
+  margin: 10px;
+}
+@media (max-width: 990px) {
+  .owl-item{
+    width: 50%;
+}    
+}
+.modal{
+  z-index: 99999999999999999999999999;
+}
+@media (max-width:600px) {
+  .mobile{
+    display: block;
+  }
+  #areaForImages{
+    display: none;
+  }
+}
+@media (min-width:600px) {
+  .mobile{
+    display: none;
+  }
+  
+}
+.img-fluid{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
 <body id="people">
   <div class="main">
@@ -474,7 +561,37 @@ color: white; }
               
             </div>
             <div class="col-lg-4" id="backImage" >
-              
+              <div class="mobile">
+                <div class="row">
+                  {% assign my_counter = 0 %}
+                {% for project in site.projects %}
+                
+                {% if project.people contains {{page.pid}} %} 
+                {% assign my_counter = my_counter | plus: 1  %}
+                {% if project.link != "none" %}
+                {% assign link = project.link %}
+               
+                  <div class="col-xxl-12 projectList">
+                      
+                    <a class="p-3" href="{{link}}"  id="projectImage{{my_counter}}">
+                      <img  src="/assets/img/projects/{{project.theme[0]}}/{{project.pid}}.png" class="img-fluid">
+                      <div class="title">{{project.title}}</div>
+                    </a>
+                  </div>
+                  {% else %}
+                  <div class="col-xxl-12 projectList">
+                    <a class="p-3" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" id="projectImage{{my_counter}}">
+                      <img src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" 
+                      class="img-fluid">
+                      <div class="title">{{project.title}}</div>
+                    </a>
+                    </div>
+                    
+                  {% endif %}
+                {% endif %}
+                 {% endfor %}
+                </div>
+              </div>
             <div class="container" id="areaForImages">
               <div class="row">
                 {% assign my_counter = 0 %}
@@ -510,35 +627,6 @@ color: white; }
               
             </div>
             
-           
-                   
-                
-              
-            
-            <!-- <div class="col-4 projectList">
-              <div class="container-fluid" style="width: 100%;">
-                <div class="row" style="width: 100%;height: inherit;">
-                  {% assign my_counter = 0 %}
-                  {% for project in site.projects %}
-                  
-                  {% if project.people contains {{page.pid}} %} 
-                  {% assign my_counter = my_counter | plus: 1  %}
-                  {% if project.link != "none" %}
-                  {% assign link = project.link %}
-              <div class="col"><a href="{{link}}"><img class="imageforblur" src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" class="img-fluid"></a>
-              </div>
-        
-                  {% else %}
-                  
-              <div class="col"><a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}"><img src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" class="img-fluid"></a></div>
-                      
-                  {% endif %}
-              {% endif %}
-            {% endfor %}
-
-                  </div>
-                </div>
-              </div> -->
 
             </div>
           
@@ -546,11 +634,39 @@ color: white; }
       </section>
     </div>
   
-  <div class="part2" style="margin-top: 200px;">
-    
-
+    <div class="modals">
+      {% assign my_counter = 0 %}
+      {% for project in site.projects %}
+      
+      {% if project.people contains {{page.pid}} %} 
+      {% assign my_counter = my_counter | plus: 1  %}
+      {% if project.link == "none" %}
+      {% assign link = project.link %}
+    <div class="modal fade animated bounce-down" id="exampleModal{{my_counter}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          
+          <div class="modal-header">
+            <h1 style="color: black;" class="modal-title fs-5" id="exampleModalLabel">{{project.title}}</h1>
+            
+          </div>
+          <div class="modal-body">
+            <p>{{project.excerpt}}</p>
+            <br>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    </div>
   </div>
-  </div>
+  
   </div>
 </body>
 
