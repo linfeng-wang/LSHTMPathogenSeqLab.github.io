@@ -152,7 +152,7 @@ min-height: 100vh;
   
             50% {
               opacity:1;
-                transform: scale(2.0);
+                transform: scale(2);
             }
   
             100% {
@@ -200,7 +200,7 @@ height: auto;
 
 .projectList:hover img {
 	filter: none;
-  transform: scale(3);
+  transform: scale(2);
   transition: transform 0.6s ease;
 }
 .project-image {
@@ -212,7 +212,7 @@ height: auto;
   transition: transform 0.5s ease;
 }
 .p-3:hover .title {
-  transform: translateY(80px); 
+  transform: translateY(50px); 
 }
 
 .title {
@@ -687,12 +687,15 @@ color: white; }
     $(".toArrow").hide();
     $(".otherrow").show();
     $(".p-3").each(function(index) {
-  $(this).delay(index * 500).queue(function() {
+  var delay = index == 0 ? 0 : index * 300;
+  $(this).delay(delay).queue(function() {
     $(this).addClass("startAnimation");
     $(this).find(".title").addClass("show");
     $(this).dequeue();
   });
 });
+
+
 
     $(".imageArea").css("position", "relative");
     $(".imageArea").css("margin-bottom", "20px");
