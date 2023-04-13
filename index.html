@@ -446,7 +446,8 @@ position: relative;">
         
         {% for image in shuffled_images %}
           <div class="items">
-            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" loading="lazy" sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33.3vw" 
+            srcset="{{site.baseurl}}{{image.path}} 480w,{{site.baseurl}}{{image.path}} 768w,{{site.baseurl}}{{image.path}} 1600w",/>
           </div>
         {% endfor %}
       </div>
@@ -455,7 +456,7 @@ position: relative;">
             <div class="container-fluid"  style="width:90%;margin-left: 5%; ">
                 <div class="row">
                 <div style=" overflow: hidden;  position: relative; margin-top: 50px; margin-bottom: 50px;text-align: center;
-                  vertical-align: middle; " >
+                  vertical-align: middle;"  >
                     <img class="logo" src="/assets/img/logo/logo.png" style="width: 200px;height:200px">
               <h1 class="text-align" style="justify-content: center; align-items:center;
               color: rgb(0,191,111); letter-spacing: .2rem;font-family: 'Abril Fatface', cursive;" id="news" >LATEST NEWS</h1>
@@ -470,7 +471,7 @@ position: relative;">
     
                 {% assign image = post.pid  %}
                 <div class="newsItems" id="{{my_counter}}">
-                  <img class="newsImage" src="/assets/img/newspics/{{image}}.png">
+                  <img class="newsImage" src="/assets/img/newspics/{{image}}.png" loading="lazy">
                   
                 
                 </div>
@@ -543,7 +544,7 @@ position: relative;">
   
               {% assign image = post.pid  %}
               <div class="newsItems" id="{{my_counter}}">
-                <img class="newsImage" src="/assets/img/newspics/{{image}}.png">
+                <img class="newsImage" src="/assets/img/newspics/{{image}}.png" loading="lazy">
                 
               
               </div>
