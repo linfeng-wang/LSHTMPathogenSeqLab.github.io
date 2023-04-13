@@ -462,7 +462,7 @@ position: relative;">
                 <div class="row">
                 <div style=" overflow: hidden;  position: relative; margin-top: 50px; margin-bottom: 50px;text-align: center;
                   vertical-align: middle;"  >
-                    <img class="logo" src="/assets/img/logo/logo.png" style="width: 200px;height:200px">
+                    <img class="logo" src="/assets/img/logo/logo.webp" style="width: 200px;height:200px">
               <h1 class="text-align" style="justify-content: center; align-items:center;
               color: rgb(0,191,111); letter-spacing: .2rem;font-family: 'Abril Fatface', cursive;" id="news" >LATEST NEWS</h1>
             
@@ -477,13 +477,10 @@ position: relative;">
                 {% assign image = post.pid  %}
                 <div class="newsItems" id="{{my_counter}}">
                   <img class="newsImage" src="{{ site.baseurl }}/assets/img/newspics/{{ image }}.webp" alt="image" loading="lazy" 
-     sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33.3vw" 
-     srcset="{{ site.baseurl }}/assets/img/newspics/{{ image }}-480.webp 480w,
-             {{ site.baseurl }}/assets/img/newspics/{{ image }}-768.webp 768w,
-             {{ site.baseurl }}/assets/img/newspics/{{ image }}-1600.webp 1600w" />
-
-                  
-                
+                   sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33.3vw" 
+                   srcset="{{ site.baseurl }}/assets/img/newspics/{{ image }}-480.webp 480w,
+                   {{ site.baseurl }}/assets/img/newspics/{{ image }}-768.webp 768w,
+                   {{ site.baseurl }}/assets/img/newspics/{{ image }}-1600.webp 1600w" />
                 </div>
              {% endfor %}
             </div>
@@ -540,7 +537,7 @@ position: relative;">
               <div class="row">
               <div style=" overflow: hidden;  position: relative; margin-top: 50px; margin-bottom: 50px;text-align: center;
                 vertical-align: middle; " >
-                  <img class="logo" src="/assets/img/logo/logo.png" style="width: 200px;height:200px">
+                  <img class="logo" src="/assets/img/logo/logo.webp" style="width: 200px;height:200px">
             <h1 class="text-align" style="justify-content: center; align-items:center;
             color: rgb(0,191,111); letter-spacing: .2rem;font-family: 'Abril Fatface', cursive;" id="news" >LATEST NEWS</h1>
           
@@ -554,7 +551,7 @@ position: relative;">
   
               {% assign image = post.pid  %}
               <div class="newsItems" id="{{my_counter}}">
-                <img class="newsImage" src="/assets/img/newspics/{{image}}.png" loading="lazy">
+                <img class="newsImage" src="/assets/img/newspics/{{image}}.webp" loading="lazy">
                 
               
               </div>

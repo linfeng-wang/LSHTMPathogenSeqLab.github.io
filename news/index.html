@@ -259,7 +259,7 @@ console.log($(document).width())
     
     {% assign image = post.pid  %}
                 <div class="col-8" id="img{{my_counter}}" style="margin-top: 20px; margin-right: 10px; ">
-                    <img src = "/assets/img/newspics/{{image}}.png" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: cover;max-width:100%;
+                    <img src = "/assets/img/newspics/{{image}}.webp" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: cover;max-width:100%;
                     max-height:50vh; border-radius: 25px;">
                 </div>
                 {% if post.link != "none" %}
@@ -455,7 +455,7 @@ var timer = setInterval(doSomething,5000)
 function changeImage1(image){
     
     clearInterval(timer);
-    img1.src = "/assets/img/newspics/"+image+".png"
+    img1.src = "/assets/img/newspics/"+image+".webp"
     var string = image
     $('#grid1').css("background", "rgb(0,191,111)");
     $('#grid3').css("background", "rgb(49,48,48)")
@@ -469,7 +469,7 @@ function changeImage1(image){
 function changeImage2(image){
     clearInterval(timer);
     var string = image
-    imgElement2.src = "/assets/img/newspics/"+image+".png"
+    imgElement2.src = "/assets/img/newspics/"+image+".webp"
     $('#grid2').css("background", "rgb(0,191,111)");
     $("#grid1").css("background", "rgb(49,48,48)")
     $("#grid3").css("background", "rgb(49,48,48)")
@@ -480,7 +480,7 @@ function changeImage2(image){
 }
 function changeImage3(image){
     clearInterval(timer); var string = image
-    imgElement3.src = "/assets/img/newspics/"+image+".png"
+    imgElement3.src = "/assets/img/newspics/"+image+".webp"
     $('#grid3').css("background", "rgb(0,191,111)");
 
     $('#grid1').css("background", "rgb(49,48,48)")
