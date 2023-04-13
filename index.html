@@ -454,21 +454,27 @@ position: relative;">
       <div class="regular slider" style="margin-top: 200px;">
         {% assign images = site.static_files | where_exp: "file", "file.path contains 'img/homepage'" %}
         {% assign n = images | size %}
-        
         {% assign shuffled_images = images | sample: n %}
-        
         {% for image in shuffled_images %}
-          <div class="items">
-            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" loading="lazy"
-  srcset="{{ site.baseurl }}{{ image.path }} 480w,
-          {{ site.baseurl }}{{ image.path }} 768w,
-          {{ site.baseurl }}{{ image.path }} 1600w"
-  sizes="(max-width: 480px) 100vw,
-         (max-width: 768px) 50vw,
-         33.3vw" />
-          </div>
+          {% unless image.path contains '-768' or image.path contains '-480' or image.path contains '-1600' %}
+            {% assign filename_parts = image.path | split: "." %}
+            {% assign filename = filename_parts.first %}
+            {% if filename contains "-480" or filename contains "-768" or filename contains "-1600" %}
+              {% continue %}
+            {% endif %}
+            <div class="items">
+              <img src="{{ site.baseurl }}{{ image.path }}" alt="image" loading="lazy"
+                srcset="{{ site.baseurl }}{{ filename }}-480.webp 480w,
+                        {{ site.baseurl }}{{ filename }}-768.webp 768w,
+                        {{ site.baseurl }}{{ filename }}-1600.webp 1600w"
+                sizes="(max-width: 480px) 100vw,
+                       (max-width: 768px) 50vw,
+                       33.3vw" />
+            </div>
+          {% endunless %}
         {% endfor %}
       </div>
+      
   
         <div class="wrapper news" style="margin-top: 150px;">
             <div class="container-fluid"  style="width:90%;margin-left: 5%; ">
