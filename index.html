@@ -446,8 +446,13 @@ position: relative;">
         
         {% for image in shuffled_images %}
           <div class="items">
-            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" loading="lazy" sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33.3vw" 
-            srcset="{{site.baseurl}}{{image.path}} 480w,{{site.baseurl}}{{image.path}} 768w,{{site.baseurl}}{{image.path}} 1600w",/>
+            <img src="{{ site.baseurl }}{{ image.path }}" alt="image" loading="lazy"
+  srcset="{{ site.baseurl }}{{ image.path }} 480w,
+          {{ site.baseurl }}{{ image.path }} 768w,
+          {{ site.baseurl }}{{ image.path }} 1600w"
+  sizes="(max-width: 480px) 100vw,
+         (max-width: 768px) 50vw,
+         33.3vw" />
           </div>
         {% endfor %}
       </div>
@@ -471,7 +476,12 @@ position: relative;">
     
                 {% assign image = post.pid  %}
                 <div class="newsItems" id="{{my_counter}}">
-                  <img class="newsImage" src="/assets/img/newspics/{{image}}.png" loading="lazy">
+                  <img class="newsImage" src="{{ site.baseurl }}/assets/img/newspics/{{ image }}.webp" alt="image" loading="lazy" 
+     sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33.3vw" 
+     srcset="{{ site.baseurl }}/assets/img/newspics/{{ image }}-480.webp 480w,
+             {{ site.baseurl }}/assets/img/newspics/{{ image }}-768.webp 768w,
+             {{ site.baseurl }}/assets/img/newspics/{{ image }}-1600.webp 1600w" />
+
                   
                 
                 </div>
