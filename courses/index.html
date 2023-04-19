@@ -1,0 +1,92 @@
+---
+layout: default
+title: courses
+---
+<links>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> </links>
+ 
+<scripts>
+  <script src="https://kit.fontawesome.com/f8a9821c7d.js" crossorigin="anonymous"></script>
+
+</scripts>
+
+
+<style>
+ .yearList li{
+        width: 12.5%;
+        float: left;
+        display: inline;
+    }
+    .text-align h1 {
+  color:white; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 40px;
+}
+.main p{
+    text-align: center;
+}
+@media (max-width: 900px) {
+    .text-align h1 {
+  color:white;  font-size: 20px; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 20px;
+}
+
+}
+i {
+    font-size: 22px;
+}
+hr{
+  color: rgb(0,191,111);
+}
+
+
+  footer {
+    z-index: 9; 
+  
+}
+h4{
+    text-align: center;
+}
+</style>
+<div class="main">
+    {% assign my_array = "" | split: ',' %}
+    <section class="heading" style="background-color:  rgb(49,48,48);height: 25vh; position: relative;">
+        <div class="container" >
+            <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 100px;">
+                <h1 >COURSES</h1>
+            </div>
+            
+        
+    </section>
+<section class="course-list" style="margin-top: 200px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Below are a list of courses past and present</h2>
+            </div>
+        </div>
+      
+        <div class="courses"  style="display: block; margin-top: 200px;">
+            {% for course in site.courses %}
+            {% assign image = course.pid %}
+            <div class="row" style="margin-bottom: 100px;">
+                
+                    <div class="col-md-8">
+                        <div class="funder">
+                            <h4 class="card-text">{{course.name}}</h4>
+                            <p class="card-text" style="margin-top: 50px;">{{course.excerpt}}</p>
+                        </div>
+                    </div>
+                        <div class="col-md-4">
+                            <div class="image" style="position: relative;">
+                              <img class="card-img-top p-2" style="height: 250px; width: auto; display:block;
+                              margin:auto;  align-items: center;" src="/assets/img/course/{{image}}.jpg" alt="Course Image">
+                              <a href="{{course.link}}" style="margin:0 auto;
+                              display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Learn more and enroll!</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+        
+    </div>
+</section>
