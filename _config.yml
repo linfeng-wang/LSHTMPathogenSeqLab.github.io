@@ -14,13 +14,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: PathogenSeq lab
-email: your-email@example.com
+email: joseph.thorpe@lshtm.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   PathogenSeq lab. We apply omics tools to understand biological systems, interactions between vectors/pathogens and host, at genetic, proteomic and metabolic levels, to assist the development of tools for infection control in public health
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://genomics.lshtm.ac.uk" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  klausyboi
+permalink: /:categories/:title/
 
 # Build settings
 markdown: kramdown
