@@ -5,7 +5,7 @@ name: TB Genomics Asia Network
 country: The Philippenes
 year: 2019
 dates: February
-
+place: in
    
 ---
 TB Genomics Asia Network (UKRI GCRF funded) inaugural meeting (The Philippines, February 2019)

@@ -46,6 +46,26 @@ hr{
 h4{
     text-align: center;
 }
+
+.headerContainer{
+    padding-top:100px;
+}
+.team-list{
+    font-family: "Mercury Text G1 A","Mercury Text G1 B",serif;
+font-style: italic;
+display: inline;
+cursor: pointer;
+margin: 20px;
+
+
+
+  }
+  #currText{
+    font-weight: 700;
+  }
+  .team-list:hover{
+    font-weight: 700;
+  }
 </style>
 <div class="main">
     {% assign my_array = "" | split: ',' %}
@@ -53,21 +73,34 @@ h4{
         <div class="container" >
             <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 100px;">
                 <h1 >WORKSHOPS</h1>
-            </div>
-            
-        
+            </div>     
     </section>
-<section class="workshop-list" style="margin-top: 200px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Below are a list of workshops past and present</h2>
+    <section class="headerContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Below are a list of workshops past and present</h2>
+                </div>
             </div>
         </div>
-      
+
+    </section>
+    <section class="lists">
+        <div class="list-section" style="margin-bottom: 200px; margin-top:200px;background-color: rgb(248, 248, 248);">
+            <ul style="list-style: none;box-sizing: border-box; text-align: center; " class="past-present">
+              <li class="team-list" id="inText" onclick="changeWorkshop('in')">LSHTM internal courses</li>
+              <li class="team-list" id="exText" onclick="changeWorkshop('ex')"> External global courses</li>
+            </ul></div>
+    </section>
+    
+<section class="workshop-list" style="margin-top: 200px;">
+    <div class="container">
+        
         <div class="workshops"  style="display: block; margin-top: 200px;">
             {% for workshop in site.workshops %}
+            {% if workshop.place == "in" %}
             {% assign image = workshop.pid %}
+            <div class="in" id="in">
             <div class="row" style="margin-bottom: 100px;">
                 
                     <div class="col-md-8">
@@ -85,8 +118,65 @@ h4{
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                </div>
+                
+                    {% else %}
+                    {% assign image = workshop.pid %}
+                    <div class="ex" id="ex">
+                    <div class="row" style="margin-bottom: 100px;">
+                
+                        <div class="col-md-8">
+                            <div class="workshop">
+                                <h4 class="card-text" >{{workshop.name}}</h4>
+                                <p class="card-text" style="margin-top: 50px;">{{workshop.excerpt}}</p>
+                            </div>
+                        </div>
+                            <div class="col-md-4">
+                                <div class="image" style="position: relative;">
+                                  <img class="card-img-top p-2" style="height: 250px; width: auto; display:block;
+                                  margin:auto;  align-items: center;" src="/assets/img/workshops/{{image}}.jpg" alt="workshop Image">
+                                  <a href="{{workshop.link}}" style="margin:0 auto;
+                                  display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Learn more!</a>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                     {% endif %}
+                     {% endfor %}
                 </div>
         
     </div>
 </section>
+
+
+
+<script type="text/javascript">
+        
+    function changeWorkshop(list){
+        
+        if (list == "ex"){
+            var past = document.getElementsByClassName("ex")
+            document.getElementById("exText").style.fontWeight = "700"
+            document.getElementById("inText").style.fontWeight = "100"
+            
+            for(i = 0; i < past.length; i++) {
+                past[i].style.display= 'block';
+                }
+                var current = document.getElementsByClassName("in")
+            for(i = 0; i < past.length; i++) {
+                current[i].style.display= 'none';
+                }
+            }else{
+                var past = document.getElementsByClassName("ex")
+                document.getElementById("inText").style.fontWeight = "700"
+                document.getElementById("exText").style.fontWeight = "100"
+            
+            for(i = 0; i < past.length; i++) {
+                past[i].style.display= 'none';
+                }
+                var current = document.getElementsByClassName("in")
+            for(i = 0; i < past.length; i++) {
+                current[i].style.display= 'block';
+                }
+            }}
+</script>

@@ -5,6 +5,7 @@ name: International Workshop in Epidemiology in Infectious Diseases
 country: Thailand
 year: 2016
 dates: 7th-11th March
+place: ex
 
    
 ---

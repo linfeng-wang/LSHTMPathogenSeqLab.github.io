@@ -5,7 +5,7 @@ name: Omics applications in malaria and infectious diseases
 country: Vietnam
 year: 2022
 dates: 9th-12th March
-
+place : ex
    
 ---
 Alongside the unfinished agenda of tackling infectious diseases,
