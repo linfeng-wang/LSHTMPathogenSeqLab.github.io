@@ -74,6 +74,10 @@ margin: 20px;
   
   height: 100px;
  }
+ .card-img-top{
+  height: 200px;
+  object-fit: contain;
+ }
 </style>
 
 <body id="Funding">
@@ -92,83 +96,68 @@ margin: 20px;
           <li class="team-list" id="currText" onclick="changeFunder('current')">Current Funders</li>
           <li class="team-list" id="pastText" onclick="changeFunder('past')"> Past Funders</li>
         </ul></div>
-    <section class="funders" style="margin-top: 200px;">
-        <div class="container">
-          {% for funder in site.funders %}
-          {% if funder.current == true %}
-          <div class="current" id="current" style="display: block;">
-            
-            <div class="row" style="margin-bottom: 100px;">
-                
-                    <div class="col-md-8">
-                        <div class="funder">
-                            <h4 class="card-text" style="">{{funder.name}}</h4>
-                            <p class="card-text" style="margin-top: 50px;">{{funder.excerpt}}</p>
-                        </div>
+        <section class="funders" style="margin-top: 200px;">
+          <div class="container">
+            <div class="row current-funders" style="margin-bottom: 100px;">
+              {% for funder in site.funders %}
+                {% if funder.current == true %}   
+                  <div class="col-4">
+                    <div class="current" id="current" style="display: block;">
+                      <div class="image" style="position: relative;">
+                        <img class="card-img-top p-2" src="/assets/img/funders/{{funder.did}}.png" alt="Card image cap">
+                        <a href="{{funder.link}}" style="margin:0 auto; display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Homepage</a>
+                      </div>
                     </div>
-                        <div class="col-md-4">
-                            <div class="image" style="position: relative;">
-                              <img class="card-img-top p-2"  src="/assets/img/funders/{{funder.did}}.png" alt="Card image cap">
-                              <a href="{{funder.link}}" style="margin:0 auto;
-                              display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Homepage</a>
-                            </div>
-                        </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+            </div>
+                  <div class="row past-funders" style="display: none; margin-bottom: 100px;">
+                    {% for funder in site.funders %}
+                      {% if funder.current != true %}   
+                  <div class="col-4">
+                    <div class="past" id="past" style="display: block;">
+                      <div class="image" style="position: relative;">
+                        <img class="card-img-top p-2" src="/assets/img/funders/{{funder.did}}.png" alt="Card image cap">
+                      </div>
+                      <div class="button">
+                        <a href="{{funder.link}}" style="margin:0 auto; display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Homepage</a>
+                      </div>
                     </div>
-                </div>
-                        {% else %}
-                        <div class="past" id="past" style="display: none;">
-                        <div class="row" style="margin-bottom: 100px;">
-                
-                            <div class="col-md-8">
-                                <div class="funder">
-                                    <h4 class="card-text" style="">{{funder.name}}</h4>
-                                    <p class="card-text" style="margin-top: 50px;">{{funder.excerpt}}</p>
-                                </div>
-                            </div>
-                                <div class="col-md-4">
-                                    <div class="image" style="position: relative;">
-                                      <img class="card-img-top p-2" src="/assets/img/funders/{{funder.did}}.png" alt="Card image cap">
-                                      <a href="{{funder.link}}" style="margin:0 auto;
-                                      display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Homepage</a>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        {% endif %}
-                        {% endfor %}
-                </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
-                
-            </div>
-        </div>
-    </section>
+          </div>
+        </section>
+        
     <script type="text/javascript">
         
         function changeFunder(list){
             console.log(list)
             if (list == "past"){
-                var past = document.getElementsByClassName("past")
+                var past = document.getElementsByClassName("past-funders")
                 document.getElementById("pastText").style.fontWeight = "700"
                 document.getElementById("currText").style.fontWeight = "100"
                 
                 for(i = 0; i < past.length; i++) {
-                    past[i].style.display= 'block';
+                    past[i].style.display= 'flex';
                     }
-                    var current = document.getElementsByClassName("current")
+                    var current = document.getElementsByClassName("current-funders")
                 for(i = 0; i < past.length; i++) {
                     current[i].style.display= 'none';
                     }
                 }else{
-                    var past = document.getElementsByClassName("past")
+                    var past = document.getElementsByClassName("past-funders")
                     document.getElementById("currText").style.fontWeight = "700"
                     document.getElementById("pastText").style.fontWeight = "100"
                 
                 for(i = 0; i < past.length; i++) {
                     past[i].style.display= 'none';
                     }
-                    var current = document.getElementsByClassName("current")
+                    var current = document.getElementsByClassName("current-funders")
                 for(i = 0; i < past.length; i++) {
-                    current[i].style.display= 'block';
+                    current[i].style.display= 'flex';
                     }
                 }}
     </script>

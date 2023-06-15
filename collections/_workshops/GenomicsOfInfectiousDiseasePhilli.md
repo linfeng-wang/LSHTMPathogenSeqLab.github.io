@@ -1,11 +1,10 @@
 ---
 layout: workshops
-pid: Genomics of Infectious Disease Meeting 
-name: Pathogen Genomics workshop in Research Institute for Tropical Medicine
-country: Philippines
+pid: phili
+name: Genomics of Infectious Disease Meeting 
+country: Manilla
 year: 2017
 dates: July
-place: ex
 
 ---
 

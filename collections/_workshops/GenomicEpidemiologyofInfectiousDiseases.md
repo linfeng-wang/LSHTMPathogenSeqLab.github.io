@@ -2,10 +2,9 @@
 layout: workshops
 pid: brazil
 name: Workshop on the Genomic Epidemiology of Infectious Diseases
-country: Brazil
+country: Maringa
 year: 2011
 dates: July
-place: ex
 
 ---
 

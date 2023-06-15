@@ -2,10 +2,10 @@
 layout: workshops
 pid: bangkok
 name: Genomics of Infectious Diseases workshop 
-country: Thailand
+country: Bangkok
 year: 2016
 dates: February
-place: ex
+
 
 ---
 

@@ -2,10 +2,10 @@
 layout: workshops
 pid: newtonfund
 name: Pathogen Genomics workshop Cape Town
-country: South Africa
+country: Cape Town
 year: 2017
 dates: March
-place: ex
+
 
 ---
 

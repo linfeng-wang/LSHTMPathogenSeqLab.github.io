@@ -2,10 +2,9 @@
 layout: workshops
 pid: GEID2016
 name: International Workshop in Epidemiology in Infectious Diseases
-country: Thailand
+country: Bangkok
 year: 2016
 dates: 7th-11th March
-place: ex
 
    
 ---

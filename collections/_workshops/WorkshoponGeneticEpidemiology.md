@@ -1,11 +1,11 @@
 ---
 layout: workshops
-pid: brazil
+pid: gulbenkian
 name: Workshop on Genetic Epidemiology 
-country: Portugal
+country: Lisbon
 year: 2011-2013
 dates: Nov
-place: ex
+
 
 ---
 

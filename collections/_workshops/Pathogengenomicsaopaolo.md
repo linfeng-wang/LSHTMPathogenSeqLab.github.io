@@ -2,10 +2,10 @@
 layout: workshops
 pid: univsaopaolo
 name: Pathogen genomic & Infectious disease epidemiology
-country: Brazil
+country: Sao Paolo
 year: 2015
 dates: March
-place: ex
+
 
 ---
 

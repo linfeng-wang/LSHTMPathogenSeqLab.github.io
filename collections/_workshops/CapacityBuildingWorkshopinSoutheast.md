@@ -5,7 +5,6 @@ name: Genomic Epidemiology in Infectious Diseases – Pathogen Genomics - Capaci
 country: Singapore
 year: 2015
 dates: February
-place: ex
 
 ---
 

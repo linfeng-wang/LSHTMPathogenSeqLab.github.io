@@ -2,10 +2,9 @@
 layout: workshops
 pid: GEID2018
 name: International Workshop in Epidemiology in Infectious Diseases
-country: Malaysia
+country: Kuala Lumpur
 year: 2018
 dates: 15th-20th October
-place: in
    
 ---
 

@@ -5,7 +5,10 @@ title: workshops
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> </links>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+  </links>
  
 <scripts>
   <script src="https://kit.fontawesome.com/f8a9821c7d.js" crossorigin="anonymous"></script>
@@ -22,9 +25,7 @@ title: workshops
     .text-align h1 {
   color:white; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 40px;
 }
-.main p{
-    text-align: center;
-}
+
 @media (max-width: 900px) {
     .text-align h1 {
   color:white;  font-size: 20px; font-family: 'Heebo', sans-serif; bottom: 0; right: 0; position: absolute; margin-right: 20px;
@@ -43,15 +44,22 @@ hr{
     z-index: 9; 
   
 }
-h4{
+#popUp h4,h6{
     text-align: center;
+    font-family: 'Lora', serif;
+    padding:20px
+}
+#text_before_map h4,h6{
+  text-align: center;
+    font-family: 'Lora', serif;
+    padding:20px
 }
 
 .headerContainer{
     padding-top:100px;
 }
 .team-list{
-    font-family: "Mercury Text G1 A","Mercury Text G1 B",serif;
+  font-family: 'Lora', serif;
 font-style: italic;
 display: inline;
 cursor: pointer;
@@ -68,8 +76,49 @@ margin: 20px;
   }
   
 #chartdiv {
+  padding: 50px;
   width: 100%;
-  height: 500px;
+  height: 100vh;
+}
+#pop-up{
+  position: absolute;
+  top:0;
+  right:0;
+  z-index: 10;
+  opacity: 0;
+  width:0px;
+  height: 100vh;
+  transition: opacity 1s ease-in-out, width 1s ease-in-out;
+  background-color: rgb(49,48,48);
+  color: white;
+  font-family: 'Lora', serif;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  overflow-y: scroll;
+  box-shadow:0 0 10px 1px rgb(0,191,111);
+}
+.map{
+  position: relative;
+}
+.card-text{
+  padding:10px;
+}
+.card-text-header{
+  padding-top: 30px;
+}
+#pop-up img{
+  border-radius: 15px;
+  height: auto;
+  justify-content: center;
+  margin:0 auto;
+  display:block; max-width: 75%; align-items: center; margin-top: 20px;
+}
+#pop-up .row{
+  border-bottom: dotted 1px white;
+}
+#pop-up .image{
+  padding-bottom: 20px;
+  
 }
 </style>
 
@@ -89,60 +138,77 @@ root.setThemes([
   am5themes_Animated.new(root)
 ]);
 
-
-var chart = root.container.children.push(
-  am5map.MapChart.new(root, {
-    panX: "rotateX",
-    wheelY: "zoom",
-    minZoomLevel: 1,
-    projection: am5map.geoOrthographic()
-  })
-);
-
-var cont = chart.children.push(am5.Container.new(root, {
-  layout: root.horizontalLayout,
-  x: 20,
-  y: 40
+var chart = root.container.children.push(am5map.MapChart.new(root, {
+  panX: "rotateX",
+  panY: "rotateY",
+  wheelY: "none",
+  projection: am5map.geoOrthographic(),
+ 
 }));
-
-chart.seriesContainer.draggable = false;
-chart.seriesContainer.resizable = false;
+chart.animate({
+  key: "rotationX",
+  from: 0,
+  to: 360,
+  duration: 30000,
+  loops: Infinity
+});
 
 
 var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-  geoJSON: am5geodata_worldLow
+  geoJSON: am5geodata_worldLow,
+  fill: am5.color("#313030"),
 }));
-polygonSeries.exclude = ["AQ"];
-var graticuleSeries = chart.series.push(am5map.GraticuleSeries.new(root, {}));
-graticuleSeries.mapLines.template.setAll({
-  stroke: root.interfaceColors.get("alternativeBackground"),
-  strokeOpacity: 0.08
+
+
+var backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
+backgroundSeries.mapPolygons.template.setAll({
+  fill: am5.color("#313030"),
+  fillOpacity: 0.1,
+  strokeOpacity: 0
 });
+backgroundSeries.data.push({
+  geometry: am5map.getGeoRectangle(90, 180, -90, -180)
+});
+
 
 
 var lineSeries = chart.series.push(am5map.MapLineSeries.new(root, {}));
 lineSeries.mapLines.template.setAll({
   stroke: root.interfaceColors.get("alternativeBackground"),
-  strokeOpacity: 0.6
+  strokeOpacity: 0.2
 });
 
 
 var citySeries = chart.series.push(
   am5map.MapPointSeries.new(root, {})
 );
+var bulletTemplate = am5.Template.new(root, {});
 
+bulletTemplate.events.on("click", function(ev) {
+  
+  showWorkshops(ev.target.dataItem.dataContext.title)
+});
+
+
+bulletTemplate.set("cursor", "pointer");
 citySeries.bullets.push(function() {
   var circle = am5.Circle.new(root, {
     radius: 5,
     tooltipText: "{title}",
     tooltipY: 0,
     fill: am5.color(0xffba00),
+    interactive: true,
     stroke: root.interfaceColors.get("background"),
-    strokeWidth: 2
-  });
-
+    strokeWidth: 2,
+    cursorOverStyle: "pointer",
+ 
+  },bulletTemplate);
+  circle.states.create('hover', {
+  scale: 3
+});
   return am5.Bullet.new(root, {
     sprite: circle
+
   });
 });
 
@@ -153,7 +219,7 @@ var arrowSeries = chart.series.push(
 
 arrowSeries.bullets.push(function() {
   var arrow = am5.Graphics.new(root, {
-    fill: am5.color(0x000000),
+    fill: am5.color(0x00BF6F),
     stroke: am5.color(0x000000),
     draw: function (display) {
       display.moveTo(0, -3);
@@ -226,12 +292,22 @@ var cities = [
     id: "ungku omar",
     title: "Ungku Omar",
     geometry: { type: "Point", coordinates: [101.075, 4.6005] }
+  },
+   {
+    id: "angeles",
+    title: "Angeles",
+    geometry: { type: "Point", coordinates: [120.591,15.156] }
+  },
+   {
+    id: "davao city",
+    title: "Davao city",
+    geometry: { type: "Point", coordinates: [125.395,7.2075] }
   }];
 
 citySeries.data.setAll(cities);
 
 
-var destinations = ["maringa","mali","oxford","ungku omar","cambridge","sao paolo", "lisbon", "cape town", "singapore", "bangkok", "manilla", "kuala lumpur", "hanoi"];
+var destinations = ["maringa","mali","oxford","ungku omar","cambridge","sao paolo", "lisbon", "cape town", "singapore", "bangkok", "manilla", "kuala lumpur", "hanoi","angeles","davao city"];
 
 var originLongitude = -0.1262;
 var originLatitude = 51.5002;
@@ -247,13 +323,51 @@ am5.array.each(destinations, function (did) {
   });
 })
 
-polygonSeries.events.on("datavalidated", function () {
-  chart.zoomToGeoPoint({ longitude: -0.1262, latitude: 51.5002 }, 3);
-})
+chart.chartContainer.wheelable = false;
 
 chart.appear(1000, 100);
 
 });
+
+function showWorkshops(country) {
+    var popUp = document.getElementById('pop-up');
+    var workshops = popUp.getElementsByClassName('row');
+
+    if(popUp.style.opacity == 1){
+      popUp.style.opacity = 0;
+      popUp.style.width = "0px";
+
+      setTimeout(function() {
+      for (var i = 0; i < workshops.length; i++) {
+          if (workshops[i].dataset.country == country) {
+              workshops[i].style.display = 'block';
+          } else {
+              workshops[i].style.display = 'none';
+          }
+      }
+      
+      
+      popUp.style.opacity = 1;
+      popUp.style.width = "25vw";
+    }, 1000);  
+    }else{
+      for (var i = 0; i < workshops.length; i++) {
+        if (workshops[i].dataset.country == country) {
+            workshops[i].style.display = 'block';
+        } else {
+            workshops[i].style.display = 'none';
+        }
+    }
+    popUp.style.opacity = 1;
+    popUp.style.width = "25vw";
+  }
+}
+function closePanel(){
+  
+  var popUp = document.getElementById('pop-up');
+  popUp.style.width = "0px"
+  popUp.style.opacity = 0
+}
 </script>
 
 
@@ -261,17 +375,18 @@ chart.appear(1000, 100);
 
 <div class="main">
     {% assign my_array = "" | split: ',' %}
-    <section class="heading" style="background-color:  rgb(49,48,48);height: 25vh; position: relative;">
+    <section class="heading" style="background-color:  rgb(49,48,48);height: 19vh; position: relative;">
         <div class="container" >
-            <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 100px;">
+            <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 80px; border-top-left-radius: 15px; border-bottom-left-radius: 15px;">
                 <h1 >WORKSHOPS</h1>
             </div>     
     </section>
     <section class="headerContainer">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h2>Below are a list of workshops past and present</h2>
+                <div class="col-md-12" id="text_before_map">
+                    <h4>As a team we have travelled the world teaching students the wonders of genomics.</h4>
+                    <h6>Take a look below by clicking a place on the map!</h6>
                 </div>
             </div>
         </div>
@@ -280,23 +395,41 @@ chart.appear(1000, 100);
   
 <section class="map">
     <div id="chartdiv"></div>
-    <div class="container">
-        <div class="row">
+    <div class="pop-up" id="pop-up">
+      {% for workshop in site.workshops %}
+      {% assign image = workshop.pid %}
+      <div class="container" id="workshopcontainer">
+      <div class="row" id="{{workshop.country}}" data-country="{{workshop.country}}"  style="margin-bottom: 100px;">
+                
+        <div class="col-md-12">
+            <div class="workshop">
+                <h4 class="card-text-header" >{{workshop.name}}</h4>
+                <h6 class="card-text-header">{{workshop.year}}</h6>
+                <p class="card-text" >{{workshop.excerpt}}</p>
+            </div>
+        </div>
             <div class="col-md-12">
-                <div class="areaToChange">
-
+                <div class="image" style="position: relative;">
+                  <img class="card-img-top p-2"  src="/assets/img/workshops/{{image}}.jpg" alt="workshop Image">
+                  <button onclick="closePanel()" style="margin:0 auto;
+                  display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Close panel</button>
                 </div>
             </div>
         </div>
+      
     </div>
+    {% endfor %}
+  </div>
 </section>
-<section class="lists">
+<!--<section class="lists">
     <div class="list-section" style="margin-bottom: 200px; margin-top:200px;background-color: rgb(248, 248, 248);">
         <ul style="list-style: none;box-sizing: border-box; text-align: center; " class="past-present">
           <li class="team-list" id="inText" onclick="changeWorkshop('in')">LSHTM internal courses</li>
           <li class="team-list" id="exText" onclick="changeWorkshop('ex')"> External global courses</li>
         </ul></div>
 </section>
+-->
+<!--
 <section class="workshop-list" style="margin-top: 200px;">
     <div class="container">
         
@@ -351,7 +484,7 @@ chart.appear(1000, 100);
         
     </div>
 </section>
-
+-->
 
 
 <script type="text/javascript">

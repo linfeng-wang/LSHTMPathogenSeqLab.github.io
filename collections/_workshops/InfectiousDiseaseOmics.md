@@ -2,10 +2,10 @@
 layout: workshops
 pid: omics2021
 name: One health 'Omics workshop
-country: The Philippines
+country: Davao city
 year: 2021
 dates: October 11-16th
-place: ex
+
    
 ---
 

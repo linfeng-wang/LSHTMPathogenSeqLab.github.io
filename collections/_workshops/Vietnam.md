@@ -1,11 +1,11 @@
 ---
 layout: workshops
 pid: vietnam
-name: Omics applications in malaria and infectious diseases
-country: Vietnam
+name: Infectious Disease ‘Omics workshop
+country: Hanoi
 year: 2022
-dates: 9th-12th March
-place : ex
+dates: 10-13th
+
    
 ---
 Alongside the unfinished agenda of tackling infectious diseases,

@@ -2,10 +2,10 @@
 layout: workshops
 pid: riftm
 name: Pathogen Genomics workshop in Research Institute for Tropical Medicine, Philippines 
-country: Philippines
+country: Manilla
 year: 2017
 dates: November
-place: ex
+
 
 ---
 
