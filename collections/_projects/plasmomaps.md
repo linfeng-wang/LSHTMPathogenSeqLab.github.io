@@ -5,7 +5,7 @@ theme:
   - malaria
   - software
 pid: pmaps
-link: http://genomics.lshtm.ac.uk/malaria_profiler/#/
+link: http://genomics.lshtm.ac.uk/plasmomaps/#/
 people:
   - jthorpe
 highlighted: true
