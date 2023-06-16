@@ -5,7 +5,7 @@ pid: rnaexplore
 theme: 
   - tuberculosis
   - software
-link:  https://genomics.lshtm.ac.uk/rnaexplore
+link:  https://genomics.lshtm.ac.uk/rnaexplore/#
 people:
   - jthorpe
 highlighted: true
