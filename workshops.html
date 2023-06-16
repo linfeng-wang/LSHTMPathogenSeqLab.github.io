@@ -88,23 +88,38 @@ margin: 20px;
   opacity: 0;
   width:0px;
   height: 100vh;
-  transition: opacity 1s ease-in-out, width 1s ease-in-out;
+  transition: opacity 1s ease-in-out, width 1s ease-in-out, transform 1s ease 0s;
   background-color: rgb(49,48,48);
   color: white;
   font-family: 'Lora', serif;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   overflow-y: scroll;
-  box-shadow:0 0 10px 1px rgb(0,191,111);
-}
+  transform: 
+    perspective(800px) 
+    rotateX(-10deg) 
+    rotateY(-20deg)
+    rotateZ(-2deg);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  
+  box-shadow:
+    rgba(0, 0, 0, 0.2) -10px 10px 20px -5px, /* closer shadow */
+    rgba(0, 0, 0, 0.14) -20px 20px 40px -10px, /* intermediate shadow */
+    rgba(0, 0, 0, 0.12) -30px 30px 60px -15px;
+  }
+
+
 .map{
   position: relative;
 }
 .card-text{
   padding:10px;
+  text-align: center;
 }
 .card-text-header{
   padding-top: 30px;
+  text-align: center;
 }
 #pop-up img{
   border-radius: 15px;
@@ -113,12 +128,20 @@ margin: 20px;
   margin:0 auto;
   display:block; max-width: 75%; align-items: center; margin-top: 20px;
 }
-#pop-up .row{
-  border-bottom: dotted 1px white;
-}
+
 #pop-up .image{
   padding-bottom: 20px;
   
+}
+.workshop{
+  text-align: center;
+  align-items: center;
+}
+#borderBottom{
+  border-bottom: 2px dashed rgb(0,191,111);
+  
+  
+  height: 2px;
 }
 </style>
 
@@ -327,41 +350,61 @@ chart.chartContainer.wheelable = false;
 
 chart.appear(1000, 100);
 
-});
-
-function showWorkshops(country) {
+});function showWorkshops(country) {
     var popUp = document.getElementById('pop-up');
     var workshops = popUp.getElementsByClassName('row');
+    
+    popUp.style.transition = "opacity 1s ease-in-out, width 1s ease-in-out, transform 1s ease 0s";
+    popUp.style.transform = "perspective(800px) rotateY(-8deg)";
 
     if(popUp.style.opacity == 1){
       popUp.style.opacity = 0;
       popUp.style.width = "0px";
-
-      setTimeout(function() {
-      for (var i = 0; i < workshops.length; i++) {
-          if (workshops[i].dataset.country == country) {
-              workshops[i].style.display = 'block';
-          } else {
-              workshops[i].style.display = 'none';
-          }
-      }
       
+      setTimeout(function() {
+        for (var i = 0; i < workshops.length; i++) {
+          if (workshops[i].dataset.country == country) {
+            workshops[i].style.display = 'block';
+          } else {
+            workshops[i].style.display = 'none';
+          }
+        }
+
+        popUp.style.opacity = 1;
+        popUp.style.width = "25vw";
+        popUp.style.transform = "perspective(800px) rotateY(-4deg)";
+
+        popUp.onmouseover = function() {
+            this.style.transform = "perspective(800px) rotateY(0deg)";
+        };
+        popUp.onmouseout = function() {
+            this.style.transform = "perspective(800px) rotateY(-4deg)";
+        };
+
+      }, 1000);
+      
+    } else {
+      for (var i = 0; i < workshops.length; i++) {
+        if (workshops[i].dataset.country == country) {
+          workshops[i].style.display = 'block';
+        } else {
+          workshops[i].style.display = 'none';
+        }
+      }
       
       popUp.style.opacity = 1;
       popUp.style.width = "25vw";
-    }, 1000);  
-    }else{
-      for (var i = 0; i < workshops.length; i++) {
-        if (workshops[i].dataset.country == country) {
-            workshops[i].style.display = 'block';
-        } else {
-            workshops[i].style.display = 'none';
-        }
+      popUp.style.transform = "perspective(800px) rotateY(-4deg)";
+
+      popUp.onmouseover = function() {
+          this.style.transform = "perspective(800px) rotateY(0deg)";
+      };
+      popUp.onmouseout = function() {
+          this.style.transform = "perspective(800px) rotateY(-4deg)";
+      };
     }
-    popUp.style.opacity = 1;
-    popUp.style.width = "25vw";
-  }
 }
+
 function closePanel(){
   
   var popUp = document.getElementById('pop-up');
@@ -414,6 +457,7 @@ function closePanel(){
                   <button onclick="closePanel()" style="margin:0 auto;
                   display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Close panel</button>
                 </div>
+                <div id="borderBottom"></div>
             </div>
         </div>
       
