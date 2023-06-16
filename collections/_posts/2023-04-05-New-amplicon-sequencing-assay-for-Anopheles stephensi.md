@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: anopheles
-hidden: true
+hidden: false
 author: hacfordpalmer
 link: none
 title: "New amplicon sequencing assay for <em>Anopheles stephensi </em>"
