@@ -17,6 +17,9 @@ title: workshops
 
 
 <style>
+  body{
+    overflow-x: hidden;
+  }
  .yearList li{
         width: 12.5%;
         float: left;
@@ -123,15 +126,19 @@ margin: 20px;
 }
 #pop-up img{
   border-radius: 15px;
+  object-fit: cover; /* This will ensure that your image covers the entire width of the div, cropping it if necessary */
   height: auto;
+  width: auto;
   justify-content: center;
   margin:0 auto;
   display:block; max-width: 75%; align-items: center; margin-top: 20px;
 }
 
+
 #pop-up .image{
   padding-bottom: 20px;
-  
+  width: auto;
+  height: auto;
 }
 .workshop{
   text-align: center;
@@ -170,9 +177,9 @@ var chart = root.container.children.push(am5map.MapChart.new(root, {
 }));
 chart.animate({
   key: "rotationX",
-  from: 0,
-  to: 360,
-  duration: 30000,
+  from: 360,
+  to: 0,
+  duration: 15000,
   loops: Infinity
 });
 
@@ -227,7 +234,7 @@ citySeries.bullets.push(function() {
  
   },bulletTemplate);
   circle.states.create('hover', {
-  scale: 3
+  scale: 5
 });
   return am5.Bullet.new(root, {
     sprite: circle
@@ -439,97 +446,32 @@ function closePanel(){
 <section class="map">
     <div id="chartdiv"></div>
     <div class="pop-up" id="pop-up">
+      
       {% for workshop in site.workshops %}
       {% assign image = workshop.pid %}
-      <div class="container" id="workshopcontainer">
-      <div class="row" id="{{workshop.country}}" data-country="{{workshop.country}}"  style="margin-bottom: 100px;">
-                
+      <div class="container-fluid" id="workshopcontainer">
+      <div class="row" id="{{workshop.country}}" data-country="{{workshop.country}}"  style="margin-bottom: 100px;">      
         <div class="col-md-12">
             <div class="workshop">
                 <h4 class="card-text-header" >{{workshop.name}}</h4>
                 <h6 class="card-text-header">{{workshop.year}}</h6>
                 <p class="card-text" >{{workshop.excerpt}}</p>
             </div>
-        </div>
-            <div class="col-md-12">
-                <div class="image" style="position: relative;">
-                  <img class="card-img-top p-2"  src="/assets/img/workshops/{{image}}.jpg" alt="workshop Image">
-                  <button onclick="closePanel()" style="margin:0 auto;
+       
+          <div class="image" style=" z-index: 99999;">
+            <img class="card-img-top p-2"  src="/assets/img/workshops/{{image}}.jpg" loading="eager" alt="workshop Image">
+              <button onclick="closePanel()" style="margin:0 auto;
                   display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Close panel</button>
-                </div>
-                <div id="borderBottom"></div>
-            </div>
+              </div>
+            <div id="borderBottom"></div>
         </div>
+      </div>
       
     </div>
     {% endfor %}
   </div>
 </section>
 </body>
-<!--<section class="lists">
-    <div class="list-section" style="margin-bottom: 200px; margin-top:200px;background-color: rgb(248, 248, 248);">
-        <ul style="list-style: none;box-sizing: border-box; text-align: center; " class="past-present">
-          <li class="team-list" id="inText" onclick="changeWorkshop('in')">LSHTM internal courses</li>
-          <li class="team-list" id="exText" onclick="changeWorkshop('ex')"> External global courses</li>
-        </ul></div>
-</section>
--->
-<!--
-<section class="workshop-list" style="margin-top: 200px;">
-    <div class="container">
-        
-        <div class="workshops"  style="display: block; margin-top: 200px;">
-            {% for workshop in site.workshops %}
-            {% if workshop.place == "in" %}
-            {% assign image = workshop.pid %}
-            <div class="in" id="in">
-            <div class="row" style="margin-bottom: 100px;">
-                
-                    <div class="col-md-8">
-                        <div class="workshop">
-                            <h4 class="card-text" >{{workshop.name}}</h4>
-                            <p class="card-text" style="margin-top: 50px;">{{workshop.excerpt}}</p>
-                        </div>
-                    </div>
-                        <div class="col-md-4">
-                            <div class="image" style="position: relative;">
-                              <img class="card-img-top p-2" style="height: 250px; width: auto; display:block;
-                              margin:auto;  align-items: center;" src="/assets/img/workshops/{{image}}.jpg" alt="workshop Image">
-                              <a href="{{workshop.link}}" style="margin:0 auto;
-                              display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Learn more!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                    {% else %}
-                    {% assign image = workshop.pid %}
-                    <div class="ex" id="ex">
-                    <div class="row" style="margin-bottom: 100px;">
-                
-                        <div class="col-md-8">
-                            <div class="workshop">
-                                <h4 class="card-text" >{{workshop.name}}</h4>
-                                <p class="card-text" style="margin-top: 50px;">{{workshop.excerpt}}</p>
-                            </div>
-                        </div>
-                            <div class="col-md-4">
-                                <div class="image" style="position: relative;">
-                                  <img class="card-img-top p-2" style="height: 250px; width: auto; display:block;
-                                  margin:auto;  align-items: center;" src="/assets/img/workshops/{{image}}.jpg" alt="workshop Image">
-                                  <a href="{{workshop.link}}" style="margin:0 auto;
-                                  display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Learn more!</a>
-                                </div>
-                            </div>
-                        </div>
-                     </div>
-                     {% endif %}
-                     {% endfor %}
-                </div>
-        
-    </div>
-</section>
--->
 
 
 <script type="text/javascript">
