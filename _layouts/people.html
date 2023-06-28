@@ -14,6 +14,7 @@ title: People
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
   <script src="/assets/js/jquery/src/jquery.js" ></script><script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 </links>
 
@@ -105,10 +106,7 @@ min-height: 100vh;
   display: none;
   margin: 0;
 }
-.projectList img{
-  height: 200px;
-  width: auto;
-}
+
 #move{
   border-right: solid rgb(146, 145, 145);
   border-top: solid rgb(146, 145, 145)
@@ -131,7 +129,9 @@ min-height: 100vh;
 
 }
 #projectImage1,#projectImage2,#projectImage3,#projectImage4,#projectImage5, #projectImage6,#projectImage7,#projectImage8,#projectImage9,#projectImage10 
-,#projectImage11,#projectImage12,#projectImage13,#projectImage14,#projectImage15 {
+,#projectImage11,#projectImage12,#projectImage13,#projectImage14,#projectImage15,#projectImage16,#projectImage17,#projectImage18,#projectImage19,#projectImage20,#projectImage21
+,#projectImage22,#projectImage23,#projectImage24,#projectImage25,#projectImage26,#projectImage27,#projectImage28,#projectImage29,#projectImage30,#projectImage31,#projectImage32
+,#projectImage33,#projectImage34,#projectImage35,#projectImage36,#projectImage37,#projectImage38,#projectImage39,#projectImage40,#projectImage41,#projectImage42,#projectImage43{
   height: auto;
   opacity: 0;
   margin: 20px;
@@ -187,15 +187,26 @@ min-height: 100vh;
  }
  
 }
+.projectList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .projectList img {
 	filter: grayscale();
 	width: 150px;
-height: auto;
+height: 150px;
 	border-radius: 25px;
 	border: 6px solid whitesmoke;
 	box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.5);
 	margin-bottom: 1rem;
 	transition: filter 0.4s ease-in-out;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
 }
 
 .projectList:hover img {
@@ -216,8 +227,8 @@ height: auto;
 }
 
 .title {
-	font-family: "Dancing Script", cursive;
-	font-size: 30px;
+	font-family: 'Lora', serif;
+	font-size: 18px;
 	color: whitesmoke;
 	position: relative;
   text-decoration: none;
@@ -487,6 +498,10 @@ color: white; }
   margin-left: auto;
   margin-right: auto;
 }
+#areaForImages{
+  height: 100vh;
+  overflow-y: auto;
+}
 </style>
 <body id="people">
   <div class="main">
@@ -671,9 +686,7 @@ color: white; }
 </body>
 
 <script>
-  window.addEventListener("load", function() {
-  console.log("Window width: " + window.innerWidth);
-});
+ 
   $(".arrow").click(function() {
     var Width = window.innerWidth;
     var result = Width * 32 / 100
@@ -686,14 +699,23 @@ color: white; }
     $(".imageArea").removeAttr("style")
     $(".toArrow").hide();
     $(".otherrow").show();
-    $(".p-3").each(function(index) {
-  var delay = index == 0 ? 0 : index * 300;
-  $(this).delay(delay).queue(function() {
-    $(this).addClass("startAnimation");
-    $(this).find(".title").addClass("show");
-    $(this).dequeue();
-  });
+    
+    var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            var element = $(entry.target);
+            var title = element.find(".title");
+            element.addClass("startAnimation");
+            title.addClass("show");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { rootMargin: "0px 0px -200px 0px" });
+
+$(".p-3").each(function(index) {
+    observer.observe(this);
 });
+
 
 
 

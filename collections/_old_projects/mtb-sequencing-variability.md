@@ -1,13 +1,11 @@
 ---
 layout: default
 name: MTB Sequencing Variability
-theme: 
-  - tuberculosis
+theme: tuberculosis
 pid: mtb
 link: https://github.com/jodyphelan/pathogenseq-scripts
 people:
     - jphelan
-highlighted: false
 ---
 
 To asses the analytical robustness of individual Mycobacterium tuberculosis DNA samples we sequenced replicates from the well characterised reference strain (H37Rv) and clinical isolates with resistance to up to 13 drugs. Sequencing was performed using the Illumina MiSeq and Ion Torrent PGM™ sequencing platforms. Two in-silico resistance calling pipelines were used to generate profiles. Results were compared to phenotypic drug susceptibility testing.

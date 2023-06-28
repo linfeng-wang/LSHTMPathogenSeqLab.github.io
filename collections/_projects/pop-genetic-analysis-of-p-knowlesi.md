@@ -1,0 +1,15 @@
+---
+layout: default
+name: Population genetic analysis of Plasmodium knowlesi
+theme: 
+  - malaria
+pid: knowlesiborneo
+link: https://www.nature.com/articles/s41598-023-29368-4
+people:
+  - emanko
+  - scampino
+  - tgclark
+highlighted: false
+---
+
+The zoonotic Plasmodium knowlesi parasite is a growing public health concern in Southeast Asia, especially in Malaysia, where elimination of P. falciparum and P. vivax malaria has been the focus of control efforts. Understanding of the genetic diversity of P. knowlesi parasites can provide insights into its evolution, population structure, diagnostics, transmission dynamics, and the emergence of drug resistance. Previous work has revealed that P. knowlesi fall into three main sub-populations distinguished by a combination of geographical location and macaque host (Macaca fascicularis and M. nemestrina). It has been shown that Malaysian Borneo groups display profound heterogeneity with long regions of high or low divergence resulting in mosaic patterns between sub-populations, with some evidence of chromosomal-segment exchanges. However, the genetic structure of non-Borneo sub-populations is less clear. By gathering one of the largest collections of P. knowlesi whole-genome sequencing data, we studied structural genomic changes across sub-populations, with the analysis revealing differences in Borneo clusters linked to mosquito-related stages of the parasite cycle, in contrast to differences in host-related stages for the Peninsular group. Our work identifies new genetic exchange events, including introgressions between Malaysian Peninsular and M. nemestrina-associated clusters on various chromosomes, including in parasite invasion genes (DBPβ, NBPXα and NBPXβ), and important proteins expressed in the vertebrate parasite stages. Recombination events appear to have occurred between the Peninsular and M. fascicularis-associated groups, including in the DBPβ and DBPγ invasion associated genes. Overall, our work finds that genetic exchange events have occurred among the recognised contemporary groups of P. knowlesi parasites during their evolutionary history, leading to apparent mosaicism between these sub-populations. These findings generate new hypotheses relevant to parasite evolutionary biology and P. knowlesi epidemiology, which can inform malaria control approaches to containing the impact of zoonotic malaria on human communities.

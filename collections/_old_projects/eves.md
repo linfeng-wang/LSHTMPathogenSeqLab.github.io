@@ -1,8 +1,7 @@
 ---
 layout: default
 name: Endogenous viral elements within Aedes mosquitos
-theme:
-    - vectors
+theme: vectors
 pid: eves
 link: none
 people:

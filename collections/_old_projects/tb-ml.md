@@ -6,7 +6,6 @@ pid: tb-ml
 link: none
 people:
     - jphelan
-    - lwang
 highlighted: true
 excerpt_separator: "<!--more-->"
 ---

@@ -1,10 +1,9 @@
 ---
 layout: default
 name: Global Drug resistance study
-theme: 
-  - tuberculosis
+theme: tuberculosis
 pid: gdr
-link: https://www.nature.com/articles/s41588-017-0029-0#change-history
+link: none
 people:
     - jphelan
     - tgclark
