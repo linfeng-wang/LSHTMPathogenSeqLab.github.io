@@ -3,7 +3,7 @@ layout: default
 name: New insights into sulfadoxine-pyrimethamine antimalarial drug resistance
 theme: 
   - malaria
-pid: sulfadoxine-pyrimethamine
+pid: sulfadoxine-pyrimethaminez
 link: https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1009268
 people:
   - emanko

@@ -3,7 +3,7 @@ layout: default
 name: Next generation targeted amplicon sequencing for insecticide resistance mutations in Aedes aegypti
 theme: 
   - vectors
-pid: ampseqcaboverde
+pid: ampseqcaboverdes
 link: https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0010935
 people:
   - ecollins

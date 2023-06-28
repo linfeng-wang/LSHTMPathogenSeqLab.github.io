@@ -2,7 +2,7 @@
 layout: default
 name: Philippines TB Drug Resistance Study
 theme: tuberculosis
-pid: projectname
+pid: phil
 link: none
 people:
     - tgclark
