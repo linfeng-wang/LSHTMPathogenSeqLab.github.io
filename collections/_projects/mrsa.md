@@ -2,7 +2,7 @@
 layout: default
 name: Tracing MRSA Transmission
 theme: amr
-pid: MRSA
+pid: mrsa
 link: none
 people:
     - tgclark
