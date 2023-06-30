@@ -1,6 +1,6 @@
 ---
 layout: post
-pid: taaneThailand
+pid: taanethailand
 hidden: true
 author: jthorpe
 link: none
