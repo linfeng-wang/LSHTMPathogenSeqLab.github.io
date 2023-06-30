@@ -1,7 +1,8 @@
 ---
 layout: default
 name: Karonga Diversity Study
-theme: tuberculosis
+theme: 
+  - tuberculosis
 pid: karonga
 link: none
 people:

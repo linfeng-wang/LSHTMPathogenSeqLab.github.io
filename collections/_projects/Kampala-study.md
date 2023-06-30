@@ -1,7 +1,8 @@
 ---
 layout: default
 name: Kampala Study
-theme: tuberculosis
+theme: 
+  - tuberculosis
 pid: kampala
 link: none
 people:

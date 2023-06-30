@@ -5,7 +5,7 @@ theme:
   - viruses
   - software
 pid: covidprofiler
-link: https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-020-00822-6
+link: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04632-y
 people:
   - jphelan
   - dward

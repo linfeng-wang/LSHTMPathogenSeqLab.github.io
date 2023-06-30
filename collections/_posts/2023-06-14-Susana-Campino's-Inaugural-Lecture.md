@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: inaugural
-hidden: true
+hidden: false
 author: jthorpe
 link: none
 brief:  In an event marking a significant milestone in her scientific career, Prof. Susana Campino, a renowned expert in the field of Genomics and Infectious Diseases, recently delivered her inaugural lecture. The lecture, presented to a captivated audience of fellow scientists, researchers, students, and loved ones, revolved around the critical role of genomics in understanding and combating infectious diseases, particularly those transmitted by arthropods.

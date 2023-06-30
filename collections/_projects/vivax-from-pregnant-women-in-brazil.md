@@ -1,6 +1,6 @@
 ---
 layout: default
-name: Genetic diversity of Plasmodium vivax isolates from pregnant women
+name: Genetic diversity of <i>Plasmodium vivax</i> isolates from pregnant women
 theme: 
   - malaria
 pid: pregnantvivax
