@@ -204,8 +204,8 @@ backgroundSeries.data.push({
 
 var lineSeries = chart.series.push(am5map.MapLineSeries.new(root, {}));
 lineSeries.mapLines.template.setAll({
-  stroke: root.interfaceColors.get("alternativeBackground"),
-  strokeOpacity: 0.2
+  stroke: "rgb(0, 153, 89)",
+  strokeOpacity: 0.1
 });
 
 
@@ -226,9 +226,9 @@ citySeries.bullets.push(function() {
     radius: 5,
     tooltipText: "{title}",
     tooltipY: 0,
-    fill: am5.color(0xffba00),
+    fill: "rgb(0, 153, 89)",
     interactive: true,
-    stroke: root.interfaceColors.get("background"),
+    stroke: "rgb(0,191,111)",
     strokeWidth: 2,
     cursorOverStyle: "pointer",
  
