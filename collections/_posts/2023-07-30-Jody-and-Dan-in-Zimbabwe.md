@@ -8,7 +8,7 @@ brief:  Dr Dan Ward and Dr Jody Phelan visit Zimbabwe to to teach students about
 excerpt_separator: "<!--more-->"
 ---
 
-We are thrilled to share that our own Dr. Dan Ward and Dr. Jody Phelan recently took their expertise on the road to Zimbabwe for an exciting educational initiative. They introduced and taught about the intricacies and applications of nanopore technology to students within the country.
+Dr. Dan Ward and Dr. Jody Phelan recently took their expertise on the road to Zimbabwe for an exciting educational initiative. They introduced and taught about the intricacies and applications of nanopore technology to students within the country.
 
 Nanopore technology, is relatively new yet Dan and Jody have steadily developed a deep understanding of nanopore technology, its workings, and its applications. Their expertise is a result of continuous learning, extensive research, and practical hands-on experiences. The comprehensive knowledge they've gained has positioned them as recognized experts in this novel and rapidly evolving field.
 
