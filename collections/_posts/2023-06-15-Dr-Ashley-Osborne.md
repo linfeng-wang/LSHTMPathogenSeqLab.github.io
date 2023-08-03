@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: DrAsh
-hidden: true
+hidden: false
 author: jthorpe
 link: none
 brief:  PhD Milestone, Ashley Osborne Paves Her Way in Academia
