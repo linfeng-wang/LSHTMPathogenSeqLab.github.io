@@ -1,5 +1,6 @@
 ---
 layout: people
+alumni: true
 pid: emanko
 forname: Emilia
 surname: Manko
