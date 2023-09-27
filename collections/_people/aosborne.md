@@ -1,6 +1,6 @@
 ---
 layout: people
-alumni: false
+alumni: true
 pid: aosborne
 forname: Ashley
 surname: Osborne
