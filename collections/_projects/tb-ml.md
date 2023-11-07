@@ -7,7 +7,7 @@ link: none
 people:
     - jphelan
     - lwang
-highlighted: true
+highlighted: false
 excerpt_separator: "<!--more-->"
 ---
 
